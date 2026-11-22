@@ -1,31 +1,32 @@
 ---
 const { pathname = Astro.url.pathname } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
-const isBeranda = pathname === "/" || pathname === "" || pathname === "/index.html";
-const isStruktur = pathname.startsWith("/struktur");
-const isDokumen = pathname.startsWith("/dokumen");
-const isSilsilah = pathname.startsWith("/silsilah");
-const isSuburin = pathname.startsWith("/suburin");
-const isP3K = pathname.startsWith("/p3k");
-const isBerita = pathname.startsWith("/berita") || pathname.startsWith("/artikel");
-const isPendaftaran = pathname.startsWith("/pendaftaran");
-const isTestimoni = pathname.startsWith("/testimoni");
+const isBeranda = pathname === "/" || pathname === "" || pathname === "/index.html" || pathname === base || pathname === `${base}/`;
+const isStruktur = pathname.includes("/struktur");
+const isDokumen = pathname.includes("/dokumen");
+const isSilsilah = pathname.includes("/silsilah");
+const isSuburin = pathname.includes("/suburin");
+const isP3K = pathname.includes("/p3k");
+const isBerita = pathname.includes("/berita") || pathname.includes("/artikel");
+const isPendaftaran = pathname.includes("/pendaftaran");
+const isTestimoni = pathname.includes("/testimoni");
 
 const navLinks = [
-  { name: "Beranda", href: "/", active: isBeranda },
-  { name: "Struktur", href: "/struktur", active: isStruktur },
-  { name: "Dokumen", href: "/dokumen", active: isDokumen },
-  { name: "Angkatan", href: "/silsilah", active: isSilsilah },
-  { name: "Produk", href: "/suburin", active: isSuburin },
-  { name: "Pendaftaran", href: "/pendaftaran", active: isPendaftaran },
-  { name: "Testimoni", href: "/testimoni", active: isTestimoni },
+  { name: "Beranda", href: `${base}/`, active: isBeranda },
+  { name: "Struktur", href: `${base}/struktur`, active: isStruktur },
+  { name: "Dokumen", href: `${base}/dokumen`, active: isDokumen },
+  { name: "Angkatan", href: `${base}/silsilah`, active: isSilsilah },
+  { name: "Produk", href: `${base}/suburin`, active: isSuburin },
+  { name: "Pendaftaran", href: `${base}/pendaftaran`, active: isPendaftaran },
+  { name: "Testimoni", href: `${base}/testimoni`, active: isTestimoni },
 ];
 
 const appItems = [
   {
     title: "Panduan & Stok P3K",
     desc: "Katalog & kalkulator kebutuhan logistik P3K dinamis sesuai jumlah peserta ekspedisi",
-    href: "/p3k",
+    href: `${base}/p3k`,
     icon: "medical_services",
     isExternal: false,
     badge: "Web App",
@@ -38,7 +39,7 @@ const featureArticles = [
     categoryLabel: "LAPORAN UTAMA",
     title: "Ekspedisi Semeru & Mahameru",
     desc: "Catatan penjelajahan tim Angkatan XXIX menuntaskan atap Jawa dengan protokol zero accident.",
-    href: "/berita/puncak-mahameru-tim-ekspedisi-xxix",
+    href: `${base}/berita/puncak-mahameru-tim-ekspedisi-xxix`,
     badge: "3.676 mdpl",
     icon: "landscape",
     bannerGradient: "from-amber-500/20 via-[#FF8000]/25 to-emerald-950/60",
@@ -48,7 +49,7 @@ const featureArticles = [
     categoryLabel: "KETERAMPILAN RIMBA",
     title: "Navigasi Darat & Peta Kontur",
     desc: "Metode resection & intersection kompas prisma untuk navigasi presisi di belantara hutan.",
-    href: "/berita/asah-navigasi-darat-bivak-kaki-gunung-gede",
+    href: `${base}/berita/asah-navigasi-darat-bivak-kaki-gunung-gede`,
     badge: "Panduan Teknis",
     icon: "explore",
     bannerGradient: "from-emerald-600/20 via-teal-500/25 to-[#065143]/60",
@@ -58,7 +59,7 @@ const featureArticles = [
     categoryLabel: "PENDIDIKAN DASAR",
     title: "DIKSAR Calon Angkatan XXX",
     desc: "Pembentukan karakter, kepemimpinan, dan persaudaraan rimba kekal siswa SMAN 39.",
-    href: "/berita/pendaftaran-pendidikan-dasar-angkatan-xxx",
+    href: `${base}/berita/pendaftaran-pendidikan-dasar-angkatan-xxx`,
     badge: "Perekrutan",
     icon: "school",
     bannerGradient: "from-blue-600/20 via-indigo-500/25 to-slate-950/60",
@@ -68,7 +69,7 @@ const featureArticles = [
     categoryLabel: "ZONA MERINDING",
     title: "Misteri Pos 4 Gunung Salak",
     desc: "Gamelan tengah malam dan bayangan mematung di luar tenda ketinggian 1.800 mdpl.",
-    href: "/berita/misteri-suara-gamelan-pos-4-gunung-salak",
+    href: `${base}/berita/misteri-suara-gamelan-pos-4-gunung-salak`,
     badge: "Kisah Mistis",
     icon: "skull",
     bannerGradient: "from-red-600/25 via-red-950/40 to-black/80",
@@ -103,11 +104,11 @@ const quickCategories = [
 <header class="fixed top-0 left-0 w-full z-50 bg-[#065143]/80 border-b border-[#065143]/60 shadow-[0_4px_20px_rgba(6,81,67,0.2)] transition-all duration-300">
   <div class="h-20 max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex justify-between gap-space-md">
     <!-- Brand Logo Lockup -->
-    <a href="/" class="flex items-center gap-space-md shrink-0 group">
+    <a href={`${base}/`} class="flex items-center gap-space-md shrink-0 group">
       <img
         alt="Trinawa Bhuwana Logo"
         class="h-11 w-auto object-contain transition-transform group-hover:scale-105 drop-shadow-md"
-        src="/images/logo-trinawa-bhuwana.png"
+        src={`${base}/images/logo-trinawa-bhuwana.png`}
       />
       <div class="flex flex-col justify-center">
         <span class="font-display text-title-md text-white leading-none uppercase group-hover:text-[#FF8000] transition-colors">

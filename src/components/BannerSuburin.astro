@@ -11,16 +11,18 @@ const {
   sourceContext = "beranda",
 } = Astro.props;
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 const product = {
   name: "SUBURIN",
   tagline: "Pupuk Kompos Organik Padat KPA Trinawa Bhuwana SMAN 39",
   badge: "100% Organik & Ramah Lingkungan",
   price: "Rp 20.000",
   weight: "1 KG",
-  link: "/suburin",
+  link: `${base}/suburin`,
   tokopediaUrl: "https://www.tokopedia.com/trinawa-bhuwana/pupuk-oraganik-padat-suburin-1736266214698616176?extParam=src%3Dshop%26whid%3D21598672",
   whatsappUrl: "https://api.whatsapp.com/send?phone=6281388838116&text=Halo%20Admin%20Trinawa%20Bhuwana%2C%20saya%20tertarik%20pesan%20Pupuk%20Organik%20Padat%20Suburin.",
-  image: "/images/suburin.jpg",
+  image: `${base}/images/suburin.jpg`,
 };
 
 // Styling variant

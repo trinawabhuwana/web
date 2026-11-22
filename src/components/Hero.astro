@@ -1,4 +1,6 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 const slides = [
   {
     id: 1,
@@ -12,7 +14,7 @@ const slides = [
     ctaText: "Gabung Bersama Kami",
     ctaLink: "#pendaftaran",
     mountainName: "G. Semeru 3.676 mdpl",
-    bgImage: "/images/hero-ranukumbolo.jpg",
+    bgImage: `${base}/images/hero-ranukumbolo.jpg`,
     bgPosition: "object-[center_30%]",
     altText: "Ekspedisi Trinawa Bhuwana SMAN 39 Jakarta di Ranu Kumbolo Gunung Semeru",
   },
@@ -28,7 +30,7 @@ const slides = [
     ctaText: "Lihat Catatan Ekspedisi",
     ctaLink: "#berita",
     mountainName: "G. Slamet 3.428 mdpl",
-    bgImage: "/images/hero-slamet.jpg",
+    bgImage: `${base}/images/hero-slamet.jpg`,
     bgPosition: "object-[center_20%]",
     altText: "Tim Pendaki Trinawa Bhuwana SMAN 39 Jakarta di Puncak Gunung Slamet",
   },
