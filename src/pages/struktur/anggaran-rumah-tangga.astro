@@ -1,0 +1,248 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+import Layout from "../../layouts/Layout.astro";
+
+// URL Embed Dokumen PDF Asli Google Drive
+const GOOGLE_DRIVE_EMBED_URL = "https://drive.google.com/file/d/1FYvUu32JmpyXWvs9rW-0Bs-LU1P3iEom/preview";
+const GOOGLE_DRIVE_VIEW_URL = "https://drive.google.com/file/d/1FYvUu32JmpyXWvs9rW-0Bs-LU1P3iEom/view?usp=sharing";
+const LOCAL_PDF_URL = `${base}/documents/Buku_Panduan_Diklat_TNB.pdf`;
+---
+
+<Layout title="Anggaran Rumah Tangga (ART) & PDF Dokumen Asli - KPA Trinawa Bhuwana SMAN 39 Jakarta">
+  <main class="w-full pt-20 bg-surface min-h-screen">
+    
+    <!-- HERO HEADER -->
+    <section class="relative w-full py-14 md:py-20 px-4 md:px-8 lg:px-12 bg-gradient-to-b from-[#065143]/15 via-surface to-surface overflow-hidden border-b border-outline-variant/30">
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-[#065143]/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-[#FF8000]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-[1080px] mx-auto relative z-10 text-center flex flex-col items-center">
+        <!-- Breadcrumb -->
+        <div class="flex items-center gap-2 mb-4 text-xs text-on-surface-variant">
+          <a href={`${base}/`} class="hover:text-primary transition-colors">Beranda</a>
+          <span>/</span>
+          <a href={`${base}/struktur`} class="hover:text-primary transition-colors">Struktur</a>
+          <span>/</span>
+          <span class="text-primary font-bold">Anggaran Rumah Tangga</span>
+        </div>
+
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold uppercase tracking-wider mb-3">
+          <span class="material-symbols-outlined text-[16px]">menu_book</span>
+          <span>Disahkan 28 Oktober 1985 &bull; Sumpah Pemuda</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-on-surface tracking-tight uppercase leading-tight font-display">
+          Anggaran Rumah Tangga (ART) <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-secondary">
+            KPA Trinawa Bhuwana
+          </span>
+        </h1>
+        <p class="text-sm sm:text-base text-on-surface-variant max-w-2xl mt-3 leading-relaxed">
+          Naskah resmi Anggaran Rumah Tangga Kelompok Pencinta Alam SMA Negeri 39 Jakarta beserta pratinjau dokumen PDF Buku Panduan Diklat asli.
+        </p>
+
+        <!-- Sub Nav Pills -->
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-2 bg-surface-container-low p-1.5 rounded-2xl border border-outline-variant/30">
+          <a href={`${base}/dokumen/kode-etik`} class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+            Kode Etik
+          </a>
+          <a href={`${base}/struktur/undang-undang`} class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+            Undang-Undang
+          </a>
+          <a href={`${base}/struktur/anggaran-rumah-tangga`} class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-primary text-white shadow-xs">
+            ART &amp; PDF Embed
+          </a>
+          <a href={`${base}/dokumen/tujuan-hakekat`} class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+            Tujuan &amp; Hakekat
+          </a>
+          <a href={`${base}/struktur/tata-tertib`} class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+            Tata Tertib
+          </a>
+        <!-- Google Docs Link Action -->
+        <div class="mt-5 flex items-center justify-center gap-3">
+          <a
+            href="https://docs.google.com/document/d/1dKTLJdQyP4F7eCsIQ6gcmngkyKIb7kE89i-BH0sqgJQ/edit?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container-highest hover:bg-surface-container text-xs font-bold text-on-surface hover:text-primary border border-outline-variant/40 shadow-xs transition-all hover:scale-[1.02]"
+          >
+            <span class="material-symbols-outlined text-[16px] text-primary">description</span>
+            <span>Buka Dokumen Asli Google Docs</span>
+            <span class="material-symbols-outlined text-[14px] opacity-70">open_in_new</span>
+          </a>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: EMBED DOKUMEN PDF ASLI (RESPONSIVE PDF VIEWER) -->
+    <section class="w-full py-12 px-4 md:px-8 lg:px-12 bg-surface-container-low border-b border-outline-variant/30">
+      <div class="max-w-[1200px] mx-auto flex flex-col gap-6">
+        
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-1">
+              <span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+              <span>Dokumen PDF Buku Panduan Diklat Asli</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-black text-on-surface uppercase tracking-tight">
+              Pratinjau Berkas Dokumen Resmi (25 Halaman)
+            </h2>
+          </div>
+
+          <div class="flex items-center gap-3 shrink-0">
+            <a
+              href={LOCAL_PDF_URL}
+              download="Buku_Panduan_Diklat_TNB.pdf"
+              class="px-4 py-2.5 rounded-xl bg-primary hover:bg-primary-container text-white text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-sm"
+            >
+              <span class="material-symbols-outlined text-[16px]">download</span>
+              <span>Unduh PDF</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PDF Embed Viewer Frame -->
+        <div class="w-full bg-slate-900 rounded-3xl overflow-hidden border border-outline-variant/30 shadow-2xl relative aspect-[4/3] md:aspect-[16/10] max-h-[820px]">
+          <iframe
+            src={GOOGLE_DRIVE_EMBED_URL}
+            class="w-full h-full border-0"
+            allow="autoplay"
+            title="Buku Panduan Diklat KPA Trinawa Bhuwana PDF Viewer"
+            loading="lazy"
+          ></iframe>
+        </div>
+
+        <p class="text-xs text-on-surface-variant text-center">
+          Jika pratinjau PDF tidak tampil di peramban Anda, Anda dapat <a href={GOOGLE_DRIVE_VIEW_URL} target="_blank" rel="noopener noreferrer" class="text-primary font-bold hover:underline">membuka dokumen langsung di Google Drive</a> atau mengunduh berkasnya.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: TEKS LENGKAP ART BAB I - VII -->
+    <section class="w-full py-16 md:py-24 px-4 md:px-8 lg:px-12 bg-surface">
+      <div class="max-w-[920px] mx-auto flex flex-col gap-10">
+        
+        <!-- Mukadimah ART -->
+        <div class="bg-surface-container-lowest p-8 sm:p-10 rounded-3xl border border-outline-variant/30 shadow-sm flex flex-col gap-3">
+          <span class="text-xs font-black uppercase tracking-wider text-primary">Mukadimah Konstitusi</span>
+          <h3 class="text-xl font-black text-on-surface uppercase tracking-tight">
+            Naskah Anggaran Rumah Tangga
+          </h3>
+          <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed italic border-l-4 border-secondary pl-4 py-1">
+            "Sadar akan panggilan masa, fungsi, disiplin, serta tanggung jawab sebagai insan muda Indonesia, maka dengan rahmat Tuhan Yang Maha Esa, kami kelompok Pencinta Alam SMA Negeri 39 menetapkan Anggaran Rumah Tangga sebagai berikut:"
+          </p>
+        </div>
+
+        <!-- BAB I -->
+        <div class="bg-surface-container-lowest p-6 sm:p-8 rounded-3xl border border-outline-variant/30 shadow-sm flex flex-col gap-4">
+          <span class="text-xs font-black uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-1 rounded-md w-fit">
+            BAB I &bull; Nama, Lambang, Kedudukan, Waktu Pembentukan
+          </span>
+          <div class="space-y-4 text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+            <div>
+              <strong class="text-on-surface block uppercase">Pasal 1: Nama &amp; Arti</strong>
+              <p>1. Nama kelompok Pecinta Alam SMA Negeri 39 Jakarta ialah: <strong>TRINAWA BHUWANA</strong>.</p>
+              <p>2. Arti: <em>Trinawa</em> berarti Tiga Sembilan (39), <em>Bhuwana</em> berarti Jagat atau Alam. Disimpulkan bermakna Kelompok Pecinta Alam SMA Negeri 39 Jakarta.</p>
+            </div>
+            <div>
+              <strong class="text-on-surface block uppercase">Pasal 2: Lambang</strong>
+              <p>1. Lambang organisasi: Terlampir.</p>
+              <p>2. Arti lambang: Terlampir (Bentuk mata angin delapan penjuru, simpul tali, serta spektrum biru-hijau).</p>
+            </div>
+            <div>
+              <strong class="text-on-surface block uppercase">Pasal 3: Kedudukan &amp; Garis Koordinasi</strong>
+              <p>1. Berkedudukan di SMA Negeri 39 Komplek Kesatrian Ahmad Yani Cijantung, Jakarta Timur.</p>
+              <p>2. Berada dalam naungan OSIS dengan garis hubungan ke Ketua OSIS dan Pembina OSIS SMAN 39 Jakarta.</p>
+            </div>
+            <div>
+              <strong class="text-on-surface block uppercase">Pasal 4: Waktu Pengesahan</strong>
+              <p>Kelompok Pencinta Alam SMA Negeri 39 dengan nama TRINAWA BHUWANA disahkan pada tanggal <strong>28 Oktober 1985</strong> di Jakarta.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BAB II & III -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/30 shadow-sm flex flex-col gap-3">
+            <span class="text-xs font-black uppercase tracking-wider text-secondary bg-secondary/10 px-2.5 py-1 rounded-md w-fit">
+              BAB II &bull; Dasar, Asas, Pedoman
+            </span>
+            <div class="text-xs sm:text-sm text-on-surface-variant space-y-2 leading-relaxed">
+              <p><strong>Pasal 5:</strong> Organisasi ini berasaskan Pancasila dan berdasarkan UUD 1945.</p>
+              <p><strong>Pasal 6:</strong> Berpedoman pada Kode Etik Pencinta Alam dan Ketentuan yang berlaku pada Trinawa Bhuwana.</p>
+            </div>
+          </div>
+
+          <div class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/30 shadow-sm flex flex-col gap-3">
+            <span class="text-xs font-black uppercase tracking-wider text-secondary bg-secondary/10 px-2.5 py-1 rounded-md w-fit">
+              BAB III &bull; Tujuan
+            </span>
+            <div class="text-xs sm:text-sm text-on-surface-variant space-y-1.5 leading-relaxed">
+              <p><strong>Pasal 7:</strong></p>
+              <p>1. Memperkuat rasa disiplin dan kecintaan kepada alam serta tanah air Indonesia.</p>
+              <p>2. Menanamkan rasa tanggung jawab dalam melaksanakan segala kegiatan.</p>
+              <p>3. Mempererat tali persaudaraan sesama anggota dan masyarakat.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BAB IV, V, VI, VII -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/30 shadow-sm flex flex-col gap-3">
+            <span class="text-xs font-black uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-1 rounded-md w-fit">
+              BAB IV &bull; Sifat
+            </span>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              <strong>Pasal 8:</strong> Organisasi ini bersifat non-politik dan bertujuan untuk menggalang persaudaraan erat dalam kepemudaan.
+            </p>
+          </div>
+
+          <div class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/30 shadow-sm flex flex-col gap-3">
+            <span class="text-xs font-black uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-1 rounded-md w-fit">
+              BAB V &bull; Keanggotaan
+            </span>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              <strong>Pasal 9:</strong> Terdiri dari Anggota Tamu, Anggota Biasa, dan Anggota Luar Biasa. Nomor keanggotaan disusun alfabetis tiap angkatan.
+            </p>
+          </div>
+
+          <div class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/30 shadow-sm flex flex-col gap-3">
+            <span class="text-xs font-black uppercase tracking-wider text-secondary bg-secondary/10 px-2.5 py-1 rounded-md w-fit">
+              BAB VI &bull; Kepengurusan
+            </span>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              <strong>Pasal 10:</strong> Pengurus disusun atas hasil musyawarah anggota dan wajib membuat Program Kerja Jangka Panjang &amp; Jangka Pendek.
+            </p>
+          </div>
+
+          <div class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/30 shadow-sm flex flex-col gap-3">
+            <span class="text-xs font-black uppercase tracking-wider text-secondary bg-secondary/10 px-2.5 py-1 rounded-md w-fit">
+              BAB VII &bull; Keuangan
+            </span>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              <strong>Pasal 11:</strong> Keuangan diatur atas dasar usaha bersama, alokasi OSIS, dan iuran anggota yang diatur Undang-Undang.
+            </p>
+          </div>
+        </div>
+
+        <!-- Kolofon Pengesahan Kepala Sekolah 1985 -->
+        <div class="bg-surface-container-lowest p-8 rounded-3xl border border-outline-variant/30 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Lembar Pengesahan Naskah Asli</span>
+            <h4 class="text-base font-black uppercase text-on-surface mt-1">Disahkan di Jakarta, 28 Oktober 1985</h4>
+            <p class="text-xs text-on-surface-variant mt-0.5">Kepala SMA Negeri 39 Jakarta: <strong>Drs. Abdul Gafar</strong> (NIP: 130216200)</p>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[28px]">verified</span>
+            <span class="text-xs font-bold text-primary">Arsip Otentik Terverifikasi</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</Layout>

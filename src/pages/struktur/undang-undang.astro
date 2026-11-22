@@ -1,0 +1,236 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Undang-Undang Trinawa Bhuwana - KPA SMAN 39 Jakarta">
+  <main class="w-full pt-20 bg-surface min-h-screen">
+    
+    <!-- HERO HEADER -->
+    <section class="relative w-full py-14 md:py-20 px-4 md:px-8 lg:px-12 bg-gradient-to-b from-[#065143]/15 via-surface to-surface overflow-hidden border-b border-outline-variant/30">
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-[#065143]/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-[#FF8000]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-[1080px] mx-auto relative z-10 text-center flex flex-col items-center">
+        <!-- Breadcrumb -->
+        <div class="flex items-center gap-2 mb-4 text-xs text-on-surface-variant">
+          <a href={`${base}/`} class="hover:text-primary transition-colors">Beranda</a>
+          <span>/</span>
+          <a href={`${base}/struktur`} class="hover:text-primary transition-colors">Struktur</a>
+          <span>/</span>
+          <span class="text-primary font-bold">Undang-Undang TNB</span>
+        </div>
+
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold uppercase tracking-wider mb-3">
+          <span class="material-symbols-outlined text-[16px]">gavel</span>
+          <span>Landasan Konstitusi Organisasi</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-on-surface tracking-tight uppercase leading-tight font-display">
+          Undang-Undang <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-secondary">
+            Trinawa Bhuwana
+          </span>
+        </h1>
+        <p class="text-sm sm:text-base text-on-surface-variant max-w-2xl mt-3 leading-relaxed">
+          Aturan dasar hukum operasional KPA Trinawa Bhuwana SMAN 39 Jakarta, dirumuskan sejak 13 Oktober 1985.
+        </p>
+
+        <!-- Sub Nav Pills -->
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-2 bg-surface-container-low p-1.5 rounded-2xl border border-outline-variant/30">
+          <a href={`${base}/dokumen/kode-etik`} class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+            Kode Etik
+          </a>
+          <a href={`${base}/struktur/undang-undang`} class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-primary text-white shadow-xs">
+            Undang-Undang
+          </a>
+          <a href={`${base}/struktur/anggaran-rumah-tangga`} class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+            ART &amp; PDF Embed
+          </a>
+          <a href={`${base}/dokumen/tujuan-hakekat`} class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+            Tujuan &amp; Hakekat
+          </a>
+          <a href={`${base}/struktur/tata-tertib`} class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+            Tata Tertib
+          </a>
+        <!-- Google Docs Link Action -->
+        <div class="mt-5 flex items-center justify-center gap-3">
+          <a
+            href="https://docs.google.com/document/d/1JuCux0wYWL2M0vjGWwPKF5s45pAAmn9wuRgt3lRjghE/edit?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container-highest hover:bg-surface-container text-xs font-bold text-on-surface hover:text-primary border border-outline-variant/40 shadow-xs transition-all hover:scale-[1.02]"
+          >
+            <span class="material-symbols-outlined text-[16px] text-primary">description</span>
+            <span>Buka Dokumen Asli Google Docs</span>
+            <span class="material-symbols-outlined text-[14px] opacity-70">open_in_new</span>
+          </a>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT BODY (PASAL 1 - 8) -->
+    <section class="w-full py-16 md:py-24 px-4 md:px-8 lg:px-12 bg-surface">
+      <div class="max-w-[920px] mx-auto flex flex-col gap-8">
+        
+        <!-- PASAL 1 & 2 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/30 shadow-xs flex flex-col gap-3">
+            <span class="text-[11px] font-black uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-0.5 rounded-md w-fit">
+              PASAL 1
+            </span>
+            <h3 class="text-base font-black text-on-surface uppercase">Status Organisasi</h3>
+            <ol class="text-xs sm:text-sm text-on-surface-variant space-y-2 list-decimal list-inside leading-relaxed">
+              <li>Status organisasi adalah non-politik.</li>
+              <li>Berada dalam naungan OSIS SMAN 39 Jakarta.</li>
+            </ol>
+          </div>
+
+          <div class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/30 shadow-xs flex flex-col gap-3">
+            <span class="text-[11px] font-black uppercase tracking-wider text-secondary bg-secondary/10 px-2.5 py-0.5 rounded-md w-fit">
+              PASAL 2
+            </span>
+            <h3 class="text-base font-black text-on-surface uppercase">Kekuasaan Tertinggi</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              Kekuasaan tertinggi dalam pengambilan keputusan organisasi ada di tangan <strong>hasil musyawarah anggota</strong>.
+            </p>
+          </div>
+        </div>
+
+        <!-- PASAL 3: PENGURUS -->
+        <div class="bg-surface-container-lowest p-6 sm:p-8 rounded-3xl border border-outline-variant/30 shadow-xs flex flex-col gap-3">
+          <span class="text-[11px] font-black uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-0.5 rounded-md w-fit">
+            PASAL 3
+          </span>
+          <h3 class="text-lg font-black text-on-surface uppercase">Syarat-Syarat Pengurus</h3>
+          <ol class="text-xs sm:text-sm text-on-surface-variant space-y-2 list-decimal list-inside leading-relaxed">
+            <li>Pengurus adalah anggota Trinawa Bhuwana yang duduk di kelas II (kelas XI).</li>
+            <li>Calon pengurus telah menunjukkan dedikasi yang tinggi dalam keanggotaan periode sebelumnya dan masuk dalam kepengurusan OSIS.</li>
+            <li>Bersedia diambil sumpahnya sebelum memegang jabatan resmi.</li>
+            <li>Mempunyai tanggung jawab yang tinggi dalam menjalankan tugas-tugas lapangan dan administratif.</li>
+            <li>Wajib mengembangkan organisasi serta senantiasa menjaga nama baik Trinawa Bhuwana dan SMAN 39 Jakarta.</li>
+          </ol>
+        </div>
+
+        <!-- PASAL 4: KEANGGOTAAN LENGKAP -->
+        <div class="bg-surface-container-lowest p-6 sm:p-8 rounded-3xl border border-outline-variant/30 shadow-xs flex flex-col gap-6">
+          <div>
+            <span class="text-[11px] font-black uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-0.5 rounded-md w-fit">
+              PASAL 4
+            </span>
+            <h3 class="text-lg font-black text-on-surface uppercase mt-2">Ketentuan Keanggotaan</h3>
+          </div>
+
+          <!-- Bagian I: Syarat Keanggotaan -->
+          <div class="p-5 rounded-2xl bg-surface-container-low border border-outline-variant/20 flex flex-col gap-2">
+            <h4 class="text-xs font-black uppercase text-primary">I. Syarat-Syarat Keanggotaan</h4>
+            <ol class="text-xs text-on-surface-variant space-y-1.5 list-decimal list-inside leading-relaxed">
+              <li>Berbadan sehat jasmani dan rohani berdasarkan surat keterangan dokter.</li>
+              <li>Kuat fisik dan mental berdasarkan tes dari panitia pelaksana.</li>
+              <li>Bersedia mematuhi peraturan dan tata tertib yang berlaku.</li>
+              <li>Tidak mengikuti kegiatan Ekstrakurikuler lebih dari dua jenis demi fokus belajar.</li>
+              <li>Melunasi biaya pendaftaran dan bersedia dididik sebagai calon anggota Trinawa Bhuwana.</li>
+            </ol>
+          </div>
+
+          <!-- Bagian II: Hakekat Anggota -->
+          <div class="p-5 rounded-2xl bg-surface-container-low border border-outline-variant/20 flex flex-col gap-2">
+            <h4 class="text-xs font-black uppercase text-secondary">II. Hakekat Anggota</h4>
+            <ol class="text-xs text-on-surface-variant space-y-1.5 list-decimal list-inside leading-relaxed">
+              <li>Percaya dan Taqwa kepada Tuhan Yang Maha Esa.</li>
+              <li>Mengabdi dan berbakti kepada nusa, bangsa, dan negara Republik Indonesia.</li>
+              <li>Disiplin, berani, bertanggung jawab, dan suka bermusyawarah.</li>
+              <li>Rela berkorban, cinta alam, dan tabah menghadapi rintangan.</li>
+              <li>Setia, patuh, dan dapat dipercaya dalam amanah.</li>
+            </ol>
+          </div>
+
+          <!-- Bagian III & V: Hak & Kewajiban -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-4 rounded-2xl bg-surface border border-outline-variant/20">
+              <h5 class="text-xs font-bold uppercase text-on-surface mb-2">III. Hak &amp; Kewajiban Anggota Biasa</h5>
+              <ul class="text-xs text-on-surface-variant space-y-1 list-disc list-inside">
+                <li>Menjunjung tinggi kehormatan organisasi.</li>
+                <li>Bebas mengeluarkan pendapat dan hak suara.</li>
+                <li>Menerima dan mengamalkan ilmu rimba.</li>
+                <li>Mengembangkan aktivitas dan kreativitas.</li>
+                <li>Memelihara dan memperbanyak perlengkapan.</li>
+              </ul>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-surface border border-outline-variant/20">
+              <h5 class="text-xs font-bold uppercase text-on-surface mb-2">V. Hak &amp; Kewajiban Anggota Luar Biasa</h5>
+              <ul class="text-xs text-on-surface-variant space-y-1 list-disc list-inside">
+                <li>Menjunjung tinggi kehormatan organisasi.</li>
+                <li>Terbatas dalam mengeluarkan pendapat/saran.</li>
+                <li>Mengamalkan ilmu yang didapat/diperoleh.</li>
+                <li>Memberikan informasi dan bimbingan moral.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Bagian IV: Kehilangan Anggota -->
+          <div class="p-4 rounded-2xl bg-red-500/10 border border-red-500/20 text-xs text-red-950 dark:text-red-200">
+            <strong class="font-black uppercase">IV. Kehilangan Keanggotaan Terjadi Karena:</strong>
+            <p class="mt-1">1. Meninggal dunia &bull; 2. Mengundurkan diri secara tertulis &bull; 3. Dikeluarkan oleh rapat anggota karena sebab pelanggaran berat.</p>
+          </div>
+        </div>
+
+        <!-- PASAL 5, 6, 7, 8 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/30 shadow-xs flex flex-col gap-2">
+            <span class="text-[11px] font-black uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-0.5 rounded-md w-fit">
+              PASAL 5
+            </span>
+            <h3 class="text-base font-black text-on-surface uppercase">Keuangan</h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              Sumber keuangan berasal dari alokasi OSIS dan iuran tetap anggota, digunakan sepenuhnya untuk menunjang kegiatan operasional rutin dan ekspedisi khusus.
+            </p>
+          </div>
+
+          <div class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/30 shadow-xs flex flex-col gap-2">
+            <span class="text-[11px] font-black uppercase tracking-wider text-secondary bg-secondary/10 px-2.5 py-0.5 rounded-md w-fit">
+              PASAL 7
+            </span>
+            <h3 class="text-base font-black text-on-surface uppercase">Ketentuan Rapat</h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              Dilarang merokok, makan, atau berkata kotor saat sidang. Setiap usulan kegiatan wajib dirapatkan minimal 2 minggu sebelum pelaksanaan.
+            </p>
+          </div>
+        </div>
+
+        <!-- PASAL 8: TATA TERTIB EKSPEDISI -->
+        <div class="bg-surface-container-lowest p-6 sm:p-8 rounded-3xl border border-outline-variant/30 shadow-xs flex flex-col gap-3">
+          <span class="text-[11px] font-black uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-0.5 rounded-md w-fit">
+            PASAL 8
+          </span>
+          <h3 class="text-lg font-black text-on-surface uppercase">Tata Tertib Ekspedisi Alam Bebas</h3>
+          <ol class="text-xs sm:text-sm text-on-surface-variant space-y-2 list-decimal list-inside leading-relaxed">
+            <li>Mendapat izin tertulis resmi dari hasil rapat pertemuan dan persetujuan sekolah.</li>
+            <li>Satu tim ekspedisi minimal 3 orang dan maksimal 5 orang beserta rencana perjalanan matang.</li>
+            <li>Memenuhi syarat: peta kontur, dana logistik, perlengkapan standar, dan studi literatur.</li>
+            <li>Melapor kepada aparat/warga daerah terakhir yang dilalui mengenai rute dan estimasi waktu kembali.</li>
+            <li><strong>Etika Rimba Mutlak:</strong> Tidak membawa kenang-kenangan yang merusak alam, tidak meninggalkan sampah/coretan, dan wajib membuat laporan dokumentasi perjalanan.</li>
+          </ol>
+        </div>
+
+        <!-- Lembar Pengesahan -->
+        <div class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant">
+          <div>
+            <p class="font-bold text-on-surface">Dirumuskan di Jakarta pada tanggal 13 Oktober 1985</p>
+            <p class="text-[11px] text-on-surface-variant mt-0.5">Disalin kembali dari arsip konstitusi asli KPA Trinawa Bhuwana SMAN 39 Jakarta.</p>
+          </div>
+          <a
+            href={`${base}/struktur/anggaran-rumah-tangga`}
+            class="px-4 py-2 rounded-xl bg-primary text-white font-bold uppercase text-xs tracking-wider shrink-0"
+          >
+            Lanjut ke ART &amp; PDF &rarr;
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</Layout>
