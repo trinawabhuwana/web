@@ -167,7 +167,7 @@ const otherArticles = allArticles.slice(1);
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8" id="articles-grid">
           {allArticles.map((item) => (
             <a
-              href={`/berita/${item.slug}`}
+              href={`${base}/berita/${item.slug}`}
               id={item.id}
               data-category={item.categorySlug}
               class="article-card bg-surface-container-lowest rounded-3xl overflow-hidden border border-outline-variant/20 flex flex-col shadow-sm hover:shadow-xl hover:border-primary/40 transition-all duration-300 group cursor-pointer"

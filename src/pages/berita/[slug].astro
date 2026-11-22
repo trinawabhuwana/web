@@ -171,7 +171,7 @@ const relatedArticles = allArticles
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedArticles.map((item) => (
               <a
-                href={`/berita/${item.slug}`}
+                href={`${base}/berita/${item.slug}`}
                 class="bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-primary/40 shadow-sm hover:shadow-md transition-all flex flex-col group"
               >
                 <div class="aspect-[16/10] overflow-hidden bg-black/10">
