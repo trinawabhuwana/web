@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import QuickStats from "../components/QuickStats.astro";
+import Pillars from "../components/Pillars.astro";
+import LatestNews from "../components/LatestNews.astro";
+import ZonaMerinding from "../components/ZonaMerinding.astro";
+import MediaCommunity from "../components/MediaCommunity.astro";
+import Testimonials from "../components/Testimonials.astro";
+import CallToAction from "../components/CallToAction.astro";
+import BannerSuburin from "../components/BannerSuburin.astro";
+---
+
+<Layout title="Beranda - KPA Trinawa Bhuwana SMAN 39 Jakarta">
+  <main class="w-full bg-surface">
+    <Hero />
+    <Pillars />
+
+    <!-- Banner Iklan Leaderboard Suburin sebelum Warta & Artikel Berita -->
+    <BannerSuburin variant="light" sourceContext="berita" />
+
+    <LatestNews />
+
+    <!-- Banner Iklan Leaderboard Suburin sebelum Zona Merinding -->
+    <BannerSuburin variant="dark" sourceContext="zona-merinding" />
+
+    <ZonaMerinding />
+    <MediaCommunity />
+    <Testimonials />
+    <CallToAction />
+  </main>
+</Layout>

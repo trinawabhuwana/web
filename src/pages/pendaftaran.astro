@@ -1,0 +1,586 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// URL Endpoint Google Apps Script Pendaftaran Calon Siswa (DIKSAR)
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw1wEL6vCoU_1qLBSE9kt0r3sGQBCF4k9oDIDO_7Rvuc4kMRBKhfyeIjiowl89A79I/exec";
+---
+
+<Layout title="Pendaftaran Calon Anggota Baru (DIKSAR) - KPA Trinawa Bhuwana SMAN 39 Jakarta">
+  <main class="w-full pt-20 bg-surface min-h-screen">
+    
+    <!-- HERO HEADER -->
+    <section class="relative w-full py-12 md:py-16 px-4 md:px-8 lg:px-12 bg-gradient-to-b from-[#065143]/15 via-surface to-surface overflow-hidden border-b border-outline-variant/30">
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-[#065143]/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-[#FF8000]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-[1080px] mx-auto relative z-10 text-center flex flex-col items-center">
+        <!-- Breadcrumb -->
+        <div class="flex items-center gap-2 mb-4 text-xs text-on-surface-variant">
+          <a href="/" class="hover:text-primary transition-colors">Beranda</a>
+          <span>/</span>
+          <span class="text-primary font-bold">Pendaftaran DIKSAR Calon Siswa</span>
+        </div>
+
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold uppercase tracking-wider mb-3">
+          <span class="material-symbols-outlined text-[16px]">how_to_reg</span>
+          <span>Penerimaan Anggota Baru (DIKSAR XXX)</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-on-surface tracking-tight uppercase leading-tight font-display">
+          Formulir Pendaftaran <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-secondary">
+            Calon Siswa Pecinta Alam
+          </span>
+        </h1>
+        <p class="text-sm sm:text-base text-on-surface-variant max-w-2xl mt-3 leading-relaxed">
+          Langkah awal petualangan dan pembentukan karakter rimba tangguh SMAN 39 Jakarta. Isi biodata dengan teliti dan lampirkan Surat Keterangan Sehat resmi dari dokter/klinik.
+        </p>
+
+        <!-- Ringkasan Info Proteksi Data -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 mt-8 w-full max-w-3xl text-left">
+          <div class="p-3.5 bg-surface-container-lowest rounded-2xl border border-outline-variant/30 flex items-center gap-3 shadow-xs">
+            <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[20px]">verified_user</span>
+            </div>
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Validasi Ganda</span>
+              <p class="text-xs font-black text-on-surface">Cek Duplikasi Email &amp; WA</p>
+            </div>
+          </div>
+
+          <div class="p-3.5 bg-surface-container-lowest rounded-2xl border border-outline-variant/30 flex items-center gap-3 shadow-xs">
+            <div class="w-10 h-10 rounded-xl bg-[#FF8000]/15 text-[#FF8000] flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[20px]">mark_email_read</span>
+            </div>
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Notifikasi</span>
+              <p class="text-xs font-black text-on-surface">Email Bukti Otomatis</p>
+            </div>
+          </div>
+
+          <div class="p-3.5 bg-surface-container-lowest rounded-2xl border border-outline-variant/30 flex items-center gap-3 shadow-xs">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-700 flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[20px]">cloud_done</span>
+            </div>
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Berkas Dokumen</span>
+              <p class="text-xs font-black text-on-surface">Folder Google Drive Terenkripsi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM SECTION: UI Persis Seperti Sensus Alumni -->
+    <section class="w-full py-12 md:py-16 px-4 md:px-8 lg:px-12 bg-surface">
+      <div class="max-w-[1000px] mx-auto">
+        
+        <!-- Card Container with Accent Banner Top -->
+        <div class="bg-surface-container-lowest rounded-3xl p-6 sm:p-10 md:p-12 shadow-md relative overflow-hidden">
+          
+          <!-- Accent Banner Top (Identik dengan Sensus Alumni) -->
+          <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-primary via-tertiary to-secondary"></div>
+
+          <!-- Section Header Box -->
+          <div class="flex flex-col md:flex-row gap-8 items-start justify-between mb-8 pb-6 bg-surface-container/30 -mx-6 sm:-mx-10 md:-mx-12 px-6 sm:px-10 md:px-12 pt-4">
+            <div>
+              <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold uppercase tracking-wider mb-2">
+                <span class="material-symbols-outlined text-[15px]">badge</span>
+                Penerimaan Siswa Baru
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-bold text-on-surface tracking-tight">
+                Formulir Pendaftaran DIKSAR Calon Anggota
+              </h2>
+              <p class="text-sm text-on-surface-variant mt-1">
+                KPA Trinawa Bhuwana SMAN 39 Jakarta. Pastikan seluruh biodata yang Anda kirimkan valid dan benar.
+              </p>
+            </div>
+
+            <div class="shrink-0 flex items-center gap-3 bg-surface-container-high/60 px-4 py-2.5 rounded-xl">
+              <span class="material-symbols-outlined text-primary text-[28px]">lock</span>
+              <div class="text-[12px] leading-tight text-on-surface-variant">
+                <strong class="text-on-surface block">Data Terproteksi</strong>
+                Khusus Panitia DIKSAR
+              </div>
+            </div>
+          </div>
+
+          <!-- The Form -->
+          <form class="grid grid-cols-1 md:grid-cols-2 gap-6" id="diksar-form" enctype="multipart/form-data">
+            
+            <!-- Feedback Alert Bar -->
+            <div
+              id="form-alert"
+              class="hidden md:col-span-2 p-4 rounded-xl text-sm font-semibold transition-all"
+            ></div>
+
+            <!-- 1. Nama Lengkap (Validasi Huruf Saja / String) -->
+            <div class="flex flex-col gap-1.5">
+              <label class="text-xs font-bold uppercase tracking-wider text-on-surface" for="full-name">
+                Nama Lengkap Calon Siswa <span class="text-error text-red-500">*</span>
+              </label>
+              <input
+                class="w-full h-11 px-4 bg-[#FF8000]/10 border border-[#FF8000]/25 text-on-surface text-sm rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF8000] focus:border-[#FF8000] focus:bg-[#FF8000]/15 transition-all placeholder:text-on-surface-variant/50"
+                id="full-name"
+                name="fullName"
+                placeholder="Contoh: Raden Satria Pamungkas"
+                required
+                type="text"
+                pattern="^[a-zA-Z\s.,'-]+$"
+                title="Nama lengkap hanya boleh berisi huruf (tanpa angka)"
+              />
+              <span class="text-[11px] text-on-surface-variant">Hanya huruf alfabet dan tanda baca nama standar (tanpa angka).</span>
+            </div>
+
+            <!-- 2. Alamat Email -->
+            <div class="flex flex-col gap-1.5">
+              <label class="text-xs font-bold uppercase tracking-wider text-on-surface" for="email">
+                Alamat Email Aktif <span class="text-error text-red-500">*</span>
+              </label>
+              <input
+                class="w-full h-11 px-4 bg-[#FF8000]/10 border border-[#FF8000]/25 text-on-surface text-sm rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF8000] focus:border-[#FF8000] focus:bg-[#FF8000]/15 transition-all placeholder:text-on-surface-variant/50"
+                id="email"
+                name="email"
+                placeholder="Contoh: siswa@sman39jkt.sch.id"
+                required
+                type="email"
+              />
+              <span class="text-[11px] text-on-surface-variant">Bukti tanda terima pendaftaran akan dikirim ke email ini.</span>
+            </div>
+
+            <!-- 3. Nomor WhatsApp / HP -->
+            <div class="md:col-span-2 flex flex-col gap-1.5">
+              <label class="text-xs font-bold uppercase tracking-wider text-on-surface" for="phone-number">
+                Nomor WhatsApp Aktif <span class="text-error text-red-500">*</span>
+              </label>
+              <input
+                class="w-full h-11 px-4 bg-[#FF8000]/10 border border-[#FF8000]/25 text-on-surface text-sm rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF8000] focus:border-[#FF8000] focus:bg-[#FF8000]/15 transition-all placeholder:text-on-surface-variant/50"
+                id="phone-number"
+                name="phone"
+                placeholder="Contoh: 081288889999"
+                required
+                type="tel"
+                inputmode="numeric"
+                pattern="^(\+62|62|0)[0-9]{8,14}$"
+                title="Nomor WhatsApp harus berupa angka valid (contoh: 081288889999)"
+              />
+              <span class="text-[11px] text-on-surface-variant">Nomor ini akan dihubungi panitia untuk undangan grup koordinasi seleksi.</span>
+            </div>
+
+            <!-- 4. Motivasi Bergabung -->
+            <div class="md:col-span-2 flex flex-col gap-1.5">
+              <label class="text-xs font-bold uppercase tracking-wider text-on-surface" for="motivasi">
+                Motivasi Ingin Bergabung dengan Trinawa Bhuwana <span class="text-error text-red-500">*</span>
+              </label>
+              <textarea
+                class="w-full p-4 bg-[#FF8000]/10 border border-[#FF8000]/25 text-on-surface text-sm rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF8000] focus:border-[#FF8000] focus:bg-[#FF8000]/15 transition-all placeholder:text-on-surface-variant/50 leading-relaxed"
+                id="motivasi"
+                name="motivasi"
+                placeholder="Ceritakan alasan, ketertarikan pada alam bebas, dan apa yang ingin Anda pelajari di KPA Trinawa Bhuwana..."
+                rows="4"
+                required
+              ></textarea>
+            </div>
+
+            <!-- 5. Upload Surat Keterangan Sehat -->
+            <div class="md:col-span-2 flex flex-col gap-1.5">
+              <label class="text-xs font-bold uppercase tracking-wider text-on-surface" for="suratKesehatan">
+                Upload Surat Keterangan Sehat Dokter / Klinik / Puskesmas <span class="text-error text-red-500">*</span>
+              </label>
+              
+              <div class="border-2 border-dashed border-[#FF8000]/30 hover:border-[#FF8000] bg-[#FF8000]/5 hover:bg-[#FF8000]/10 rounded-2xl p-6 transition-all text-center flex flex-col items-center justify-center relative cursor-pointer group">
+                <input
+                  type="file"
+                  id="suratKesehatan"
+                  name="suratKesehatan"
+                  accept=".pdf,.jpg,.jpeg,.png"
+                  required
+                  class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                />
+                <div class="w-12 h-12 rounded-2xl bg-[#FF8000]/15 text-[#FF8000] group-hover:scale-110 flex items-center justify-center transition-transform mb-2">
+                  <span class="material-symbols-outlined text-[26px]">upload_file</span>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <span class="text-xs font-extrabold text-on-surface group-hover:text-[#065143] transition-colors" id="file-name-display">
+                    Klik atau Seret Berkas Surat Kesehatan ke Area Ini
+                  </span>
+                  <span class="text-[11px] text-on-surface-variant" id="file-hint-display">
+                    Format: PDF, JPG, PNG (Maksimal 5 MB). File otomatis dinamai sesuai nama lengkap Anda di Google Drive.
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. Consent Pernyataan Kebenaran & Kepatuhan Tes -->
+            <div class="md:col-span-2 p-4 rounded-2xl bg-[#FF8000]/10 border border-[#FF8000]/25 flex items-start gap-3">
+              <input
+                type="checkbox"
+                id="consent"
+                name="consent"
+                required
+                class="mt-1 w-4 h-4 rounded text-primary border-outline-variant focus:ring-primary cursor-pointer"
+              />
+              <label for="consent" class="text-xs text-on-surface leading-relaxed cursor-pointer select-none">
+                <strong class="font-bold text-on-surface">Pernyataan Kesediaan &amp; Kebenaran Data:</strong> <br />
+                Saya menyatakan dengan sungguh-sungguh bahwa seluruh data dan dokumen yang saya kirimkan adalah benar dan sah. Saya bersedia mengikuti seluruh rangkaian tes fisik, wawancara, serta kegiatan DIKSAR KPA Trinawa Bhuwana SMAN 39 dengan penuh disiplin dan rasa tanggung jawab.
+              </label>
+            </div>
+
+            <!-- Submit Button (Gaya Sensus Alumni) -->
+            <div class="md:col-span-2 flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-outline-variant/20">
+              <span class="text-xs text-on-surface-variant flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-primary text-[16px]">info</span>
+                Data Anda langsung terverifikasi di Google Sheet &amp; Drive resmi.
+              </span>
+
+              <button
+                class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-primary to-primary-container hover:from-[#FF8000] hover:to-[#e07200] text-on-primary font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+                id="submit-btn"
+                type="submit"
+              >
+                <span class="material-symbols-outlined text-[18px]" id="btn-icon">send</span>
+                <span id="btn-text">Kirim Formulir Pendaftaran</span>
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DUPLICATE MODAL POPUP (Identik dengan Sensus Alumni) -->
+    <div
+      id="duplicate-modal"
+      class="hidden fixed inset-0 z-50 flex items-end md:items-center justify-center"
+    >
+      <!-- Backdrop with blur -->
+      <div
+        id="modal-backdrop"
+        class="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity"
+      ></div>
+
+      <!-- Modal Card Content -->
+      <div
+        id="modal-content"
+        class="relative w-full max-w-md mx-auto bg-surface-container-lowest rounded-t-3xl md:rounded-3xl p-6 sm:p-8 shadow-2xl border border-outline-variant/40 transform transition-transform duration-300 ease-out translate-y-full md:translate-y-0 md:scale-95 z-10"
+      >
+        <!-- Modal Drag Handle for Mobile Drawer -->
+        <div class="w-12 h-1.5 bg-outline-variant/60 rounded-full mx-auto mb-4 md:hidden"></div>
+
+        <div class="flex flex-col gap-4">
+          <!-- Icon & Header -->
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-2xl bg-red-500/15 text-red-600 flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[28px]">warning</span>
+            </div>
+            <div class="flex flex-col">
+              <h3 class="text-base sm:text-lg font-extrabold uppercase text-on-surface leading-tight">
+                Pernah Terdaftar!
+              </h3>
+              <span class="text-xs text-red-600 font-semibold mt-0.5" id="duplicate-type-label">
+                Nomor WhatsApp atau Email Telah Ada
+              </span>
+            </div>
+          </div>
+
+          <!-- Detail Info -->
+          <div class="bg-surface-container-low p-3.5 rounded-xl text-xs text-on-surface-variant leading-relaxed border border-outline-variant/30">
+            <p id="duplicate-desc">
+              Alamat Email atau Nomor WhatsApp yang Anda masukkan sudah pernah terdaftar di lembar pendaftaran DIKSAR Calon Siswa Trinawa Bhuwana SMAN 39.
+            </p>
+          </div>
+
+          <p class="text-xs text-on-surface-variant/80">
+            Jika Anda ingin memperbarui berkas kesehatan atau ada kendala pengisian, silakan hubungi panitia melalui nomor WhatsApp resmi: <strong>+62 813-8883-8116</strong>.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row gap-2.5 pt-2">
+            <button
+              id="close-modal-btn"
+              type="button"
+              class="w-full py-2.5 px-4 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider shadow-sm transition-all cursor-pointer"
+            >
+              Tutup &amp; Periksa Kembali
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</Layout>
+
+<script>
+  function initDiksarForm() {
+    const form = document.getElementById("diksar-form") as HTMLFormElement | null;
+    const fileInput = document.getElementById("suratKesehatan") as HTMLInputElement | null;
+    const fileNameDisplay = document.getElementById("file-name-display");
+    const fileHintDisplay = document.getElementById("file-hint-display");
+    const formAlert = document.getElementById("form-alert");
+    const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement | null;
+    const btnText = document.getElementById("btn-text");
+    const btnIcon = document.getElementById("btn-icon");
+
+    // Modal Duplicate Elements
+    const duplicateModal = document.getElementById("duplicate-modal");
+    const modalBackdrop = document.getElementById("modal-backdrop");
+    const modalContent = document.getElementById("modal-content");
+    const closeModalBtn = document.getElementById("close-modal-btn");
+    const duplicateTypeLabel = document.getElementById("duplicate-type-label");
+    const duplicateDesc = document.getElementById("duplicate-desc");
+
+    if (!form || !fileInput) return;
+
+    // Tampilkan nama file terpilih
+    fileInput.addEventListener("change", () => {
+      if (fileInput.files && fileInput.files[0]) {
+        const file = fileInput.files[0];
+        if (fileNameDisplay) {
+          fileNameDisplay.textContent = `File terpilih: ${file.name} (${(file.size / (1024 * 1024)).toFixed(2)} MB)`;
+          fileNameDisplay.classList.add("text-[#065143]");
+        }
+        if (fileHintDisplay) {
+          fileHintDisplay.textContent = "Berkas siap diunggah ke Google Drive panitia.";
+        }
+      }
+    });
+
+    // Helper: Show Duplicate Modal
+    function showDuplicateModal(type: string, value: string) {
+      if (!duplicateModal) return;
+
+      let labelText = "Nomor WhatsApp atau Email Telah Ada";
+      let descText = "Data yang Anda masukkan sudah pernah melakukan pendaftaran DIKSAR Calon Siswa.";
+
+      if (type === "phone") {
+        labelText = "Nomor WhatsApp Sudah Terdaftar!";
+        descText = `Nomor WhatsApp (${value}) sudah pernah tercatat di lembar pendaftaran DIKSAR Trinawa Bhuwana SMAN 39.`;
+      } else if (type === "email") {
+        labelText = "Alamat Email Sudah Terdaftar!";
+        descText = `Alamat Email (${value}) sudah pernah tercatat di lembar pendaftaran DIKSAR Trinawa Bhuwana SMAN 39.`;
+      } else if (type === "both") {
+        labelText = "WhatsApp & Email Sudah Terdaftar!";
+        descText = `Nomor WhatsApp dan Alamat Email yang Anda masukkan sudah pernah terdaftar di lembar pendaftaran DIKSAR Trinawa Bhuwana SMAN 39.`;
+      }
+
+      if (duplicateTypeLabel) duplicateTypeLabel.textContent = labelText;
+      if (duplicateDesc) duplicateDesc.textContent = descText;
+
+      duplicateModal.classList.remove("hidden");
+      setTimeout(() => {
+        if (modalContent) {
+          modalContent.classList.remove("translate-y-full", "md:scale-95");
+          modalContent.classList.add("translate-y-0", "md:scale-100");
+        }
+      }, 10);
+    }
+
+    // Helper: Hide Duplicate Modal
+    function hideDuplicateModal() {
+      if (!duplicateModal) return;
+      if (modalContent) {
+        modalContent.classList.remove("translate-y-0", "md:scale-100");
+        modalContent.classList.add("translate-y-full", "md:scale-95");
+      }
+      setTimeout(() => {
+        duplicateModal.classList.add("hidden");
+      }, 250);
+    }
+
+    closeModalBtn?.addEventListener("click", hideDuplicateModal);
+    modalBackdrop?.addEventListener("click", hideDuplicateModal);
+
+    // Form Submit Handler
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw1wEL6vCoU_1qLBSE9kt0r3sGQBCF4k9oDIDO_7Rvuc4kMRBKhfyeIjiowl89A79I/exec";
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      // 1. Validasi Nama Lengkap (Harus String/Huruf, tidak boleh ada angka)
+      const nameInput = document.getElementById("full-name") as HTMLInputElement | null;
+      const nameVal = nameInput ? nameInput.value.trim() : "";
+      const namePattern = /^[a-zA-Z\s.,'-]+$/;
+      if (!namePattern.test(nameVal)) {
+        if (formAlert) {
+          formAlert.className = "md:col-span-2 p-4 rounded-xl text-sm font-semibold bg-red-600 border border-red-700 text-white shadow-md flex items-center gap-2.5";
+          formAlert.innerHTML = '<span class="material-symbols-outlined text-white text-[22px]">warning</span> <span>Nama Lengkap hanya boleh berupa huruf alfabet (tidak boleh berisi angka).</span>';
+          formAlert.classList.remove("hidden");
+        }
+        nameInput?.focus();
+        return;
+      }
+
+      // 2. Validasi Nomor WhatsApp (Angka valid)
+      const phoneInput = document.getElementById("phone-number") as HTMLInputElement | null;
+      const phoneVal = phoneInput ? phoneInput.value.trim() : "";
+      const phonePattern = /^(\+62|62|0)[0-9]{8,14}$/;
+      if (!phonePattern.test(phoneVal)) {
+        if (formAlert) {
+          formAlert.className = "md:col-span-2 p-4 rounded-xl text-sm font-semibold bg-red-600 border border-red-700 text-white shadow-md flex items-center gap-2.5";
+          formAlert.innerHTML = '<span class="material-symbols-outlined text-white text-[22px]">warning</span> <span>Nomor WhatsApp hanya boleh berupa angka yang valid (contoh: 081288889999).</span>';
+          formAlert.classList.remove("hidden");
+        }
+        phoneInput?.focus();
+        return;
+      }
+
+      // 3. Validasi Email
+      const emailInput = document.getElementById("email") as HTMLInputElement | null;
+      const emailVal = emailInput ? emailInput.value.trim() : "";
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(emailVal)) {
+        if (formAlert) {
+          formAlert.className = "md:col-span-2 p-4 rounded-xl text-sm font-semibold bg-red-600 border border-red-700 text-white shadow-md flex items-center gap-2.5";
+          formAlert.innerHTML = '<span class="material-symbols-outlined text-white text-[22px]">warning</span> <span>Mohon masukkan alamat email yang valid.</span>';
+          formAlert.classList.remove("hidden");
+        }
+        emailInput?.focus();
+        return;
+      }
+
+      // 4. Validasi File Surat Kesehatan
+      if (!fileInput.files || !fileInput.files[0]) {
+        alert("Silakan pilih file Surat Keterangan Sehat terlebih dahulu.");
+        return;
+      }
+
+      const file = fileInput.files[0];
+      if (file.size > 5 * 1024 * 1024) {
+        if (formAlert) {
+          formAlert.className = "md:col-span-2 p-4 rounded-xl text-sm font-semibold bg-red-600 border border-red-700 text-white shadow-md flex items-center gap-2.5";
+          formAlert.innerHTML = '<span class="material-symbols-outlined text-white text-[22px]">error</span> <span>Ukuran file melebihi 5 MB. Mohon kompres atau unggah file lebih kecil.</span>';
+          formAlert.classList.remove("hidden");
+        }
+        return;
+      }
+
+      const motivasiVal = (document.getElementById("motivasi") as HTMLTextAreaElement).value.trim();
+      const consentVal = (document.getElementById("consent") as HTMLInputElement).checked;
+
+      // Loading State
+      if (submitBtn && btnText && btnIcon) {
+        submitBtn.disabled = true;
+        btnText.textContent = "Memeriksa Riwayat & Mengunggah...";
+        btnIcon.textContent = "hourglass_top";
+      }
+      formAlert?.classList.add("hidden");
+
+      try {
+        // STEP 1: CEK APAKAH PERNAH DAFTAR (Cek Duplicate Email & WhatsApp)
+        const checkUrl = `${SCRIPT_URL}?check=duplicate&phone=${encodeURIComponent(phoneVal)}&email=${encodeURIComponent(emailVal)}`;
+        
+        try {
+          const checkRes = await fetch(checkUrl);
+          if (checkRes.ok) {
+            const checkData = await checkRes.json();
+            if (checkData && checkData.isDuplicate) {
+              showDuplicateModal(
+                checkData.duplicateField,
+                checkData.duplicateField === "phone" ? phoneVal : emailVal
+              );
+              if (submitBtn && btnText && btnIcon) {
+                submitBtn.disabled = false;
+                btnText.textContent = "Kirim Formulir Pendaftaran";
+                btnIcon.textContent = "send";
+              }
+              return;
+            }
+          }
+        } catch (checkErr) {
+          console.warn("Pengecekan duplicate via GET gagal atau doGet belum aktif, lanjut simpan:", checkErr);
+        }
+
+        // STEP 2: BACA FILE & KIRIM DATA PENDAFTARAN
+        if (btnText) btnText.textContent = "Mengunggah Berkas ke Drive...";
+
+        const reader = new FileReader();
+        reader.onload = async () => {
+          try {
+            const base64Data = (reader.result as string).split(",")[1];
+
+            const payload = {
+              namaLengkap: nameVal,
+              email: emailVal,
+              noWhatsApp: phoneVal,
+              motivasi: motivasiVal,
+              consent: consentVal,
+              fileOriginalName: file.name,
+              fileMimeType: file.type,
+              fileBase64: base64Data,
+              timestamp: new Date().toISOString()
+            };
+
+            await fetch(SCRIPT_URL, {
+              method: "POST",
+              mode: "no-cors",
+              headers: {
+                "Content-Type": "text/plain;charset=utf-8",
+              },
+              body: JSON.stringify(payload),
+            });
+
+            // Sukses
+            if (formAlert) {
+              formAlert.className = "md:col-span-2 p-5 rounded-2xl text-sm font-semibold bg-[#065143] border border-[#065143]/80 text-white shadow-md flex flex-col gap-2";
+              formAlert.innerHTML = `
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[#FF8000] text-[24px]">check_circle</span>
+                  <span class="font-bold uppercase">Pendaftaran Berhasil Dikirim!</span>
+                </div>
+                <p class="text-white/90 leading-relaxed text-xs sm:text-sm">
+                  Terima kasih, <strong>${nameVal}</strong>! Data pendaftaran dan surat kesehatan Anda telah tersimpan. Email konfirmasi penerimaan telah kami kirimkan ke <strong>${emailVal}</strong>.
+                </p>
+              `;
+              formAlert.classList.remove("hidden");
+            }
+
+            form.reset();
+            if (fileNameDisplay) {
+              fileNameDisplay.textContent = "Klik atau Seret Berkas Surat Kesehatan ke Area Ini";
+              fileNameDisplay.classList.remove("text-[#065143]");
+            }
+
+          } catch (uploadErr) {
+            console.error("Gagal mengirim data:", uploadErr);
+            if (formAlert) {
+              formAlert.className = "md:col-span-2 p-4 rounded-xl text-sm font-semibold bg-red-600 border border-red-700 text-white shadow-md flex items-center gap-2.5";
+              formAlert.innerHTML = '<span class="material-symbols-outlined text-white text-[22px]">error</span> <span>Terjadi kendala saat mengirim data. Silakan coba kembali atau hubungi panitia.</span>';
+              formAlert.classList.remove("hidden");
+            }
+          } finally {
+            if (submitBtn && btnText && btnIcon) {
+              submitBtn.disabled = false;
+              btnText.textContent = "Kirim Formulir Pendaftaran";
+              btnIcon.textContent = "send";
+            }
+          }
+        };
+
+        reader.onerror = () => {
+          alert("Gagal membaca file berkas. Silakan coba unggah kembali.");
+          if (submitBtn && btnText && btnIcon) {
+            submitBtn.disabled = false;
+            btnText.textContent = "Kirim Formulir Pendaftaran";
+            btnIcon.textContent = "send";
+          }
+        };
+
+        reader.readAsDataURL(file);
+
+      } catch (err) {
+        console.error("Error utama pendaftaran:", err);
+        if (submitBtn && btnText && btnIcon) {
+          submitBtn.disabled = false;
+          btnText.textContent = "Kirim Formulir Pendaftaran";
+          btnIcon.textContent = "send";
+        }
+      }
+    });
+  }
+
+  initDiksarForm();
+  document.addEventListener("astro:page-load", initDiksarForm);
+</script>

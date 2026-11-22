@@ -1,0 +1,824 @@
+---
+const { pathname = Astro.url.pathname } = Astro.props;
+
+const isBeranda = pathname === "/" || pathname === "" || pathname === "/index.html";
+const isStruktur = pathname.startsWith("/struktur");
+const isDokumen = pathname.startsWith("/dokumen");
+const isSilsilah = pathname.startsWith("/silsilah");
+const isSuburin = pathname.startsWith("/suburin");
+const isP3K = pathname.startsWith("/p3k");
+const isBerita = pathname.startsWith("/berita") || pathname.startsWith("/artikel");
+const isPendaftaran = pathname.startsWith("/pendaftaran");
+const isTestimoni = pathname.startsWith("/testimoni");
+
+const navLinks = [
+  { name: "Beranda", href: "/", active: isBeranda },
+  { name: "Struktur", href: "/struktur", active: isStruktur },
+  { name: "Dokumen", href: "/dokumen", active: isDokumen },
+  { name: "Angkatan", href: "/silsilah", active: isSilsilah },
+  { name: "Produk", href: "/suburin", active: isSuburin },
+  { name: "Pendaftaran", href: "/pendaftaran", active: isPendaftaran },
+  { name: "Testimoni", href: "/testimoni", active: isTestimoni },
+];
+
+const appItems = [
+  {
+    title: "Panduan & Stok P3K",
+    desc: "Katalog & kalkulator kebutuhan logistik P3K dinamis sesuai jumlah peserta ekspedisi",
+    href: "/p3k",
+    icon: "medical_services",
+    isExternal: false,
+    badge: "Web App",
+  },
+];
+
+// Highlight Feature Cards (Mega Menu Berita & Artikel) - 4 Card Pilihan
+const featureArticles = [
+  {
+    categoryLabel: "LAPORAN UTAMA",
+    title: "Ekspedisi Semeru & Mahameru",
+    desc: "Catatan penjelajahan tim Angkatan XXIX menuntaskan atap Jawa dengan protokol zero accident.",
+    href: "/berita/puncak-mahameru-tim-ekspedisi-xxix",
+    badge: "3.676 mdpl",
+    icon: "landscape",
+    bannerGradient: "from-amber-500/20 via-[#FF8000]/25 to-emerald-950/60",
+    bannerAccent: "text-[#FF8000]",
+  },
+  {
+    categoryLabel: "KETERAMPILAN RIMBA",
+    title: "Navigasi Darat & Peta Kontur",
+    desc: "Metode resection & intersection kompas prisma untuk navigasi presisi di belantara hutan.",
+    href: "/berita/asah-navigasi-darat-bivak-kaki-gunung-gede",
+    badge: "Panduan Teknis",
+    icon: "explore",
+    bannerGradient: "from-emerald-600/20 via-teal-500/25 to-[#065143]/60",
+    bannerAccent: "text-emerald-400",
+  },
+  {
+    categoryLabel: "PENDIDIKAN DASAR",
+    title: "DIKSAR Calon Angkatan XXX",
+    desc: "Pembentukan karakter, kepemimpinan, dan persaudaraan rimba kekal siswa SMAN 39.",
+    href: "/berita/pendaftaran-pendidikan-dasar-angkatan-xxx",
+    badge: "Perekrutan",
+    icon: "school",
+    bannerGradient: "from-blue-600/20 via-indigo-500/25 to-slate-950/60",
+    bannerAccent: "text-sky-400",
+  },
+  {
+    categoryLabel: "ZONA MERINDING",
+    title: "Misteri Pos 4 Gunung Salak",
+    desc: "Gamelan tengah malam dan bayangan mematung di luar tenda ketinggian 1.800 mdpl.",
+    href: "/berita/misteri-suara-gamelan-pos-4-gunung-salak",
+    badge: "Kisah Mistis",
+    icon: "skull",
+    bannerGradient: "from-red-600/25 via-red-950/40 to-black/80",
+    bannerAccent: "text-red-400",
+  },
+];
+
+// List Menu Tautan Kanan (Quick Links / Knowledge Base)
+const quickCategories = [
+  {
+    header: "KATEGORI ARTIKEL",
+    items: [
+      { name: "Zona Merinding (Kisah Horor)", href: "/#zona-merinding", tag: "Horor" },
+      { name: "Gunung Hutan (Ekspedisi)", href: "/berita", tag: "Rimba" },
+      { name: "Navigasi & Orientasi Medan", href: "/berita", tag: "Navrat" },
+      { name: "Survival & Pertolongan Pertama", href: "/p3k", tag: "Medis" },
+      { name: "Konservasi & Lingkungan Hidup", href: "/suburin", tag: "Eko" },
+    ],
+  },
+  {
+    header: "ARSIP & WARTA",
+    items: [
+      { name: "Jurnal Ekspedisi Tahunan", href: "/berita" },
+      { name: "Silsilah 33 Generasi Alumni", href: "/silsilah" },
+      { name: "Rilis Berita Kegiatan Sekolah", href: "http://sman39jkt.sch.id/", isExternal: true },
+      { name: "Petunjuk Kirim Naskah", href: "#", isKirimNaskah: true },
+    ],
+  },
+];
+---
+
+<header class="fixed top-0 left-0 w-full z-50 bg-[#065143]/80 border-b border-[#065143]/60 shadow-[0_4px_20px_rgba(6,81,67,0.2)] transition-all duration-300">
+  <div class="h-20 max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex justify-between gap-space-md">
+    <!-- Brand Logo Lockup -->
+    <a href="/" class="flex items-center gap-space-md shrink-0 group">
+      <img
+        alt="Trinawa Bhuwana Logo"
+        class="h-11 w-auto object-contain transition-transform group-hover:scale-105 drop-shadow-md"
+        src="/images/logo-trinawa-bhuwana.png"
+      />
+      <div class="flex flex-col justify-center">
+        <span class="font-display text-title-md text-white leading-none uppercase group-hover:text-[#FF8000] transition-colors">
+          TRINAWA BHUWANA
+        </span>
+        <span class="font-label-caps text-label-caps text-white/80 uppercase tracking-wider mt-space-xs font-semibold">
+          KPA SMAN 39 Jakarta
+        </span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav
+      class="hidden xl:flex items-center gap-1.5 ml-auto"
+      aria-label="Main Navigation"
+    >
+      <!-- 1. Beranda -->
+      <a
+        href="/"
+        class:list={[
+          "px-3.5 py-1.5 rounded-lg text-sm transition-all duration-200",
+          isBeranda
+            ? "bg-[#FF8000] text-white font-extrabold shadow-md shadow-[#FF8000]/30"
+            : "text-white/90 hover:text-white hover:bg-white/15 font-medium",
+        ]}
+      >
+        Beranda
+      </a>
+
+      <!-- 2. Struktur Dropdown Menu -->
+      <div class="relative group py-2">
+        <a
+          href="/struktur"
+          class:list={[
+            "inline-flex items-center gap-1 px-3.5 py-1.5 rounded-lg text-sm transition-all duration-200 cursor-pointer",
+            isStruktur
+              ? "bg-[#FF8000] text-white font-extrabold shadow-md shadow-[#FF8000]/30"
+              : "text-white/90 hover:text-white hover:bg-white/15 font-medium group-hover:bg-white/15 group-hover:text-white",
+          ]}
+          aria-expanded="false"
+        >
+          <span>Struktur</span>
+          <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:rotate-180">
+            expand_more
+          </span>
+        </a>
+
+        <!-- Dropdown Sub Menu Struktur -->
+        <div class="absolute left-0 top-full pt-1.5 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 pointer-events-none group-hover:pointer-events-auto shadow-2xl">
+          <div class="bg-[#04342b]/95 backdrop-blur-xl border border-[#065143] rounded-2xl p-2.5 shadow-[0_12px_36px_rgba(0,0,0,0.4)]">
+            <div class="px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white/50 border-b border-white/10 mb-1">
+              Profil &amp; Struktur Organisasi
+            </div>
+            
+            <a
+              href="/struktur"
+              class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/10 transition-colors group/item"
+            >
+              <div class="w-8 h-8 rounded-lg bg-[#FF8000]/20 text-[#FF8000] flex items-center justify-center shrink-0 group-hover/item:bg-[#FF8000] group-hover/item:text-white transition-colors">
+                <span class="material-symbols-outlined text-[18px]">account_tree</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-xs font-bold text-white group-hover/item:text-[#FF8000] transition-colors leading-snug">
+                  Bagan Struktur BPH
+                </span>
+                <span class="text-[11px] text-white/70">
+                  Susunan pengurus harian aktif periode berjalan
+                </span>
+              </div>
+            </a>
+
+            <a
+              href="/struktur/sejarah"
+              class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/10 transition-colors group/item"
+            >
+              <div class="w-8 h-8 rounded-lg bg-[#FF8000]/20 text-[#FF8000] flex items-center justify-center shrink-0 group-hover/item:bg-[#FF8000] group-hover/item:text-white transition-colors">
+                <span class="material-symbols-outlined text-[18px]">menu_book</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-xs font-bold text-white group-hover/item:text-[#FF8000] transition-colors leading-snug">
+                  Sejarah Trinawa Bhuwana
+                </span>
+                <span class="text-[11px] text-white/70">
+                  Perintisan 1985 &amp; 26 tokoh Kabut Perintis
+                </span>
+              </div>
+            </a>
+
+            <a
+              href="/struktur/logo"
+              class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/10 transition-colors group/item"
+            >
+              <div class="w-8 h-8 rounded-lg bg-[#FF8000]/20 text-[#FF8000] flex items-center justify-center shrink-0 group-hover/item:bg-[#FF8000] group-hover/item:text-white transition-colors">
+                <span class="material-symbols-outlined text-[18px]">token</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-xs font-bold text-white group-hover/item:text-[#FF8000] transition-colors leading-snug">
+                  Makna Lambang Logo
+                </span>
+                <span class="text-[11px] text-white/70">
+                  Filosofi mata angin, simpul tali &amp; warna
+                </span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Angkatan -->
+      <a
+        href="/silsilah"
+        class:list={[
+          "px-3.5 py-1.5 rounded-lg text-sm transition-all duration-200",
+          isSilsilah
+            ? "bg-[#FF8000] text-white font-extrabold shadow-md shadow-[#FF8000]/30"
+            : "text-white/90 hover:text-white hover:bg-white/15 font-medium",
+        ]}
+      >
+        Angkatan
+      </a>
+
+      <!-- 4. Produk (Suburin) -->
+      <a
+        href="/suburin"
+        class:list={[
+          "px-3.5 py-1.5 rounded-lg text-sm transition-all duration-200",
+          isSuburin
+            ? "bg-[#FF8000] text-white font-extrabold shadow-md shadow-[#FF8000]/30"
+            : "text-white/90 hover:text-white hover:bg-white/15 font-medium",
+        ]}
+      >
+        Produk
+      </a>
+
+      <!-- 5. MEGA MENU: BERITA & ARTIKEL (Style Infermedica) -->
+      <div class="relative group py-2">
+        <button
+          type="button"
+          class:list={[
+            "inline-flex items-center gap-1 px-3.5 py-1.5 rounded-lg text-sm transition-all duration-200 cursor-pointer",
+            isBerita
+              ? "bg-[#FF8000] text-white font-extrabold shadow-md shadow-[#FF8000]/30"
+              : "text-white/90 hover:text-white hover:bg-white/15 font-medium group-hover:bg-white/15 group-hover:text-white",
+          ]}
+          aria-expanded="false"
+        >
+          <span>Berita &amp; Artikel</span>
+          <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:rotate-180">
+            expand_more
+          </span>
+        </button>
+
+        <!-- MEGA MENU CARD CONTAINER: Simple 4 Cards Layout -->
+        <div class="absolute right-0 xl:-right-12 2xl:right-0 top-full pt-2 w-[860px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 pointer-events-none group-hover:pointer-events-auto">
+          <div class="bg-white rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.35)] border border-slate-100 flex flex-col gap-5 text-slate-800">
+            
+            <!-- Top Section Header -->
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#FF8000]"></span>
+                <span class="text-xs font-black uppercase tracking-widest text-slate-500">
+                  Warta &amp; Jurnal Ekspedisi Terpilih
+                </span>
+              </div>
+              <a
+                href="/berita"
+                class="inline-flex items-center gap-1 text-xs text-[#065143] hover:text-[#FF8000] font-extrabold tracking-wide uppercase transition-colors group/all"
+              >
+                <span>Buka Seluruh Artikel</span>
+                <span class="material-symbols-outlined text-[15px] transition-transform group-hover/all:translate-x-1">arrow_forward</span>
+              </a>
+            </div>
+
+            <!-- 4 Featured Cards Grid -->
+            <div class="grid grid-cols-4 gap-3.5">
+              {featureArticles.map((card) => (
+                <a
+                  href={card.href}
+                  class="group/card flex flex-col bg-slate-50 hover:bg-white rounded-2xl border border-slate-100 hover:border-[#FF8000]/40 hover:shadow-lg hover:shadow-slate-200/60 transition-all duration-200 overflow-hidden text-left"
+                >
+                  <!-- Visual Header Banner -->
+                  <div class={`h-20 w-full bg-gradient-to-br ${card.bannerGradient} relative flex items-center justify-center p-2.5 overflow-hidden border-b border-slate-100/60`}>
+                    <div class="w-10 h-10 rounded-xl bg-white shadow-md flex items-center justify-center transition-transform duration-300 group-hover/card:scale-110">
+                      <span class={`material-symbols-outlined text-[20px] ${card.bannerAccent}`}>
+                        {card.icon}
+                      </span>
+                    </div>
+
+                    <div class="absolute top-2 left-2">
+                      <span class="text-[8px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded-md bg-black/60 text-white backdrop-blur-xs">
+                        {card.categoryLabel}
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Card Body -->
+                  <div class="p-3 flex flex-col flex-1 justify-between gap-2.5">
+                    <div>
+                      <h4 class="text-xs font-extrabold text-slate-800 group-hover/card:text-[#065143] transition-colors leading-snug line-clamp-2">
+                        {card.title}
+                      </h4>
+                      <p class="text-[10px] text-slate-500 mt-1 leading-relaxed line-clamp-2">
+                        {card.desc}
+                      </p>
+                    </div>
+
+                    <!-- Bottom Link -->
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] font-bold text-slate-600 group-hover/card:text-[#FF8000] transition-colors">
+                      <span>{card.badge}</span>
+                      <span class="material-symbols-outlined text-[14px] transition-transform group-hover/card:translate-x-0.5">
+                        arrow_forward
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            <!-- Bottom Quick Strip: Kirim Naskah -->
+            <div class="bg-slate-50 rounded-xl px-4 py-2.5 border border-slate-100 flex items-center justify-between gap-3">
+              <span class="text-[11px] text-slate-500 flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[16px] text-[#065143]">history_edu</span>
+                Punya catatan ekspedisi rimba? Kirimkan tulisan Anda untuk diterbitkan.
+              </span>
+              <button
+                type="button"
+                class="btn-open-kirim-naskah shrink-0 px-3 py-1.5 rounded-lg bg-[#065143] hover:bg-[#FF8000] text-white text-[11px] font-bold uppercase tracking-wider shadow-xs transition-all flex items-center gap-1 cursor-pointer"
+              >
+                <span>Kirim Naskah</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. App (Katalog P3K) -->
+      <div class="relative group py-2">
+        <button
+          type="button"
+          class:list={[
+            "inline-flex items-center gap-1 px-3.5 py-1.5 rounded-lg text-sm transition-all duration-200 cursor-pointer",
+            isP3K
+              ? "bg-[#FF8000] text-white font-extrabold shadow-md shadow-[#FF8000]/30"
+              : "text-white/90 hover:text-white hover:bg-white/15 font-medium group-hover:bg-white/15 group-hover:text-white",
+          ]}
+          aria-expanded="false"
+        >
+          <span>App</span>
+          <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:rotate-180">
+            expand_more
+          </span>
+        </button>
+
+        <div class="absolute left-0 top-full pt-1.5 w-80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 pointer-events-none group-hover:pointer-events-auto shadow-2xl">
+          <div class="bg-[#04342b]/95 backdrop-blur-xl border border-[#065143] rounded-2xl p-2.5 shadow-[0_12px_36px_rgba(0,0,0,0.4)]">
+            <div class="px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white/50 border-b border-white/10 mb-1">
+              Aplikasi Lapangan
+            </div>
+            {appItems.map((app) => (
+              <a
+                href={app.href}
+                class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/10 transition-colors group/item"
+              >
+                <div class="w-9 h-9 rounded-lg bg-[#FF8000]/20 text-[#FF8000] flex items-center justify-center shrink-0 group-hover/item:bg-[#FF8000] group-hover/item:text-white transition-colors">
+                  <span class="material-symbols-outlined text-[20px]">{app.icon}</span>
+                </div>
+                <div class="flex flex-col">
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-sm font-bold text-white group-hover/item:text-[#FF8000] transition-colors leading-snug">
+                      {app.title}
+                    </span>
+                    {app.badge && (
+                      <span class="text-[9px] font-extrabold uppercase px-1.5 py-0.2 rounded bg-[#FF8000] text-white">
+                        {app.badge}
+                      </span>
+                    )}
+                  </div>
+                  <span class="text-xs text-white/70 line-clamp-2 mt-0.5 leading-relaxed">
+                    {app.desc}
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Pendaftaran DIKSAR -->
+      <a
+        href="/pendaftaran"
+        class:list={[
+          "px-3.5 py-1.5 rounded-lg text-sm transition-all duration-200",
+          isPendaftaran
+            ? "bg-[#FF8000] text-white font-extrabold shadow-md shadow-[#FF8000]/30"
+            : "text-white/90 hover:text-white hover:bg-white/15 font-medium",
+        ]}
+      >
+        Pendaftaran
+      </a>
+
+      <!-- 8. Testimoni -->
+      <a
+        href="/testimoni"
+        class:list={[
+          "px-3.5 py-1.5 rounded-lg text-sm transition-all duration-200",
+          isTestimoni
+            ? "bg-[#FF8000] text-white font-extrabold shadow-md shadow-[#FF8000]/30"
+            : "text-white/90 hover:text-white hover:bg-white/15 font-medium",
+        ]}
+      >
+        Testimoni
+      </a>
+
+      <!-- 9. Dokumen Dropdown Menu -->
+      <div class="relative group py-2">
+        <a
+          href="/dokumen"
+          class:list={[
+            "inline-flex items-center gap-1 px-3.5 py-1.5 rounded-lg text-sm transition-all duration-200 cursor-pointer",
+            isDokumen
+              ? "bg-[#FF8000] text-white font-extrabold shadow-md shadow-[#FF8000]/30"
+              : "text-white/90 hover:text-white hover:bg-white/15 font-medium group-hover:bg-white/15 group-hover:text-white",
+          ]}
+          aria-expanded="false"
+        >
+          <span>Dokumen</span>
+          <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:rotate-180">
+            expand_more
+          </span>
+        </a>
+
+        <!-- Dropdown Sub Menu Dokumen -->
+        <div class="absolute right-0 top-full pt-1.5 w-80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 pointer-events-none group-hover:pointer-events-auto shadow-2xl">
+          <div class="bg-[#04342b]/95 backdrop-blur-xl border border-[#065143] rounded-2xl p-2.5 shadow-[0_12px_36px_rgba(0,0,0,0.4)]">
+            <div class="px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white/50 border-b border-white/10 mb-1 flex items-center justify-between">
+              <span>Arsip Dokumen Resmi</span>
+              <a href="/dokumen" class="text-[#FF8000] hover:underline text-[10px]">Semua →</a>
+            </div>
+
+            <a
+              href="/dokumen/kode-etik"
+              class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-white/10 transition-colors group/item"
+            >
+              <div class="w-7 h-7 rounded-lg bg-[#FF8000]/20 text-[#FF8000] flex items-center justify-center shrink-0 group-hover/item:bg-[#FF8000] group-hover/item:text-white transition-colors">
+                <span class="material-symbols-outlined text-[16px]">verified</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-xs font-bold text-white group-hover/item:text-[#FF8000] transition-colors leading-snug">
+                  Kode Etik Pecinta Alam
+                </span>
+                <span class="text-[10px] text-white/70">
+                  Konsensus Gladian IV Ujung Pandang 1974
+                </span>
+              </div>
+            </a>
+
+            <a
+              href="/dokumen/undang-undang"
+              class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-white/10 transition-colors group/item"
+            >
+              <div class="w-7 h-7 rounded-lg bg-[#FF8000]/20 text-[#FF8000] flex items-center justify-center shrink-0 group-hover/item:bg-[#FF8000] group-hover/item:text-white transition-colors">
+                <span class="material-symbols-outlined text-[16px]">gavel</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-xs font-bold text-white group-hover/item:text-[#FF8000] transition-colors leading-snug">
+                  Undang-Undang Trinawa Bhuwana
+                </span>
+                <span class="text-[10px] text-white/70">
+                  Landasan hukum pokok &amp; tata aturan internal
+                </span>
+              </div>
+            </a>
+
+            <a
+              href="/dokumen/anggaran-rumah-tangga"
+              class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-white/10 transition-colors group/item"
+            >
+              <div class="w-7 h-7 rounded-lg bg-[#FF8000]/20 text-[#FF8000] flex items-center justify-center shrink-0 group-hover/item:bg-[#FF8000] group-hover/item:text-white transition-colors">
+                <span class="material-symbols-outlined text-[16px]">menu_book</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-xs font-bold text-white group-hover/item:text-[#FF8000] transition-colors leading-snug">
+                  Anggaran Rumah Tangga (ART)
+                </span>
+                <span class="text-[10px] text-white/70">
+                  Naskah resmi 1985 &amp; Viewer PDF Buku Diklat
+                </span>
+              </div>
+            </a>
+
+            <a
+              href="/dokumen/tujuan-hakekat"
+              class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-white/10 transition-colors group/item"
+            >
+              <div class="w-7 h-7 rounded-lg bg-[#FF8000]/20 text-[#FF8000] flex items-center justify-center shrink-0 group-hover/item:bg-[#FF8000] group-hover/item:text-white transition-colors">
+                <span class="material-symbols-outlined text-[16px]">flag</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-xs font-bold text-white group-hover/item:text-[#FF8000] transition-colors leading-snug">
+                  Tujuan &amp; Hakekat
+                </span>
+                <span class="text-[10px] text-white/70">
+                  5 Hakekat &amp; 3 Pilar Tujuan Keorganisasian
+                </span>
+              </div>
+            </a>
+
+            <a
+              href="/dokumen/tata-tertib"
+              class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-white/10 transition-colors group/item"
+            >
+              <div class="w-7 h-7 rounded-lg bg-[#FF8000]/20 text-[#FF8000] flex items-center justify-center shrink-0 group-hover/item:bg-[#FF8000] group-hover/item:text-white transition-colors">
+                <span class="material-symbols-outlined text-[16px]">policy</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-xs font-bold text-white group-hover/item:text-[#FF8000] transition-colors leading-snug">
+                  Tata Tertib
+                </span>
+                <span class="text-[10px] text-white/70">
+                  Ketentuan umum, siswa DIKSAR &amp; ekspedisi rimba
+                </span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header Actions & Socials -->
+    <div class="flex items-center gap-2 sm:gap-space-sm shrink-0">
+      <!-- Quick Social Icons -->
+      <div class="hidden md:flex items-center gap-1">
+        <a
+          class="w-9 h-9 flex items-center justify-center rounded-lg text-white/90 hover:bg-white/20 hover:text-white transition-colors"
+          href="http://sman39jkt.sch.id/"
+          rel="noopener noreferrer"
+          target="_blank"
+          title="Web SMAN 39 Jakarta"
+          aria-label="Web SMAN 39 Jakarta"
+        >
+          <span class="material-symbols-outlined text-[20px]">school</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button (Hamburger) -->
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        class="xl:hidden w-10 h-10 flex items-center justify-center rounded-lg text-white hover:bg-white/20 transition-colors cursor-pointer"
+        aria-label="Buka Menu Navigasi"
+        aria-expanded="false"
+      >
+        <span class="material-symbols-outlined text-[26px]" id="menu-icon">
+          menu
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Collapsible Menu (Drawer) -->
+  <div
+    id="mobile-menu"
+    class="hidden xl:hidden bg-black/95 backdrop-blur-2xl border-b border-[#FF8000]/30 px-margin py-space-md shadow-2xl transition-all duration-300 text-white max-h-[85vh] overflow-y-auto"
+  >
+    <nav class="flex flex-col gap-1 pb-space-sm" aria-label="Mobile Navigation">
+      <!-- 1. Beranda -->
+      <a
+        href="/"
+        class:list={[
+          "px-4 py-2.5 rounded-lg text-sm transition-colors",
+          isBeranda ? "bg-[#FF8000] text-white font-bold" : "text-white/85 hover:bg-white/10 hover:text-white",
+        ]}
+      >
+        Beranda
+      </a>
+
+      <!-- 2. Struktur -->
+      <a
+        href="/struktur"
+        class:list={[
+          "px-4 py-2.5 rounded-lg text-sm transition-colors",
+          isStruktur ? "bg-[#FF8000] text-white font-bold" : "text-white/85 hover:bg-white/10 hover:text-white",
+        ]}
+      >
+        Struktur
+      </a>
+
+      <!-- 3. Angkatan -->
+      <a
+        href="/silsilah"
+        class:list={[
+          "px-4 py-2.5 rounded-lg text-sm transition-colors",
+          isSilsilah ? "bg-[#FF8000] text-white font-bold" : "text-white/85 hover:bg-white/10 hover:text-white",
+        ]}
+      >
+        Angkatan
+      </a>
+
+      <!-- 4. Produk (Suburin) -->
+      <a
+        href="/suburin"
+        class:list={[
+          "px-4 py-2.5 rounded-lg text-sm transition-colors",
+          isSuburin ? "bg-[#FF8000] text-white font-bold" : "text-white/85 hover:bg-white/10 hover:text-white",
+        ]}
+      >
+        Produk (Pupuk Suburin)
+      </a>
+
+      <!-- 5. Berita & Artikel Hub (Mobile Accordion / Card) -->
+      <div class="flex flex-col my-1 bg-white/5 rounded-2xl p-3 border border-white/10 gap-2.5">
+        <div class="flex items-center justify-between px-1">
+          <div class="text-[11px] font-extrabold uppercase tracking-wider text-[#FF8000] flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[16px]">newspaper</span>
+            <span>Berita &amp; Artikel</span>
+          </div>
+          <a href="/#berita" class="text-[10px] text-white/60 hover:text-white uppercase font-bold">
+            Lihat Semua →
+          </a>
+        </div>
+
+        <!-- Featured cards in mobile -->
+        <div class="flex flex-col gap-2 pt-1 border-t border-white/5">
+          {featureArticles.map((card) => (
+            <a
+              href={card.href}
+              class="p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/10 border border-white/5 flex items-center gap-3 transition-colors"
+            >
+              <div class="w-9 h-9 rounded-lg bg-[#FF8000]/20 text-[#FF8000] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[18px]">{card.icon}</span>
+              </div>
+              <div class="flex flex-col flex-1">
+                <span class="text-[9px] font-black uppercase text-white/40 tracking-wider">
+                  {card.categoryLabel}
+                </span>
+                <span class="text-xs font-bold text-white line-clamp-1">
+                  {card.title}
+                </span>
+              </div>
+              <span class="material-symbols-outlined text-[16px] text-white/40">chevron_right</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- 6. App (Katalog P3K) -->
+      <div class="flex flex-col mb-1 bg-white/5 rounded-2xl p-3 border border-white/10">
+        <div class="px-1 py-1 text-[11px] font-extrabold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[16px]">apps</span>
+          <span>Aplikasi Lapangan</span>
+        </div>
+        {appItems.map((app) => (
+          <a
+            href={app.href}
+            class="flex items-center justify-between px-2.5 py-2 rounded-xl text-sm text-white/90 hover:bg-white/10 hover:text-white transition-colors"
+          >
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[18px] text-emerald-400">{app.icon}</span>
+              <span>{app.title}</span>
+            </div>
+            <span class="text-[9px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-emerald-600 text-white">
+              {app.badge}
+            </span>
+          </a>
+        ))}
+      </div>
+
+      <!-- 7. Pendaftaran DIKSAR -->
+      <a
+        href="/pendaftaran"
+        class:list={[
+          "px-4 py-2.5 rounded-lg text-sm transition-colors",
+          isPendaftaran ? "bg-[#FF8000] text-white font-bold" : "text-white/85 hover:bg-white/10 hover:text-white",
+        ]}
+      >
+        Pendaftaran
+      </a>
+
+      <!-- 8. Testimoni -->
+      <a
+        href="/testimoni"
+        class:list={[
+          "px-4 py-2.5 rounded-lg text-sm transition-colors",
+          isTestimoni ? "bg-[#FF8000] text-white font-bold" : "text-white/85 hover:bg-white/10 hover:text-white",
+        ]}
+      >
+        Testimoni
+      </a>
+
+      <!-- 9. Dokumen Hub (Mobile Accordion / Card) -->
+      <div class="flex flex-col mb-1 bg-white/5 rounded-2xl p-3 border border-white/10">
+        <div class="flex items-center justify-between px-1 py-1">
+          <div class="text-[11px] font-extrabold uppercase tracking-wider text-[#FF8000] flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[16px]">folder_open</span>
+            <span>Dokumen Organisasi</span>
+          </div>
+          <a href="/dokumen" class="text-[10px] text-white/60 hover:text-white uppercase font-bold">
+            Semua →
+          </a>
+        </div>
+        <div class="flex flex-col gap-1 pt-1.5 border-t border-white/5">
+          <a
+            href="/dokumen/kode-etik"
+            class="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs text-white/90 hover:bg-white/10 transition-colors"
+          >
+            <span class="material-symbols-outlined text-[16px] text-[#FF8000]">verified</span>
+            <span>Kode Etik Pecinta Alam</span>
+          </a>
+          <a
+            href="/dokumen/undang-undang"
+            class="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs text-white/90 hover:bg-white/10 transition-colors"
+          >
+            <span class="material-symbols-outlined text-[16px] text-[#FF8000]">gavel</span>
+            <span>Undang-Undang Trinawa Bhuwana</span>
+          </a>
+          <a
+            href="/dokumen/anggaran-rumah-tangga"
+            class="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs text-white/90 hover:bg-white/10 transition-colors"
+          >
+            <span class="material-symbols-outlined text-[16px] text-[#FF8000]">menu_book</span>
+            <span>Anggaran Rumah Tangga &amp; PDF</span>
+          </a>
+          <a
+            href="/dokumen/tujuan-hakekat"
+            class="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs text-white/90 hover:bg-white/10 transition-colors"
+          >
+            <span class="material-symbols-outlined text-[16px] text-[#FF8000]">flag</span>
+            <span>Tujuan &amp; Hakekat</span>
+          </a>
+          <a
+            href="/dokumen/tata-tertib"
+            class="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs text-white/90 hover:bg-white/10 transition-colors"
+          >
+            <span class="material-symbols-outlined text-[16px] text-[#FF8000]">policy</span>
+            <span>Tata Tertib</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="pt-space-sm border-t border-white/15 flex flex-col gap-space-sm">
+      <div class="flex items-center justify-around py-1 text-white/80">
+        <a
+          href="https://www.instagram.com/trinawabhuwana/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-1.5 text-xs hover:text-[#FF8000]"
+        >
+          <span class="material-symbols-outlined text-[18px]">photo_camera</span>
+          <span>Instagram</span>
+        </a>
+        <a
+          href="https://www.youtube.com/@trinawabhuwana"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-1.5 text-xs hover:text-error"
+        >
+          <span class="material-symbols-outlined text-[18px]">smart_display</span>
+          <span>YouTube</span>
+        </a>
+        <a
+          href="http://sman39jkt.sch.id/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-1.5 text-xs hover:text-[#FF8000]"
+        >
+          <span class="material-symbols-outlined text-[18px]">school</span>
+          <span>SMAN 39</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  function setupMobileMenu() {
+    const btn = document.getElementById("mobile-menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    const icon = document.getElementById("menu-icon");
+
+    if (!btn || !menu) return;
+
+    btn.addEventListener("click", () => {
+      const isExpanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!isExpanded));
+
+      if (isExpanded) {
+        menu.classList.add("hidden");
+        if (icon) icon.textContent = "menu";
+      } else {
+        menu.classList.remove("hidden");
+        if (icon) icon.textContent = "close";
+      }
+    });
+
+    // Close menu when a navigation link is clicked
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.add("hidden");
+        btn.setAttribute("aria-expanded", "false");
+        if (icon) icon.textContent = "menu";
+      });
+    });
+  }
+
+  // Run on initial load
+  setupMobileMenu();
+
+  // Support Astro view transitions or dynamic re-renders
+  document.addEventListener("astro:page-load", setupMobileMenu);
+</script>

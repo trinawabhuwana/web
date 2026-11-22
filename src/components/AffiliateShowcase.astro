@@ -1,0 +1,158 @@
+---
+import { affiliateGearList, type AffiliateItem } from "../data/affiliates";
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  categoryFilter?: string;
+  limit?: number;
+  className?: string;
+}
+
+const {
+  title = "Rekomendasi Perlengkapan Rimba Teruji",
+  subtitle = "Peralatan standar ekspedisi dan navigasi darat yang direkomendasikan anggota KPA Trinawa Bhuwana SMAN 39.",
+  categoryFilter,
+  limit = 4,
+  className = "",
+} = Astro.props;
+
+const filteredItems = categoryFilter
+  ? affiliateGearList.filter((g) => g.category === categoryFilter || categoryFilter === "all")
+  : affiliateGearList;
+
+const displayItems = filteredItems.slice(0, limit);
+---
+
+<div class={`w-full my-8 p-5 sm:p-7 rounded-3xl bg-surface-container-low border border-outline-variant/30 shadow-sm ${className}`}>
+  <!-- Section Header -->
+  <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6 pb-4 border-b border-outline-variant/20">
+    <div>
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-black uppercase tracking-wider mb-2">
+        <span class="material-symbols-outlined text-[15px]">verified</span>
+        <span>Rekomendasi Perlengkapan Rimba</span>
+      </div>
+      <h3 class="text-lg sm:text-xl font-black text-on-surface uppercase tracking-tight font-display">
+        {title}
+      </h3>
+      <p class="text-xs text-on-surface-variant max-w-xl mt-1 leading-relaxed">
+        {subtitle}
+      </p>
+    </div>
+
+    <!-- Supported Marketplace Logos Tag -->
+    <div class="flex items-center gap-2 text-[10px] font-bold text-on-surface-variant shrink-0 bg-surface-container-lowest px-3 py-1.5 rounded-xl border border-outline-variant/20">
+      <span>Tersedia di:</span>
+      <span class="text-emerald-600 font-extrabold">Tokopedia</span>
+      <span>•</span>
+      <span class="text-orange-500 font-extrabold">Shopee</span>
+      <span>•</span>
+      <span class="text-slate-900 font-extrabold">TikTok Shop</span>
+    </div>
+  </div>
+
+  <!-- Gear Cards Grid (Dimensi Responsif & Bersih) -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    {displayItems.map((gear: AffiliateItem) => (
+      <div class="bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-primary/40 hover:shadow-lg transition-all flex flex-col group">
+        
+        <!-- Thumbnail & Badge -->
+        <div class="relative w-full aspect-[4/3] bg-black/5 overflow-hidden">
+          <img
+            src={gear.image}
+            alt={gear.name}
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+          />
+          {gear.badge && (
+            <div class="absolute top-2 left-2">
+              <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md bg-black/70 text-white backdrop-blur-xs">
+                {gear.badge}
+              </span>
+            </div>
+          )}
+          {gear.rating && (
+            <div class="absolute bottom-2 left-2 flex items-center gap-1 bg-white/90 backdrop-blur-xs px-2 py-0.5 rounded-md text-[10px] font-bold text-slate-800 shadow-xs">
+              <span class="material-symbols-outlined text-[13px] text-amber-500 fill-1">star</span>
+              <span>{gear.rating}</span>
+              {gear.soldCount && <span class="text-slate-400">({gear.soldCount})</span>}
+            </div>
+          )}
+        </div>
+
+        <!-- Details -->
+        <div class="p-3.5 flex flex-col flex-1 justify-between gap-3">
+          <div>
+            <span class="text-[9px] font-black uppercase tracking-wider text-primary">
+              {gear.brand || "Outdoor Essential"}
+            </span>
+            <h4 class="text-xs sm:text-[13px] font-bold text-on-surface line-clamp-2 leading-snug group-hover:text-primary transition-colors mt-0.5">
+              {gear.name}
+            </h4>
+            <p class="text-[11px] text-on-surface-variant line-clamp-2 mt-1 leading-relaxed">
+              {gear.description}
+            </p>
+          </div>
+
+          <!-- Price & Multi-Store Buy Buttons -->
+          <div class="pt-2 border-t border-outline-variant/15 flex flex-col gap-2">
+            <div class="flex items-baseline gap-2">
+              <span class="text-sm font-black text-[#FF8000]">{gear.price}</span>
+              {gear.originalPrice && (
+                <span class="text-[10px] text-on-surface-variant/60 line-through">
+                  {gear.originalPrice}
+                </span>
+              )}
+            </div>
+
+            <!-- Marketplace Links Buttons -->
+            <div class="grid grid-cols-3 gap-1 pt-1">
+              {gear.links.tokopedia && (
+                <a
+                  href={gear.links.tokopedia}
+                  target="_blank"
+                  rel="noopener noreferrer sponsored"
+                  class="px-1.5 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-600 text-emerald-800 hover:text-white text-[10px] font-bold text-center transition-colors border border-emerald-200/60"
+                  title="Cek di Tokopedia"
+                >
+                  Tokopedia
+                </a>
+              )}
+              {gear.links.shopee && (
+                <a
+                  href={gear.links.shopee}
+                  target="_blank"
+                  rel="noopener noreferrer sponsored"
+                  class="px-1.5 py-1.5 rounded-lg bg-orange-50 hover:bg-orange-600 text-orange-800 hover:text-white text-[10px] font-bold text-center transition-colors border border-orange-200/60"
+                  title="Cek di Shopee"
+                >
+                  Shopee
+                </a>
+              )}
+              {gear.links.tiktok && (
+                <a
+                  href={gear.links.tiktok}
+                  target="_blank"
+                  rel="noopener noreferrer sponsored"
+                  class="px-1.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-900 text-slate-800 hover:text-white text-[10px] font-bold text-center transition-colors border border-slate-300"
+                  title="Cek di TikTok Shop"
+                >
+                  TikTok
+                </a>
+              )}
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    ))}
+  </div>
+
+  <div class="mt-4 pt-3 border-t border-outline-variant/15 flex items-center justify-between text-[11px] text-on-surface-variant">
+    <span class="italic">
+      *Tautan di atas merupakan kurasi rujukan perlengkapan rimba terpercaya.
+    </span>
+    <span class="font-bold text-primary">KPA Trinawa Bhuwana</span>
+  </div>
+</div>

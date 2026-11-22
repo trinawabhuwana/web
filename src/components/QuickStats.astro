@@ -1,0 +1,55 @@
+---
+const stats = [
+  {
+    icon: "groups",
+    label: "Regenerasi Aktif",
+    value: "30+",
+    desc: "Angkatan Terkaderisasi Sejak Awal",
+    colorClass: "text-primary",
+  },
+  {
+    icon: "badge",
+    label: "Jejaring Insan",
+    value: "450+",
+    desc: "Anggota Tetap & Alumni SMAN 39",
+    colorClass: "text-secondary",
+  },
+  {
+    icon: "altitude",
+    label: "Jejak Langkah",
+    value: "50+",
+    desc: "Puncak Gunung & Ekspedisi Rimba",
+    colorClass: "text-tertiary",
+  },
+  {
+    icon: "verified",
+    label: "Integritas Sejarah",
+    value: "Est. KPA",
+    desc: "SMAN 39 Cijantung, Jakarta Timur",
+    colorClass: "text-primary-container",
+  },
+];
+---
+
+<section class="w-full py-space-lg bg-surface-container-lowest border-y border-outline-variant/30 shadow-sm">
+  <div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-gutter">
+      {stats.map((stat) => (
+        <div class="flex flex-col p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors border border-outline-variant/20 shadow-xs">
+          <div class={`flex items-center gap-space-xs ${stat.colorClass} mb-space-xs`}>
+            <span class="material-symbols-outlined text-[20px]">{stat.icon}</span>
+            <span class="font-label-caps text-label-caps uppercase text-on-surface-variant font-semibold">
+              {stat.label}
+            </span>
+          </div>
+          <span class="font-headline-md text-headline-md text-on-surface font-extrabold tracking-tight">
+            {stat.value}
+          </span>
+          <span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            {stat.desc}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,175 @@
+---
+// Komponen Modal Dialog Pop-up Kirim Naskah Cerita & Artikel
+---
+
+<dialog
+  id="modal-kirim-naskah"
+  class="backdrop:bg-black/70 backdrop:backdrop-blur-sm p-0 rounded-3xl shadow-[0_25px_60px_rgba(0,0,0,0.5)] border border-slate-200/80 max-w-lg w-[92%] mx-auto my-auto overflow-hidden text-slate-800 transition-all duration-300"
+>
+  <div class="bg-white flex flex-col">
+    <!-- Modal Header -->
+    <div class="bg-gradient-to-r from-[#065143] via-[#054337] to-[#04342b] p-6 text-white relative">
+      <button
+        type="button"
+        id="btn-close-modal-naskah"
+        class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
+        aria-label="Tutup"
+      >
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-[#FF8000] text-xs font-bold uppercase tracking-wider mb-2">
+        <span class="material-symbols-outlined text-[16px]">edit_note</span>
+        <span>Petunjuk Kirim Tulisan</span>
+      </div>
+      <h3 class="text-xl sm:text-2xl font-black tracking-tight text-white uppercase">
+        Kirim Naskah &amp; Cerita Rimba
+      </h3>
+      <p class="text-xs sm:text-sm text-white/80 mt-1">
+        Publikasikan artikel perjalanan, materi kepecintaalaman, atau kisah Zona Merinding Anda di website resmi KPA Trinawa Bhuwana SMAN 39.
+      </p>
+    </div>
+
+    <!-- Modal Body: Step by step instructions -->
+    <div class="p-6 sm:p-7 flex flex-col gap-5">
+      <div class="space-y-4">
+        <!-- Step 1: Tulis di Google Doc -->
+        <div class="flex items-start gap-3.5">
+          <div class="w-8 h-8 rounded-xl bg-[#065143]/10 text-[#065143] flex items-center justify-center font-black text-sm shrink-0 mt-0.5">
+            1
+          </div>
+          <div class="flex flex-col">
+            <h4 class="text-xs font-extrabold text-slate-900 uppercase">
+              Tulis di Google Docs &amp; Sematkan Foto
+            </h4>
+            <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">
+              Tulis draf cerita Anda di <span class="font-semibold text-slate-900">Google Docs</span>. Masukkan foto/gambar dokumentasi langsung (<strong>embed image</strong>) ke dalam halaman dokumen Anda.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2: Atur Akses Link -->
+        <div class="flex items-start gap-3.5">
+          <div class="w-8 h-8 rounded-xl bg-[#065143]/10 text-[#065143] flex items-center justify-center font-black text-sm shrink-0 mt-0.5">
+            2
+          </div>
+          <div class="flex flex-col">
+            <h4 class="text-xs font-extrabold text-slate-900 uppercase">
+              Bagikan Link (Share Link Google Docs)
+            </h4>
+            <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">
+              Pastikan akses link Google Doc diatur ke <strong class="text-slate-900">"Anyone with the link can view"</strong> (Siapa saja yang memiliki link dapat melihat) agar naskah dapat dibaca redaksi.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3: Kirim Email -->
+        <div class="flex items-start gap-3.5">
+          <div class="w-8 h-8 rounded-xl bg-[#065143]/10 text-[#065143] flex items-center justify-center font-black text-sm shrink-0 mt-0.5">
+            3
+          </div>
+          <div class="flex flex-col">
+            <h4 class="text-xs font-extrabold text-slate-900 uppercase">
+              Kirimkan Link via Email Resmi
+            </h4>
+            <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">
+              Kirimkan link Google Doc tersebut beserta Nama, Angkatan, dan Kategori tulisan (misal: <em>Artikel, Warta, atau Zona Merinding</em>) ke alamat email di bawah.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Email Box with One-Click Copy -->
+      <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-[#FF8000]/15 text-[#FF8000] flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[20px]">mail</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Alamat Email Redaksi</span>
+            <span class="text-sm font-black text-slate-800 select-all" id="text-email-naskah">
+              trianwabhuwana@gmail.com
+            </span>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          id="btn-copy-email-naskah"
+          class="w-full sm:w-auto px-4 py-2 rounded-xl bg-[#065143] hover:bg-[#FF8000] text-white text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-sm active:scale-95"
+        >
+          <span class="material-symbols-outlined text-[15px]" id="icon-copy-naskah">content_copy</span>
+          <span id="label-copy-naskah">Salin Email</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal Footer -->
+    <div class="bg-slate-50 px-6 py-4 border-t border-slate-100 flex items-center justify-end">
+      <button
+        type="button"
+        id="btn-close-modal-footer"
+        class="px-5 py-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
+      >
+        Tutup
+      </button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  function initKirimNaskahModal() {
+    const modal = document.getElementById("modal-kirim-naskah") as HTMLDialogElement | null;
+    const btnClose = document.getElementById("btn-close-modal-naskah");
+    const btnCloseFooter = document.getElementById("btn-close-modal-footer");
+    const btnCopy = document.getElementById("btn-copy-email-naskah");
+    const labelCopy = document.getElementById("label-copy-naskah");
+    const iconCopy = document.getElementById("icon-copy-naskah");
+
+    if (!modal) return;
+
+    // Delegate click to all triggers that open the modal
+    document.addEventListener("click", (e) => {
+      const target = (e.target as HTMLElement).closest(".btn-open-kirim-naskah");
+      if (target) {
+        e.preventDefault();
+        modal.showModal();
+      }
+    });
+
+    const closeModal = () => {
+      modal.close();
+    };
+
+    btnClose?.addEventListener("click", closeModal);
+    btnCloseFooter?.addEventListener("click", closeModal);
+
+    // Close when clicking on backdrop
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Copy Email Action
+    btnCopy?.addEventListener("click", async () => {
+      const email = "trianwabhuwana@gmail.com";
+      try {
+        await navigator.clipboard.writeText(email);
+        if (labelCopy && iconCopy) {
+          labelCopy.textContent = "Tersalin!";
+          iconCopy.textContent = "check";
+          setTimeout(() => {
+            labelCopy.textContent = "Salin Email";
+            iconCopy.textContent = "content_copy";
+          }, 2500);
+        }
+      } catch (err) {
+        console.error("Gagal menyalin email:", err);
+      }
+    });
+  }
+
+  initKirimNaskahModal();
+  document.addEventListener("astro:page-load", initKirimNaskahModal);
+</script>

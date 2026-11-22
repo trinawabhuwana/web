@@ -1,0 +1,132 @@
+---
+interface Props {
+  variant?: "light" | "dark" | "transparent";
+  className?: string;
+  sourceContext?: string; // e.g. "berita", "zona-merinding", "event"
+}
+
+const {
+  variant = "light",
+  className = "",
+  sourceContext = "beranda",
+} = Astro.props;
+
+const product = {
+  name: "SUBURIN",
+  tagline: "Pupuk Kompos Organik Padat KPA Trinawa Bhuwana SMAN 39",
+  badge: "100% Organik & Ramah Lingkungan",
+  price: "Rp 20.000",
+  weight: "1 KG",
+  link: "/suburin",
+  tokopediaUrl: "https://www.tokopedia.com/trinawa-bhuwana/pupuk-oraganik-padat-suburin-1736266214698616176?extParam=src%3Dshop%26whid%3D21598672",
+  whatsappUrl: "https://api.whatsapp.com/send?phone=6281388838116&text=Halo%20Admin%20Trinawa%20Bhuwana%2C%20saya%20tertarik%20pesan%20Pupuk%20Organik%20Padat%20Suburin.",
+  image: "/images/suburin.jpg",
+};
+
+// Styling variant
+const isDark = variant === "dark";
+---
+
+<div class={`w-full max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop my-6 md:my-8 ${className}`}>
+  <!-- Leaderboard Container (Dimensi Standar Banner Leaderboard: responsive 728x90 -> 970x90/250) -->
+  <div
+    class:list={[
+      "relative w-full rounded-2xl md:rounded-3xl overflow-hidden border transition-all duration-300 shadow-md hover:shadow-xl group",
+      isDark
+        ? "bg-gradient-to-r from-[#120303] via-[#1a0a05] to-[#0d160f] border-red-900/40 hover:border-emerald-500/50"
+        : "bg-gradient-to-r from-emerald-950 via-[#064e3b] to-[#04342b] border-emerald-700/40 hover:border-[#FF8000]/60",
+    ]}
+  >
+    <!-- Background Watermark / Decorative Gradients -->
+    <div class="absolute -right-16 -top-16 w-64 h-64 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none group-hover:scale-125 transition-transform duration-700"></div>
+    <div class="absolute left-1/3 -bottom-16 w-56 h-56 bg-[#FF8000]/15 rounded-full blur-2xl pointer-events-none"></div>
+
+    <!-- Banner Inner Layout: Leaderboard Strip -->
+    <div class="relative z-10 px-4 py-3 sm:px-6 sm:py-4 md:py-3.5 flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4">
+      
+      <!-- Left: Thumbnail & Main Pitch -->
+      <div class="flex items-center gap-3 sm:gap-4 w-full md:w-auto flex-1 min-w-0">
+        <!-- Badge Sponsor / Iklan -->
+        <div class="hidden sm:flex flex-col items-center justify-center shrink-0">
+          <span class="text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded bg-white/10 text-white/60 border border-white/10">
+            Iklan
+          </span>
+        </div>
+
+        <!-- Product Image Thumbnail -->
+        <a href={product.link} class="shrink-0 relative overflow-hidden rounded-xl border border-white/20 shadow-md group/img">
+          <img
+            src={product.image}
+            alt={product.name}
+            class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-14 object-cover object-center group-hover/img:scale-110 transition-transform duration-300"
+            loading="lazy"
+          />
+          <div class="absolute bottom-0 inset-x-0 bg-black/60 backdrop-blur-xs py-0.5 text-center">
+            <span class="text-[9px] font-extrabold text-emerald-300 leading-none">
+              {product.weight}
+            </span>
+          </div>
+        </a>
+
+        <!-- Copywriting & Headlines -->
+        <div class="flex flex-col min-w-0 flex-1">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-400/20 text-emerald-300 border border-emerald-400/30">
+              {product.badge}
+            </span>
+            <span class="text-[11px] font-black uppercase tracking-wider text-[#FF8000] hidden lg:inline-flex items-center gap-1">
+              <span class="material-symbols-outlined text-[13px]">eco</span>
+              Karya Siswa TNB SMAN 39
+            </span>
+          </div>
+
+          <a href={product.link} class="group-hover:text-[#FF8000] transition-colors mt-0.5">
+            <h4 class="text-sm sm:text-base md:text-lg font-black text-white uppercase tracking-tight truncate leading-tight">
+              Pupuk Daun <span class="text-[#FF8000]">{product.name}</span> &bull; Tanah Subur, Tanaman Makmur
+            </h4>
+          </a>
+
+          <p class="text-[11px] sm:text-xs text-white/75 truncate leading-snug">
+            {product.tagline} &bull; Fermentasi alami daun sekolah tanpa kimia sintetis.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: Price & CTA Actions (Leaderboard Right Deck) -->
+      <div class="flex items-center justify-between md:justify-end gap-3 sm:gap-4 w-full md:w-auto shrink-0 pt-2 md:pt-0 border-t md:border-t-0 border-white/10">
+        <!-- Pricing Info -->
+        <div class="flex flex-col text-left md:text-right">
+          <span class="text-[10px] text-white/60 font-semibold uppercase tracking-wider leading-none">Harga Kompos</span>
+          <span class="text-base sm:text-lg md:text-xl font-black text-[#FF8000] leading-tight">
+            {product.price}
+          </span>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex items-center gap-2">
+          <!-- Detail Link -->
+          <a
+            href={product.link}
+            class="px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider transition-all border border-white/15 flex items-center gap-1"
+          >
+            <span>Detail</span>
+          </a>
+
+          <!-- Tokopedia CTA -->
+          <a
+            href={product.tokopediaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black uppercase tracking-wider transition-all shadow-md shadow-emerald-500/20 hover:scale-105 active:scale-95 flex items-center gap-1.5"
+            title="Beli Sekarang di Tokopedia"
+          >
+            <span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+            <span class="hidden sm:inline">Beli di</span>
+            <span>Tokopedia</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

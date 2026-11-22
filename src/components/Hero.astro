@@ -1,0 +1,354 @@
+---
+const slides = [
+  {
+    id: 1,
+    tag: "Ekspedisi Semeru",
+    headlineWhite: "Mendaki Prestasi,\u00a0",
+    headlineOrange: "Solid Berorganisasi",
+    desc1:
+      "Kami percaya bahwa alam bebas adalah ruang kelas terbaik untuk membentuk karakter generasi muda. Di Trinawa Bhuwana, perjalanan menyusuri gunung, hutan, pantai, hingga lorong gua bukan sekadar petualangan fisik—melainkan proses belajar menata diri, mengambil keputusan di bawah tekanan, dan merawat kelestarian bumi.",
+    desc2:
+      "Melalui tantangan di alam terbuka, setiap anggota ditempa untuk memiliki mental survival yang tangguh dan solidaritas tanpa batas. Nilai-nilai lapangan inilah yang kami bawa pulang ke ruang sekretariat: membangun manajemen organisasi yang solid, disiplin, dan siap mendaki prestasi di berbagai ajang kepencintaalaman maupun pengembangan diri.",
+    ctaText: "Gabung Bersama Kami",
+    ctaLink: "#pendaftaran",
+    mountainName: "G. Semeru 3.676 mdpl",
+    bgImage: "/images/hero-ranukumbolo.jpg",
+    bgPosition: "object-[center_30%]",
+    altText: "Ekspedisi Trinawa Bhuwana SMAN 39 Jakarta di Ranu Kumbolo Gunung Semeru",
+  },
+  {
+    id: 2,
+    tag: "Ekspedisi Slamet",
+    headlineWhite: "Jejak Rimba,\u00a0",
+    headlineOrange: "Penempaan Jiwa Ksatria",
+    desc1:
+      "Berdiri kokoh di atap Jawa Tengah, kawah puncak Gunung Slamet menjadi saksi bisu keteguhan tekad dan kedisiplinan regu pendaki Trinawa Bhuwana. Menembus terjalnya pasir batuan vulkanik, angin kencang, dan suhu ekstrem menguji batas kemampuan setiap individu.",
+    desc2:
+      "Di sinilah arti sejati persaudaraan diuji: tak ada yang tertinggal di belakang, saling menjaga keselamatan langkah kawan, serta menjunjung tinggi kode etik pecinta alam demi melahirkan insan tangguh berjiwa ksatria bagi almamater SMAN 39 Jakarta.",
+    ctaText: "Lihat Catatan Ekspedisi",
+    ctaLink: "#berita",
+    mountainName: "G. Slamet 3.428 mdpl",
+    bgImage: "/images/hero-slamet.jpg",
+    bgPosition: "object-[center_20%]",
+    altText: "Tim Pendaki Trinawa Bhuwana SMAN 39 Jakarta di Puncak Gunung Slamet",
+  },
+];
+---
+
+<section
+  id="hero-slider"
+  class="relative w-full min-h-[660px] sm:min-h-[720px] lg:min-h-[780px] flex flex-col justify-between pt-28 pb-10 sm:pt-36 sm:pb-14 overflow-hidden text-white bg-black select-none"
+  aria-label="Banner Ekspedisi Trinawa Bhuwana"
+>
+  <!-- Full-Width Background Slides (Transition strictly via opacity crossfade, NO SCALE JUMP) -->
+  {slides.map((slide, index) => (
+    <img
+      id={`bg-slide-${index}`}
+      class:list={[
+        "hero-bg-img absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out",
+        slide.bgPosition,
+        index === 0 ? "opacity-100" : "opacity-0 pointer-events-none"
+      ]}
+      alt={slide.altText}
+      src={slide.bgImage}
+      loading={index === 0 ? "eager" : "lazy"}
+    />
+  ))}
+
+  <!-- Atmospheric Dark Overlays (Darker on Left & Bottom for Maximum Contrast) -->
+  <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/25 pointer-events-none z-1"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-black/40 pointer-events-none z-1"></div>
+
+  <!-- Content Container (Keeps text comfortably aligned within max-w-[1440px]) -->
+  <div class="relative z-10 w-full max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex flex-col justify-between flex-1">
+    
+    <!-- Dynamic Sliding Content Stack -->
+    <div class="relative w-full pt-4 sm:pt-6 min-h-[360px] sm:min-h-[380px]">
+      {slides.map((slide, index) => (
+        <div
+          id={`content-slide-${index}`}
+          class:list={[
+            "hero-content-slide w-full flex flex-col items-start transition-all duration-700 ease-out",
+            index === 0
+              ? "relative opacity-100 translate-y-0 pointer-events-auto"
+              : "absolute inset-0 opacity-0 translate-y-4 pointer-events-none"
+          ]}
+        >
+          <!-- Top Badge -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-white border border-white/20 mb-4 sm:mb-6 shadow-sm">
+            <span
+              class="material-symbols-outlined text-[16px] text-[#FF8000]"
+              style="font-variation-settings: 'FILL' 1;"
+            >
+              eco
+            </span>
+            <span class="font-label-caps text-label-caps uppercase tracking-wider font-bold text-white text-xs">
+              KELOMPOK PECINTA ALAM SMAN 39 &bull; {slide.tag}
+            </span>
+          </div>
+
+          <!-- Main Bold Headline (H1, uppercase, no underline) -->
+          <h1 class="font-display-hero text-[28px] leading-[32px] sm:text-5xl sm:leading-tight lg:text-[56px] lg:leading-[1.12] text-white tracking-tight mb-4 sm:mb-6 uppercase font-extrabold drop-shadow-md max-w-4xl">
+            <span class="text-white">{slide.headlineWhite}</span>
+            <br class="hidden sm:inline" />
+            <span class="text-[#FF8000] uppercase">{slide.headlineOrange}</span>
+          </h1>
+
+          <!-- Subheadline Paragraph (1 Paragraph default + Expand Toggle) -->
+          <div class="font-body-md text-[14px] text-white/95 leading-relaxed max-w-2xl drop-shadow-sm mb-6 sm:mb-8">
+            <p class="text-white/95">{slide.desc1}</p>
+            
+            <!-- Expandable 2nd Paragraph -->
+            <div id={`desc-more-${index}`} class="hidden pt-3 text-white/90 space-y-2 border-t border-white/15 mt-3">
+              <p>{slide.desc2}</p>
+            </div>
+
+            <!-- Expand Toggle Button -->
+            <button
+              type="button"
+              class="expand-desc-btn inline-flex items-center gap-1.5 text-xs font-bold text-[#FF8000] hover:text-white transition-colors cursor-pointer pt-2 focus:outline-none"
+              data-target={`desc-more-${index}`}
+            >
+              <span class="btn-label">Selengkapnya</span>
+              <span class="material-symbols-outlined text-[16px] btn-icon transition-transform duration-200">expand_more</span>
+            </button>
+          </div>
+
+          <!-- Action Area: CTA Button on Left & Mountain Box Aligned to Right -->
+          <div class="w-full flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-auto">
+            <a
+              href={slide.ctaLink}
+              class="inline-flex items-center gap-2 px-7 sm:px-9 py-3 rounded-full bg-white text-black font-extrabold text-sm hover:bg-[#FF8000] hover:text-white transition-all shadow-xl active:scale-95 group self-start sm:self-auto"
+            >
+              <span>{slide.ctaText}</span>
+              <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">
+                arrow_forward
+              </span>
+            </a>
+
+            <!-- Box Nama Gunung (Aligned to Right) -->
+            <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white shadow-lg self-start sm:self-auto sm:ml-auto">
+              <span class="material-symbols-outlined text-[18px] text-[#FF8000]">
+                landscape
+              </span>
+              <span class="text-xs font-semibold text-white/95">
+                {slide.mountainName}
+              </span>
+              <span class="text-white/40">&bull;</span>
+              <span class="text-[#FF8000] font-bold tracking-wider uppercase text-[10px] bg-[#FF8000]/20 px-2 py-0.5 rounded-full border border-[#FF8000]/30">
+                Terverifikasi
+              </span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Fixed Bottom Bar: 3 Stats (STATIC / NEVER SHIFTS) + Slider Navigation Controls -->
+    <div class="pt-8 mt-10 sm:mt-14 flex flex-col md:flex-row md:items-end justify-between gap-6 border-t border-white/20">
+      
+      <!-- Left: 3 Fixed Numbers / Stats (TIDAK BERGESER) -->
+      <div class="flex flex-wrap items-center gap-8 sm:gap-14 text-white">
+        <div class="flex flex-col">
+          <span class="text-xs uppercase tracking-wider text-white/75 font-semibold mb-1">
+            Regenerasi Aktif
+          </span>
+          <span class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white font-display">
+            30+
+          </span>
+        </div>
+
+        <div class="flex flex-col">
+          <span class="text-xs uppercase tracking-wider text-white/75 font-semibold mb-1">
+            Jejaring Insan
+          </span>
+          <span class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white font-display">
+            450+
+          </span>
+        </div>
+
+        <div class="flex flex-col">
+          <span class="text-xs uppercase tracking-wider text-white/75 font-semibold mb-1">
+            Jejak Langkah
+          </span>
+          <span class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white font-display">
+            50+
+          </span>
+        </div>
+      </div>
+
+      <!-- Right: Slider Nav Controls (Prev / Next & Indicators) -->
+      <div class="flex items-center gap-4 self-start md:self-auto">
+        <!-- Slide indicators (dots) -->
+        <div class="flex items-center gap-2">
+          {slides.map((_, index) => (
+            <button
+              type="button"
+              class:list={[
+                "hero-dot h-2 rounded-full transition-all duration-300 cursor-pointer",
+                index === 0 ? "w-8 bg-[#FF8000]" : "w-2 bg-white/40 hover:bg-white/70"
+              ]}
+              data-index={index}
+              aria-label={`Pindah ke Slide ${index + 1}`}
+            ></button>
+          ))}
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex items-center gap-1.5 ml-2">
+          <button
+            id="hero-prev-btn"
+            type="button"
+            class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/25 active:scale-95 border border-white/20 flex items-center justify-center text-white transition-all backdrop-blur-sm cursor-pointer"
+            aria-label="Slide Sebelumnya"
+          >
+            <span class="material-symbols-outlined text-[20px]">chevron_left</span>
+          </button>
+          <button
+            id="hero-next-btn"
+            type="button"
+            class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/25 active:scale-95 border border-white/20 flex items-center justify-center text-white transition-all backdrop-blur-sm cursor-pointer"
+            aria-label="Slide Selanjutnya"
+          >
+            <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Interactive Slide Banner & Expand Script -->
+<script>
+  function setupHeroSlider() {
+    const totalSlides = 2;
+    let currentSlide = 0;
+    let autoPlayTimer: any = null;
+
+    const bgSlides = document.querySelectorAll('.hero-bg-img');
+    const contentSlides = document.querySelectorAll('.hero-content-slide');
+    const dots = document.querySelectorAll('.hero-dot');
+    const prevBtn = document.getElementById('hero-prev-btn');
+    const nextBtn = document.getElementById('hero-next-btn');
+    const sliderContainer = document.getElementById('hero-slider');
+
+    // Setup Expand/Collapse buttons
+    const expandButtons = document.querySelectorAll('.expand-desc-btn');
+    expandButtons.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const targetId = btn.getAttribute('data-target');
+        if (!targetId) return;
+        const targetEl = document.getElementById(targetId);
+        const label = btn.querySelector('.btn-label');
+        const icon = btn.querySelector('.btn-icon');
+
+        if (targetEl) {
+          const isHidden = targetEl.classList.contains('hidden');
+          if (isHidden) {
+            targetEl.classList.remove('hidden');
+            if (label) label.textContent = 'Tutup';
+            if (icon) icon.textContent = 'expand_less';
+          } else {
+            targetEl.classList.add('hidden');
+            if (label) label.textContent = 'Selengkapnya';
+            if (icon) icon.textContent = 'expand_more';
+          }
+        }
+      });
+    });
+
+    function goToSlide(index: number) {
+      currentSlide = (index + totalSlides) % totalSlides;
+
+      // Update background images (strictly crossfade opacity, NO SCALE JUMP)
+      bgSlides.forEach((img, i) => {
+        if (i === currentSlide) {
+          img.classList.remove('opacity-0', 'pointer-events-none');
+          img.classList.add('opacity-100');
+        } else {
+          img.classList.remove('opacity-100');
+          img.classList.add('opacity-0', 'pointer-events-none');
+        }
+      });
+
+      // Update contents
+      contentSlides.forEach((content, i) => {
+        if (i === currentSlide) {
+          content.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none', 'absolute', 'inset-0');
+          content.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto', 'relative');
+        } else {
+          content.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto', 'relative');
+          content.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none', 'absolute', 'inset-0');
+        }
+      });
+
+      // Update dots
+      dots.forEach((dot, i) => {
+        if (i === currentSlide) {
+          dot.classList.remove('w-2', 'bg-white/40');
+          dot.classList.add('w-8', 'bg-[#FF8000]');
+        } else {
+          dot.classList.remove('w-8', 'bg-[#FF8000]');
+          dot.classList.add('w-2', 'bg-white/40');
+        }
+      });
+    }
+
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentSlide - 1);
+    }
+
+    function startAutoPlay() {
+      stopAutoPlay();
+      autoPlayTimer = setInterval(nextSlide, 7000);
+    }
+
+    function stopAutoPlay() {
+      if (autoPlayTimer) {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = null;
+      }
+    }
+
+    // Event listeners
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        startAutoPlay();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        startAutoPlay();
+      });
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const targetIndex = Number(dot.getAttribute('data-index'));
+        goToSlide(targetIndex);
+        startAutoPlay();
+      });
+    });
+
+    if (sliderContainer) {
+      sliderContainer.addEventListener('mouseenter', stopAutoPlay);
+      sliderContainer.addEventListener('mouseleave', startAutoPlay);
+    }
+
+    startAutoPlay();
+  }
+
+  // Initialize on load and Astro page transitions
+  setupHeroSlider();
+  document.addEventListener('astro:after-swap', setupHeroSlider);
+</script>

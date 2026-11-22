@@ -1,0 +1,74 @@
+---
+import { allTestimonials } from "../data/testimonials";
+
+const testimonials = allTestimonials;
+---
+
+{testimonials.length > 0 && (
+  <section class="w-full py-space-2xl bg-surface-container-low border-b border-outline-variant/30">
+    <div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md">
+        <div class="flex flex-col max-w-xl">
+          <span class="font-label-caps text-label-caps uppercase tracking-wider text-primary font-bold">
+            Persaudaraan Rimba
+          </span>
+          <h2 class="font-headline-lg text-headline-lg text-black tracking-tight mt-space-xs font-extrabold uppercase">
+            Kata Mereka bareng Trinawa Bhuwana
+          </h2>
+          <p class="font-body-md text-black mt-space-xs text-[14px]">
+            Pengalaman berharga yang melatih ketahanan mental, kepemimpinan nyata,
+            dan ikatan silaturahmi yang tidak pudar oleh waktu.
+          </p>
+        </div>
+
+        <a
+          href="/testimoni"
+          class="inline-flex items-center gap-1.5 text-primary font-bold text-sm hover:underline group shrink-0"
+        >
+          <span>Lihat Semua Testimoni</span>
+          <span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">
+            arrow_forward
+          </span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+        {testimonials.map((item) => (
+          <div class="flex flex-col p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm relative border border-outline-variant/30 hover:shadow-md transition-shadow">
+            <span
+              class="material-symbols-outlined text-[36px] text-primary-fixed mb-space-sm"
+            >
+              format_quote
+            </span>
+            <p class="font-body-md text-black leading-relaxed flex-1 mb-space-lg italic">
+              "{item.quote}"
+            </p>
+            <div class="flex items-center gap-space-sm pt-space-sm bg-surface-container-low/60 p-2.5 rounded-xl border border-outline-variant/20">
+              <!-- Foto Profil Langsung dari Google Drive -->
+              {item.avatar ? (
+                <img
+                  src={item.avatar}
+                  alt={item.name}
+                  class="w-12 h-12 rounded-full object-cover border-2 border-primary/20 shadow-xs"
+                  loading="lazy"
+                />
+              ) : (
+                <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm shadow-xs border border-primary/20">
+                  <span class="material-symbols-outlined text-[24px]">person</span>
+                </div>
+              )}
+              <div class="flex flex-col">
+                <span class="font-title-md text-sm text-on-surface font-black uppercase">
+                  {item.name}
+                </span>
+                <span class="font-body-sm text-xs text-on-surface-variant font-medium">
+                  {item.role}
+                </span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

@@ -1,0 +1,98 @@
+---
+const pillars = [
+  {
+    div: "Divisi 01",
+    title: "Mountaineering",
+    icon: "hiking",
+    colorBg: "bg-primary-fixed",
+    colorText: "text-primary",
+    desc: "Navigasi darat (kompas & peta resection/intersection), survival rintangan cuaca, manajemen logistik pendakian jangka panjang, dan etika Leave No Trace.",
+    badge: "Navrat • Survival • Bivak",
+    badgeIconColor: "text-primary",
+  },
+  {
+    div: "Divisi 02",
+    title: "Rock Climbing",
+    icon: "terrain",
+    colorBg: "bg-secondary-fixed",
+    colorText: "text-secondary",
+    desc: "Penguasaan tali-temali (knotting), artificial & lead climbing pada tebing alam, teknik rapelling, ascending, serta pengoperasian sistem keamanan belaying.",
+    badge: "Single Pitch • Anchoring • SRT",
+    badgeIconColor: "text-secondary",
+  },
+  {
+    div: "Divisi 03",
+    title: "Caving (Susur Gua)",
+    icon: "flash_on",
+    colorBg: "bg-tertiary-fixed",
+    colorText: "text-tertiary",
+    desc: "Penjelajahan lorong speleologi horizontal maupun vertikal, pemetaan gua karst bawah tanah, observasi biospeleologi, dan mitigasi bahaya ruang tertutup.",
+    badge: "Speleologi • Rigging • Pemetaan",
+    badgeIconColor: "text-tertiary",
+  },
+  {
+    div: "Divisi 04",
+    title: "Konservasi Alam",
+    icon: "park",
+    colorBg: "bg-primary-fixed-dim",
+    colorText: "text-on-primary-fixed",
+    desc: "Aksi reboisasi mata air pegunungan, pembersihan jalur sampah plastik, kampanye ekologis sekolah adiwiyata, dan advokasi keanekaragaman hayati flora-fauna.",
+    badge: "Reboisasi • Edukasi • Ekosistem",
+    badgeIconColor: "text-primary",
+  },
+];
+---
+
+<section id="profil" class="w-full py-space-2xl bg-surface">
+  <div class="max-w-[1440px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md">
+      <div class="flex flex-col max-w-xl">
+        <div class="inline-flex items-center gap-space-xs text-primary font-label-caps text-label-caps uppercase tracking-wider mb-space-xs font-bold">
+          <span class="material-symbols-outlined text-[16px]">military_tech</span>
+          <span>Spesialisasi Lapangan</span>
+        </div>
+        <h2 class="font-headline-lg text-headline-lg text-black tracking-tight font-extrabold uppercase">
+          4 Pilar Keahlian Rimba &amp; Kepedulian
+        </h2>
+        <p class="font-body-md text-black mt-space-xs text-[14px]">
+          Kurikulum lapangan komprehensif yang membentuk ketahanan fisik, ketajaman navigasi, dan etika kepencintaalaman berstandar keselamatan tinggi.
+        </p>
+      </div>
+
+      <a
+        class="inline-flex items-center gap-space-xs text-primary hover:text-primary-container font-semibold text-sm transition-colors group"
+        href="#kurikulum"
+      >
+        <span>Lihat Kurikulum Lapangan</span>
+        <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+      </a>
+    </div>
+
+    <!-- Bento Grid 4 Pillars -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+      {pillars.map((pillar) => (
+        <div class="flex flex-col bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm hover:shadow-md transition-all border border-outline-variant/30 group hover:-translate-y-1 duration-200">
+          <div class={`w-12 h-12 rounded-xl ${pillar.colorBg} flex items-center justify-center ${pillar.colorText} mb-space-md group-hover:scale-110 transition-transform shadow-xs`}>
+            <span class="material-symbols-outlined text-[28px]">{pillar.icon}</span>
+          </div>
+          <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider font-semibold">
+            {pillar.div}
+          </span>
+          <h3 class="font-headline-sm text-headline-sm text-black mt-1 mb-space-xs font-extrabold uppercase">
+            {pillar.title}
+          </h3>
+          <p class="font-body-sm text-black leading-relaxed mb-space-md flex-1">
+            {pillar.desc}
+          </p>
+          <div class="flex items-center gap-space-xs text-on-surface-variant font-label-caps text-label-caps pt-space-sm bg-surface-container-low px-space-sm py-1.5 rounded-lg border border-outline-variant/20">
+            <span class={`material-symbols-outlined text-[16px] ${pillar.badgeIconColor}`}>check_circle</span>
+            <span class="font-medium">{pillar.badge}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

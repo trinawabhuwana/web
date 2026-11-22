@@ -1,0 +1,246 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const product = {
+  title: "Pupuk Organik Padat - Suburin",
+  subtitle: "Kompos Daun Alami Hasil Karya Lestari Siswa KPA Trinawa Bhuwana SMAN 39 Jakarta",
+  price: "Rp 20.000",
+  weight: "1 KG (Netto)",
+  type: "Pupuk Organik Padat (Kompos Daun)",
+  material: "Daun Kering Pilihan (Fermentasi Optimal)",
+  producer: "Kelompok Pecinta Alam Trinawa Bhuwana SMAN 39 Jakarta",
+  image: "/images/suburin.jpg",
+  tokopediaUrl: "https://www.tokopedia.com/trinawa-bhuwana/pupuk-oraganik-padat-suburin-1736266214698616176?extParam=src%3Dshop%26whid%3D21598672&aff_unique_id=&channel=others&chain_key=",
+  whatsappUrl: "https://api.whatsapp.com/send?phone=6281388838116&text=Halo%20Admin%20Trinawa%20Bhuwana%2C%20saya%20tertarik%20pesan%20Pupuk%20Organik%20Padat%20Suburin.",
+};
+
+const benefits = [
+  {
+    icon: "agriculture",
+    title: "Memperbaiki Struktur Tanah",
+    desc: "Membuat tanah pekarangan atau pot menjadi lebih gembur, berpori, dan tidak mudah memadat.",
+  },
+  {
+    icon: "compost",
+    title: "Meningkatkan Kesuburan Alami",
+    desc: "Mengembalikan unsur hara mikro dan makro alami yang sangat dibutuhkan oleh jaringan tanaman.",
+  },
+  {
+    icon: "spa",
+    title: "Mendorong Pertumbuhan Akar",
+    desc: "Membantu akar serabut berkembang kuat menembus media tanam dan menyerap nutrisi dengan optimal.",
+  },
+  {
+    icon: "water_drop",
+    title: "Menjaga Kelembapan Media",
+    desc: "Mengikat air tanah lebih tahan lama sehingga tanaman kesayangan tidak mudah layu saat cuaca terik.",
+  },
+  {
+    icon: "eco",
+    title: "100% Organik & Aman",
+    desc: "Bebas bahan kimia sintetis keras. Sangat aman bagi anabul (hewan peliharaan), anak-anak, dan ekosistem bumi.",
+  },
+  {
+    icon: "volunteer_activism",
+    title: "Dukungan Gerakan Nol Sampah",
+    desc: "Setiap pembelian mendukung aksi nyata siswa pecinta alam dalam mengolah sampah dedaunan sekolah secara sirkular.",
+  },
+];
+---
+
+<Layout
+  title="Pupuk Organik Padat Suburin - KPA Trinawa Bhuwana SMAN 39 Jakarta"
+  description="Suburin: Pupuk kompos daun organik hasil olahan mandiri siswa KPA Trinawa Bhuwana SMAN 39 Jakarta. 100% alami, menyuburkan tanah pekarangan dan tanaman."
+  image="/images/suburin.jpg"
+>
+  <main class="w-full pt-20 bg-surface">
+    <!-- HERO BREADCRUMB & HEADER -->
+    <section class="relative w-full py-10 md:py-14 px-4 md:px-8 lg:px-12 bg-surface overflow-hidden border-b border-outline-variant/30">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20"></div>
+      <div class="absolute bottom-0 left-0 w-80 h-80 bg-secondary/5 rounded-full blur-2xl pointer-events-none -ml-16 -mb-16"></div>
+
+      <div class="max-w-[1440px] mx-auto relative z-10">
+        <!-- Breadcrumb -->
+        <div class="flex items-center gap-2 mb-4">
+          <a href="/" class="text-xs text-on-surface-variant hover:text-primary transition-colors">Beranda</a>
+          <span class="text-on-surface-variant/40 text-xs">/</span>
+          <span class="text-xs text-on-surface-variant">Produk</span>
+          <span class="text-on-surface-variant/40 text-xs">/</span>
+          <span class="text-xs font-semibold text-primary">Suburin</span>
+        </div>
+
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-800 dark:text-emerald-300 text-xs font-bold uppercase tracking-wider mb-3">
+              <span class="material-symbols-outlined text-[16px]">eco</span>
+              <span>Produk Ramah Lingkungan Resmi TNB</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-on-surface tracking-tight uppercase">
+              Suburin <span class="text-primary font-bold lowercase text-2xl sm:text-3xl">(Kompos Daun)</span>
+            </h1>
+            <p class="text-sm sm:text-base text-on-surface-variant max-w-2xl mt-2 leading-relaxed">
+              {product.subtitle}
+            </p>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <span class="px-3.5 py-1.5 rounded-xl bg-surface-container-high text-xs font-bold text-on-surface flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+              100% Organik
+            </span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-surface-container-high text-xs font-bold text-on-surface flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[18px] text-secondary">recycling</span>
+              Pengolahan Mandiri
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT SHOWCASE SECTION -->
+    <section class="w-full py-12 md:py-16 px-4 md:px-8 lg:px-12 bg-surface">
+      <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        
+        <!-- Left Column: Product Gallery & Image -->
+        <div class="lg:col-span-5 flex flex-col gap-4">
+          <div class="relative w-full aspect-square bg-[#065143]/5 rounded-3xl overflow-hidden border border-[#065143]/20 shadow-xl group">
+            <img
+              src={product.image}
+              alt={product.title}
+              class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+            />
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1.5 rounded-xl bg-[#065143] text-white font-extrabold text-xs uppercase tracking-wider shadow-lg flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[16px] text-[#FF8000]">compost</span>
+                Pouch 1 KG
+              </span>
+            </div>
+            <div class="absolute bottom-4 right-4">
+              <span class="px-3 py-1 rounded-lg bg-black/75 backdrop-blur-md text-white text-[11px] font-medium flex items-center gap-1">
+                <span class="material-symbols-outlined text-[14px] text-[#FF8000]">photo_camera</span>
+                Foto Kemasan Asli
+              </span>
+            </div>
+          </div>
+
+          <!-- Direct Order Buttons -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            <a
+              href={product.tokopediaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-[#03AC0E] hover:bg-[#02960c] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all active:scale-[0.98] group"
+            >
+              <span class="material-symbols-outlined text-[20px]">storefront</span>
+              <span>Beli di Tokopedia</span>
+              <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-0.5">open_in_new</span>
+            </a>
+
+            <a
+              href={product.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-[#065143] hover:bg-[#04342b] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all active:scale-[0.98]"
+            >
+              <span class="material-symbols-outlined text-[20px] text-[#FF8000]">chat</span>
+              <span>Pesan via WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Product Detail & Specifications -->
+        <div class="lg:col-span-7 flex flex-col gap-6">
+          <!-- Price & Title Card -->
+          <div class="bg-surface-container-low p-6 sm:p-8 rounded-3xl border border-outline-variant/30 flex flex-col gap-4">
+            <div class="flex flex-wrap items-baseline justify-between gap-2 border-b border-outline-variant/20 pb-4">
+              <div>
+                <span class="text-xs uppercase font-bold text-on-surface-variant tracking-wider">Harga Produk</span>
+                <div class="text-3xl sm:text-4xl font-black text-[#FF8000] tracking-tight mt-1">
+                  {product.price}
+                  <span class="text-xs font-semibold text-on-surface-variant text-base">/ kemasan 1 kg</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-1.5 text-xs font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-500/15 px-3 py-1.5 rounded-lg">
+                <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                <span>Stok Tersedia</span>
+              </div>
+            </div>
+
+            <!-- Story / Context -->
+            <div class="text-sm text-on-surface leading-relaxed flex flex-col gap-3">
+              <p>
+                <strong>Ingin tanaman di rumah tumbuh lebat, subur, dan sehat secara alami?</strong> Kenalin nih, <strong>Suburin</strong>, Pupuk Organik Padat (Kompos Daun) andalan untuk kebun kesayanganmu!
+              </p>
+              <p class="text-on-surface-variant">
+                Seperti yang terlihat pada kemasan pouch, produk ini sangat istimewa karena merupakan hasil karya dan dedikasi adik-adik serta alumni <strong>Kelompok Pecinta Alam Trinawa Bhuwana SMAN 39 Cijantung, Jakarta Timur</strong>. Dengan menggunakan pupuk ini, kamu tidak hanya merawat tanamanmu, tapi juga mendukung aksi nyata generasi muda dalam menjaga kelestarian lingkungan dan mengelola sampah organik secara mandiri!
+              </p>
+            </div>
+
+            <!-- Key Specifications Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+              <div class="p-3 bg-surface-container rounded-xl flex flex-col">
+                <span class="text-[11px] uppercase font-bold text-on-surface-variant">Berat Bersih</span>
+                <span class="text-sm font-bold text-on-surface mt-0.5">{product.weight}</span>
+              </div>
+              <div class="p-3 bg-surface-container rounded-xl flex flex-col">
+                <span class="text-[11px] uppercase font-bold text-on-surface-variant">Jenis Pupuk</span>
+                <span class="text-sm font-bold text-on-surface mt-0.5">Kompos Organik Padat</span>
+              </div>
+              <div class="p-3 bg-surface-container rounded-xl flex flex-col col-span-2 sm:col-span-1">
+                <span class="text-[11px] uppercase font-bold text-on-surface-variant">Bahan Baku</span>
+                <span class="text-sm font-bold text-on-surface mt-0.5">Daun Kering Pilihan</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefits Card -->
+          <div class="bg-surface-container-low p-6 sm:p-8 rounded-3xl border border-outline-variant/30 flex flex-col gap-4">
+            <h2 class="text-lg font-extrabold uppercase text-on-surface tracking-wider flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-[22px]">verified</span>
+              Keunggulan &amp; Manfaat Suburin
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+              {benefits.map((item) => (
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-surface-container/60 hover:bg-surface-container transition-colors">
+                  <div class="w-9 h-9 rounded-xl bg-[#065143]/15 text-[#065143] dark:text-[#FF8000] flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">{item.icon}</span>
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="text-xs font-bold text-on-surface leading-snug">
+                      {item.title}
+                    </span>
+                    <span class="text-[11px] text-on-surface-variant mt-0.5 leading-relaxed">
+                      {item.desc}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Usage & Application Guide -->
+          <div class="p-6 bg-gradient-to-br from-[#065143]/10 to-[#FF8000]/10 rounded-3xl border border-[#065143]/20 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex flex-col gap-1.5 text-center sm:text-left">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-primary">Solusi Alami &amp; Berkelanjutan</span>
+              <h3 class="text-base font-extrabold text-on-surface uppercase leading-snug">
+                Cocok Untuk Segala Jenis Tanaman
+              </h3>
+              <p class="text-xs text-on-surface-variant max-w-lg leading-relaxed">
+                Sangat ideal untuk tanaman hias indoor/outdoor, pot monstera, tanaman sayuran hidro-organik, hingga pohon buah-buahan di pekarangan rumah Anda.
+              </p>
+            </div>
+            <a
+              href={product.tokopediaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="shrink-0 px-6 py-3 rounded-xl bg-[#FF8000] hover:bg-[#e67300] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all"
+            >
+              Beli Sekarang (Rp 20.000)
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

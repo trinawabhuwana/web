@@ -1,0 +1,2874 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Silsilah Angkatan - KPA Trinawa Bhuwana SMAN 39 Jakarta">
+  <main class="w-full pt-20 bg-surface">
+    <div class="flex flex-col w-full">
+      <!-- SECTION 1: HEADER & STATISTIK RINGKAS -->
+      <section class="relative w-full py-16 px-4 md:px-8 lg:px-12 bg-surface overflow-hidden">
+        <!-- Topographic Accent Line & Glows -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-secondary/5 rounded-full blur-2xl pointer-events-none -ml-16 -mb-16"></div>
+        <div class="max-w-[1440px] mx-auto relative z-10">
+          <!-- Breadcrumb & Tag -->
+          <div class="flex items-center gap-2 mb-4">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-xs font-semibold uppercase tracking-wider">
+              <span class="material-symbols-outlined text-[15px]">
+                history_edu
+              </span>
+              Arsip Resmi
+            </span>
+            <span class="text-on-surface-variant/60 text-xs">
+              / Silsilah &amp; Tradisi
+            </span>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+            <div class="lg:col-span-8 flex flex-col gap-3">
+              <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-on-surface tracking-tight leading-tight">
+                Silsilah Angkatan <br class="hidden sm:inline" />
+                <span class="text-primary">Trinawa Bhuwana</span>
+              </h1>
+              <p class="text-base sm:text-lg text-on-surface-variant max-w-3xl leading-relaxed">
+                Menelusuri jejak langkah, nama kehormatan, dan riwayat lokasi
+                Pendidikan Dasar dari Angkatan 1 (1985) hingga Angkatan 33
+                (2016). Pilar tegak persaudaraan rimba SMAN 39 Jakarta.
+              </p>
+            </div>
+            <!-- Metric Stat Cards -->
+            <div class="lg:col-span-4 grid grid-cols-3 gap-3">
+              <div class="bg-surface-container-low rounded-xl p-4 shadow-sm flex flex-col justify-between">
+                <span class="text-xs uppercase font-bold text-on-surface-variant tracking-wider">
+                  Generasi
+                </span>
+                <div class="text-2xl sm:text-3xl font-black text-primary mt-2">
+                  33
+                </div>
+                <span class="text-[11px] text-on-surface-variant">
+                  Terdata resmi
+                </span>
+              </div>
+              <div class="bg-surface-container-low rounded-xl p-4 shadow-sm flex flex-col justify-between">
+                <span class="text-xs uppercase font-bold text-on-surface-variant tracking-wider">
+                  Dedikasi
+                </span>
+                <div class="text-2xl sm:text-3xl font-black text-secondary mt-2">
+                  31+
+                </div>
+                <span class="text-[11px] text-on-surface-variant">
+                  Tahun sejarah
+                </span>
+              </div>
+              <div class="bg-surface-container-low rounded-xl p-4 shadow-sm flex flex-col justify-between">
+                <span class="text-xs uppercase font-bold text-on-surface-variant tracking-wider">
+                  Semangat
+                </span>
+                <div class="text-2xl sm:text-3xl font-black text-tertiary mt-2">
+                  100%
+                </div>
+                <span class="text-[11px] text-on-surface-variant">
+                  Jiwa rimba
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 2: INTERACTIVE FILTER CONTROLS & SEARCH -->
+      <section class="sticky top-20 z-40 w-full py-4 px-4 md:px-8 lg:px-12 bg-surface/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <!-- Era Filter Tabs -->
+          <div
+            class="flex items-center gap-1.5 p-1 bg-surface-container rounded-xl overflow-x-auto w-full md:w-auto scrollbar-none"
+            id="era-tabs"
+          >
+            <button
+              class="era-btn px-4 py-2 text-xs font-semibold rounded-lg bg-primary text-on-primary shadow-sm whitespace-nowrap transition-all"
+              data-era="all"
+              type="button"
+            >
+              Semua (1–33)
+            </button>
+            <button
+              class="era-btn px-4 py-2 text-xs font-semibold rounded-lg text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-all"
+              data-era="perintis"
+              type="button"
+            >
+              Era Perintis (1985–1994)
+            </button>
+            <button
+              class="era-btn px-4 py-2 text-xs font-semibold rounded-lg text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-all"
+              data-era="penjelajah"
+              type="button"
+            >
+              Era Penjelajah (1995–2004)
+            </button>
+            <button
+              class="era-btn px-4 py-2 text-xs font-semibold rounded-lg text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-all"
+              data-era="konservasi"
+              type="button"
+            >
+              Era Konservasi (2005–2016)
+            </button>
+          </div>
+          <!-- Search Input Field -->
+          <div class="relative w-full md:w-80">
+            <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px] pointer-events-none">
+              search
+            </span>
+            <input
+              class="w-full h-11 pl-10 pr-4 bg-surface-container-lowest text-on-surface text-sm rounded-xl placeholder:text-on-surface-variant/60 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+              id="search-angkatan"
+              placeholder="Cari nama, kode (KP), tahun, lokasi..."
+              type="text"
+            />
+            <button
+              class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface"
+              id="clear-search"
+            >
+              <span class="material-symbols-outlined text-[18px]">close</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 3: VERTICAL TIMELINE OF 33 GENERATIONS -->
+      <section class="w-full py-12 px-4 md:px-8 lg:px-12 bg-surface">
+        <div class="max-w-[1440px] mx-auto">
+          <!-- Active Results Counter Bar -->
+          <div class="flex items-center justify-between mb-8 px-2">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+              <span
+                class="text-xs font-semibold uppercase tracking-wider text-on-surface-variant"
+                id="filtered-count"
+              >
+                Menampilkan 33 Angkatan
+              </span>
+            </div>
+            <div class="text-xs text-on-surface-variant hidden sm:flex items-center gap-3">
+              <span class="inline-flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-primary"></span> Diksar
+                Terverifikasi
+              </span>
+              <span class="inline-flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-secondary"></span>{" "}
+                Terdaftar di KPA SMAN 39
+              </span>
+            </div>
+          </div>
+          <!-- Vertical Timeline Wrapper -->
+          <div class="relative">
+            <!-- Central Spine Line -->
+            <div class="absolute left-6 md:left-1/2 top-4 bottom-4 w-0.5 bg-surface-container-highest -translate-x-1/2"></div>
+            <div class="space-y-6" id="timeline-list">
+              <!-- Item 1 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row items-start group"
+                data-angkatan="1"
+                data-code="kp"
+                data-era="perintis"
+                data-location="klapanunggal cibubur"
+                data-name="kabut perintis"
+                data-year="1985"
+              >
+                <div class="hidden md:flex w-1/2 pr-8 text-right flex-col items-end">
+                  <span class="text-xs font-bold text-primary tracking-widest uppercase">
+                    Era Perintis
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 1985
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Klapanunggal &amp; Cibubur
+                  </span>
+                </div>
+                <!-- Node Marker -->
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  01
+                </div>
+                <!-- Card Body -->
+                <div class="w-full md:w-1/2 pl-14 md:pl-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 1
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        KP
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">
+                      Kabut Perintis
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-primary">
+                          calendar_today
+                        </span>{" "}
+                        1985
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Klapanunggal &amp; Cibubur
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 2 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row-reverse items-start group"
+                data-angkatan="2"
+                data-code="sg"
+                data-era="perintis"
+                data-location="loji"
+                data-name="slayer gunung"
+                data-year="1985"
+              >
+                <div class="hidden md:flex w-1/2 pl-8 text-left flex-col items-start">
+                  <span class="text-xs font-bold text-primary tracking-widest uppercase">
+                    Era Perintis
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 1985
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Loji, Bogor
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  02
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pr-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 2
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        SG
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">
+                      Slayer Gunung
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-primary">
+                          calendar_today
+                        </span>{" "}
+                        1985
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Loji
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 3 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row items-start group"
+                data-angkatan="3"
+                data-code="jp"
+                data-era="perintis"
+                data-location="-"
+                data-name="jejak pelita"
+                data-year="1986"
+              >
+                <div class="hidden md:flex w-1/2 pr-8 text-right flex-col items-end">
+                  <span class="text-xs font-bold text-primary tracking-widest uppercase">
+                    Era Perintis
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 1986
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1">
+                    Dokumentasi Terarsip
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  03
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pl-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 3
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        JP
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">
+                      Jejak Pelita
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-primary">
+                          calendar_today
+                        </span>{" "}
+                        1986
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        -
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 4 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row-reverse items-start group"
+                data-angkatan="4"
+                data-code="pm"
+                data-era="perintis"
+                data-location="-"
+                data-name="pembaharuan muda"
+                data-year="1987"
+              >
+                <div class="hidden md:flex w-1/2 pl-8 text-left flex-col items-start">
+                  <span class="text-xs font-bold text-primary tracking-widest uppercase">
+                    Era Perintis
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 1987
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1">
+                    Dokumentasi Terarsip
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  04
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pr-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 4
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        PM
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">
+                      Pembaharuan Muda
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-primary">
+                          calendar_today
+                        </span>{" "}
+                        1987
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        -
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 5 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row items-start group"
+                data-angkatan="5"
+                data-code="al"
+                data-era="perintis"
+                data-location="kelapa nunggal tajur"
+                data-name="altar lumpur"
+                data-year="1988"
+              >
+                <div class="hidden md:flex w-1/2 pr-8 text-right flex-col items-end">
+                  <span class="text-xs font-bold text-primary tracking-widest uppercase">
+                    Era Perintis
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 1988
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Kelapa Nunggal &amp; Tajur
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  05
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pl-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 5
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        AL
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">
+                      Altar Lumpur
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-primary">
+                          calendar_today
+                        </span>{" "}
+                        1988
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Kelapa Nunggal &amp; Tajur
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 6 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row-reverse items-start group"
+                data-angkatan="6"
+                data-code="ab"
+                data-era="perintis"
+                data-location="tajur"
+                data-name="arung badai"
+                data-year="1989"
+              >
+                <div class="hidden md:flex w-1/2 pl-8 text-left flex-col items-start">
+                  <span class="text-xs font-bold text-primary tracking-widest uppercase">
+                    Era Perintis
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 1989
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Tajur, Bogor
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  06
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pr-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 6
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        AB
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">
+                      Arung Badai
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-primary">
+                          calendar_today
+                        </span>{" "}
+                        1989
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Tajur
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 7 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row items-start group"
+                data-angkatan="7"
+                data-code="tr"
+                data-era="perintis"
+                data-location="ciampea"
+                data-name="tapak rimba"
+                data-year="1990"
+              >
+                <div class="hidden md:flex w-1/2 pr-8 text-right flex-col items-end">
+                  <span class="text-xs font-bold text-primary tracking-widest uppercase">
+                    Era Perintis
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 1990
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Ciampea
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  07
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pl-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 7
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        TR
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">
+                      Tapak Rimba
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-primary">
+                          calendar_today
+                        </span>{" "}
+                        1990
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Ciampea
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 8 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row-reverse items-start group"
+                data-angkatan="8"
+                data-code="kb"
+                data-era="perintis"
+                data-location="cidahu"
+                data-name="kawah bhavana"
+                data-year="1991"
+              >
+                <div class="hidden md:flex w-1/2 pl-8 text-left flex-col items-start">
+                  <span class="text-xs font-bold text-primary tracking-widest uppercase">
+                    Era Perintis
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 1991
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Cidahu, Sukabumi
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  08
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pr-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 8
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        KB
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">
+                      Kawah Bhavana
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-primary">
+                          calendar_today
+                        </span>{" "}
+                        1991
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Cidahu
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 9 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row items-start group"
+                data-angkatan="9"
+                data-code="lw"
+                data-era="perintis"
+                data-location="cidahu"
+                data-name="lintas wana"
+                data-year="1992"
+              >
+                <div class="hidden md:flex w-1/2 pr-8 text-right flex-col items-end">
+                  <span class="text-xs font-bold text-primary tracking-widest uppercase">
+                    Era Perintis
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 1992
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Cidahu, Sukabumi
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  09
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pl-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 9
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        LW
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">
+                      Lintas Wana
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-primary">
+                          calendar_today
+                        </span>{" "}
+                        1992
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Cidahu
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 10 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row-reverse items-start group"
+                data-angkatan="10"
+                data-code="ar"
+                data-era="perintis"
+                data-location="gunung bunder"
+                data-name="agra ratu"
+                data-year="1993"
+              >
+                <div class="hidden md:flex w-1/2 pl-8 text-left flex-col items-start">
+                  <span class="text-xs font-bold text-primary tracking-widest uppercase">
+                    Era Perintis
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 1993
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Gunung Bunder
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  10
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pr-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 10
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        AR
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">
+                      Agra Ratu
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-primary">
+                          calendar_today
+                        </span>{" "}
+                        1993
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Gunung Bunder
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 11 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row items-start group"
+                data-angkatan="11"
+                data-code="tj"
+                data-era="perintis"
+                data-location="cidahu"
+                data-name="taraksa janggala"
+                data-year="1994"
+              >
+                <div class="hidden md:flex w-1/2 pr-8 text-right flex-col items-end">
+                  <span class="text-xs font-bold text-primary tracking-widest uppercase">
+                    Era Perintis
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 1994
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Cidahu, Sukabumi
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  11
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pl-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 11
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        TJ
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">
+                      Taraksa Janggala
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-primary">
+                          calendar_today
+                        </span>{" "}
+                        1994
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Cidahu
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 12 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row-reverse items-start group"
+                data-angkatan="12"
+                data-code="gw"
+                data-era="penjelajah"
+                data-location="sukamantri"
+                data-name="giri wisesa"
+                data-year="1995"
+              >
+                <div class="hidden md:flex w-1/2 pl-8 text-left flex-col items-start">
+                  <span class="text-xs font-bold text-secondary tracking-widest uppercase">
+                    Era Penjelajah
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 1995
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Sukamantri
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  12
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pr-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 12
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        GW
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-secondary transition-colors">
+                      Giri Wisesa
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          calendar_today
+                        </span>{" "}
+                        1995
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Sukamantri
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 13 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row items-start group"
+                data-angkatan="13"
+                data-code="ba"
+                data-era="penjelajah"
+                data-location="cidahu"
+                data-name="banyu acala"
+                data-year="1996"
+              >
+                <div class="hidden md:flex w-1/2 pr-8 text-right flex-col items-end">
+                  <span class="text-xs font-bold text-secondary tracking-widest uppercase">
+                    Era Penjelajah
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 1996
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Cidahu, Sukabumi
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  13
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pl-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 13
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        BA
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-secondary transition-colors">
+                      Banyu Acala
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          calendar_today
+                        </span>{" "}
+                        1996
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Cidahu
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 14 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row-reverse items-start group"
+                data-angkatan="14"
+                data-code="ss"
+                data-era="penjelajah"
+                data-location="gunung bunder"
+                data-name="shiriung sangkala"
+                data-year="1997"
+              >
+                <div class="hidden md:flex w-1/2 pl-8 text-left flex-col items-start">
+                  <span class="text-xs font-bold text-secondary tracking-widest uppercase">
+                    Era Penjelajah
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 1997
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Gunung Bunder
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  14
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pr-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 14
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        SS
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-secondary transition-colors">
+                      Shiriung Sangkala
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          calendar_today
+                        </span>{" "}
+                        1997
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Gunung Bunder
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 15 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row items-start group"
+                data-angkatan="15"
+                data-code="tg"
+                data-era="penjelajah"
+                data-location="cidahu"
+                data-name="tilas guar"
+                data-year="1998"
+              >
+                <div class="hidden md:flex w-1/2 pr-8 text-right flex-col items-end">
+                  <span class="text-xs font-bold text-secondary tracking-widest uppercase">
+                    Era Penjelajah
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 1998
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Cidahu, Sukabumi
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  15
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pl-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 15
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        TG
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-secondary transition-colors">
+                      Tilas Guar
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          calendar_today
+                        </span>{" "}
+                        1998
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Cidahu
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 16 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row-reverse items-start group"
+                data-angkatan="16"
+                data-code="cs"
+                data-era="penjelajah"
+                data-location="gunung bunder"
+                data-name="carana siga"
+                data-year="1999"
+              >
+                <div class="hidden md:flex w-1/2 pl-8 text-left flex-col items-start">
+                  <span class="text-xs font-bold text-secondary tracking-widest uppercase">
+                    Era Penjelajah
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 1999
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Gunung Bunder
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  16
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pr-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 16
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        CS
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-secondary transition-colors">
+                      Carana Siga
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          calendar_today
+                        </span>{" "}
+                        1999
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Gunung Bunder
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 17 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row items-start group"
+                data-angkatan="17"
+                data-code="pgw"
+                data-era="penjelajah"
+                data-location="cidahu"
+                data-name="pandega gerilya wana"
+                data-year="2000"
+              >
+                <div class="hidden md:flex w-1/2 pr-8 text-right flex-col items-end">
+                  <span class="text-xs font-bold text-secondary tracking-widest uppercase">
+                    Era Penjelajah
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 2000
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Cidahu, Sukabumi
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  17
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pl-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 17
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        PGW
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-secondary transition-colors">
+                      Pandega Gerilya Wana
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          calendar_today
+                        </span>{" "}
+                        2000
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Cidahu
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 18 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row-reverse items-start group"
+                data-angkatan="18"
+                data-code="ak"
+                data-era="penjelajah"
+                data-location="cidahu"
+                data-name="agraha kretarta"
+                data-year="2002"
+              >
+                <div class="hidden md:flex w-1/2 pl-8 text-left flex-col items-start">
+                  <span class="text-xs font-bold text-secondary tracking-widest uppercase">
+                    Era Penjelajah
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 2002
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Cidahu, Sukabumi
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  18
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pr-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 18
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        AK
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-secondary transition-colors">
+                      Agraha Kretarta
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          calendar_today
+                        </span>{" "}
+                        2002
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Cidahu
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 19 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row items-start group"
+                data-angkatan="19"
+                data-code="um"
+                data-era="penjelajah"
+                data-location="cidahu"
+                data-name="ukkara manghistha"
+                data-year="2002"
+              >
+                <div class="hidden md:flex w-1/2 pr-8 text-right flex-col items-end">
+                  <span class="text-xs font-bold text-secondary tracking-widest uppercase">
+                    Era Penjelajah
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 2002
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Cidahu, Sukabumi
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  19
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pl-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 19
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        UM
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-secondary transition-colors">
+                      Ukkara Manghistha
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          calendar_today
+                        </span>{" "}
+                        2002
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Cidahu
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 20 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row-reverse items-start group"
+                data-angkatan="20"
+                data-code="as"
+                data-era="penjelajah"
+                data-location="gunung bunder"
+                data-name="awasana sukla"
+                data-year="2004"
+              >
+                <div class="hidden md:flex w-1/2 pl-8 text-left flex-col items-start">
+                  <span class="text-xs font-bold text-secondary tracking-widest uppercase">
+                    Era Penjelajah
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 2004
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Gunung Bunder
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  20
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pr-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 20
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        AS
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-secondary transition-colors">
+                      Awasana Sukla
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          calendar_today
+                        </span>{" "}
+                        2004
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Gunung Bunder
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 21 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row items-start group"
+                data-angkatan="21"
+                data-code="sc"
+                data-era="penjelajah"
+                data-location="gunung bunder"
+                data-name="shukam chalam"
+                data-year="2004"
+              >
+                <div class="hidden md:flex w-1/2 pr-8 text-right flex-col items-end">
+                  <span class="text-xs font-bold text-secondary tracking-widest uppercase">
+                    Era Penjelajah
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 2004
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Gunung Bunder
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  21
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pl-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 21
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        SC
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-secondary transition-colors">
+                      Shukam Chalam
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          calendar_today
+                        </span>{" "}
+                        2004
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Gunung Bunder
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 22 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row-reverse items-start group"
+                data-angkatan="22"
+                data-code="ks"
+                data-era="konservasi"
+                data-location="gunung kencana gunung luhur"
+                data-name="kara satrena"
+                data-year="2006"
+              >
+                <div class="hidden md:flex w-1/2 pl-8 text-left flex-col items-start">
+                  <span class="text-xs font-bold text-tertiary tracking-widest uppercase">
+                    Era Konservasi
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 2006
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Gn. Kencana - Gn. Luhur
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  22
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pr-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 22
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        KS
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-tertiary transition-colors">
+                      Kara Satrena
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-tertiary">
+                          calendar_today
+                        </span>{" "}
+                        2006
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Gn. Kencana - Gn. Luhur
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 23 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row items-start group"
+                data-angkatan="23"
+                data-code="pd"
+                data-era="konservasi"
+                data-location="situ gunung"
+                data-name="pusara drawa"
+                data-year="2007"
+              >
+                <div class="hidden md:flex w-1/2 pr-8 text-right flex-col items-end">
+                  <span class="text-xs font-bold text-tertiary tracking-widest uppercase">
+                    Era Konservasi
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 2007
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Situ Gunung, Sukabumi
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  23
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pl-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 23
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        PD
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-tertiary transition-colors">
+                      Pusara Drawa
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-tertiary">
+                          calendar_today
+                        </span>{" "}
+                        2007
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Situ Gunung
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 24 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row-reverse items-start group"
+                data-angkatan="24"
+                data-code="bc"
+                data-era="konservasi"
+                data-location="gunung bunder"
+                data-name="brama cancala"
+                data-year="2007"
+              >
+                <div class="hidden md:flex w-1/2 pl-8 text-left flex-col items-start">
+                  <span class="text-xs font-bold text-tertiary tracking-widest uppercase">
+                    Era Konservasi
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 2007
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Gunung Bunder
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  24
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pr-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 24
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        BC
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-tertiary transition-colors">
+                      Brama Cancala
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-tertiary">
+                          calendar_today
+                        </span>{" "}
+                        2007
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Gunung Bunder
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 25 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row items-start group"
+                data-angkatan="25"
+                data-code="sr"
+                data-era="konservasi"
+                data-location="gunung kencana"
+                data-name="sambandha rajata"
+                data-year="2008"
+              >
+                <div class="hidden md:flex w-1/2 pr-8 text-right flex-col items-end">
+                  <span class="text-xs font-bold text-tertiary tracking-widest uppercase">
+                    Era Konservasi
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 2008
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Gunung Kencana
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  25
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pl-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 25
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        SR
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-tertiary transition-colors">
+                      Sambandha Rajata
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-tertiary">
+                          calendar_today
+                        </span>{" "}
+                        2008
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Gunung Kencana
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 26 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row-reverse items-start group"
+                data-angkatan="26"
+                data-code="ww"
+                data-era="konservasi"
+                data-location="gunung kencana"
+                data-name="wrestipata wijaya"
+                data-year="2009"
+              >
+                <div class="hidden md:flex w-1/2 pl-8 text-left flex-col items-start">
+                  <span class="text-xs font-bold text-tertiary tracking-widest uppercase">
+                    Era Konservasi
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 2009
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Gunung Kencana
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  26
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pr-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 26
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        WW
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-tertiary transition-colors">
+                      Wrestipata Wijaya
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-tertiary">
+                          calendar_today
+                        </span>{" "}
+                        2009
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Gunung Kencana
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 27 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row items-start group"
+                data-angkatan="27"
+                data-code="ph"
+                data-era="konservasi"
+                data-location="sukamantri"
+                data-name="prabhata hekasa"
+                data-year="2010"
+              >
+                <div class="hidden md:flex w-1/2 pr-8 text-right flex-col items-end">
+                  <span class="text-xs font-bold text-tertiary tracking-widest uppercase">
+                    Era Konservasi
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 2010
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Sukamantri, Bogor
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  27
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pl-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 27
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        PH
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-tertiary transition-colors">
+                      Prabhata Hekasa
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-tertiary">
+                          calendar_today
+                        </span>{" "}
+                        2010
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Sukamantri
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 28 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row-reverse items-start group"
+                data-angkatan="28"
+                data-code="nk"
+                data-era="konservasi"
+                data-location="gunung bunder"
+                data-name="nimnaga kretayuga"
+                data-year="2011"
+              >
+                <div class="hidden md:flex w-1/2 pl-8 text-left flex-col items-start">
+                  <span class="text-xs font-bold text-tertiary tracking-widest uppercase">
+                    Era Konservasi
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 2011
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Gunung Bunder
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  28
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pr-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 28
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        NK
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-tertiary transition-colors">
+                      Nimnaga Kretayuga
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-tertiary">
+                          calendar_today
+                        </span>{" "}
+                        2011
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Gunung Bunder
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 29 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row items-start group"
+                data-angkatan="29"
+                data-code="ka"
+                data-era="konservasi"
+                data-location="sukamantri"
+                data-name="kirana arutala"
+                data-year="2013"
+              >
+                <div class="hidden md:flex w-1/2 pr-8 text-right flex-col items-end">
+                  <span class="text-xs font-bold text-tertiary tracking-widest uppercase">
+                    Era Konservasi
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 2013
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Sukamantri, Bogor
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  29
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pl-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 29
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        KA
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-tertiary transition-colors">
+                      Kirana Arutala
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-tertiary">
+                          calendar_today
+                        </span>{" "}
+                        2013
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Sukamantri
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 30 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row-reverse items-start group"
+                data-angkatan="30"
+                data-code="tp"
+                data-era="konservasi"
+                data-location="gunung bunder"
+                data-name="taranggana prabaswara"
+                data-year="2013"
+              >
+                <div class="hidden md:flex w-1/2 pl-8 text-left flex-col items-start">
+                  <span class="text-xs font-bold text-tertiary tracking-widest uppercase">
+                    Era Konservasi
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 2013
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Gunung Bunder
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  30
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pr-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 30
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        TP
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-tertiary transition-colors">
+                      Taranggana Prabaswara
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-tertiary">
+                          calendar_today
+                        </span>{" "}
+                        2013
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Gunung Bunder
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 31 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row items-start group"
+                data-angkatan="31"
+                data-code="aa"
+                data-era="konservasi"
+                data-location="gunung gede"
+                data-name="adarma abisatya"
+                data-year="2014"
+              >
+                <div class="hidden md:flex w-1/2 pr-8 text-right flex-col items-end">
+                  <span class="text-xs font-bold text-tertiary tracking-widest uppercase">
+                    Era Konservasi
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 2014
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Gunung Gede Pangrango
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  31
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pl-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 31
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        AA
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-tertiary transition-colors">
+                      Adarma Abisatya
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-tertiary">
+                          calendar_today
+                        </span>{" "}
+                        2014
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Gunung Gede
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 32 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row-reverse items-start group"
+                data-angkatan="32"
+                data-code="ad"
+                data-era="konservasi"
+                data-location="sekolah gunung gede"
+                data-name="andala daraka"
+                data-year="2015"
+              >
+                <div class="hidden md:flex w-1/2 pl-8 text-left flex-col items-start">
+                  <span class="text-xs font-bold text-tertiary tracking-widest uppercase">
+                    Era Konservasi
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 2015
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">
+                      pin_drop
+                    </span>
+                    Sekolah + Gunung Gede
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  32
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pr-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 32
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        AD
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-tertiary transition-colors">
+                      Andala Daraka
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-tertiary">
+                          calendar_today
+                        </span>{" "}
+                        2015
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        Sekolah + Gunung Gede
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 33 -->
+              <div
+                class="timeline-item relative flex flex-col md:flex-row items-start group"
+                data-angkatan="33"
+                data-code="ta"
+                data-era="konservasi"
+                data-location="-"
+                data-name="trisha akshita"
+                data-year="2016"
+              >
+                <div class="hidden md:flex w-1/2 pr-8 text-right flex-col items-end">
+                  <span class="text-xs font-bold text-tertiary tracking-widest uppercase">
+                    Era Konservasi
+                  </span>
+                  <span class="text-xl font-black text-on-surface">
+                    Tahun 2016
+                  </span>
+                  <span class="text-xs text-on-surface-variant mt-1">
+                    Dokumentasi Terarsip
+                  </span>
+                </div>
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-xs shadow-md transition-transform group-hover:scale-110">
+                  33
+                </div>
+                <div class="w-full md:w-1/2 pl-14 md:pl-8">
+                  <div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[11px] font-bold tracking-wider uppercase">
+                        Angkatan 33
+                      </span>
+                      <span class="px-2.5 py-0.5 rounded-lg bg-surface-container text-on-surface font-mono font-bold text-xs">
+                        TA
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-on-surface group-hover:text-tertiary transition-colors">
+                      Trisha Akshita
+                    </h3>
+                    <div class="mt-3 pt-3 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-on-surface-variant">
+                      <span class="flex items-center gap-1 font-medium text-on-surface">
+                        <span class="material-symbols-outlined text-[15px] text-tertiary">
+                          calendar_today
+                        </span>{" "}
+                        2016
+                      </span>
+                      <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">
+                          explore
+                        </span>{" "}
+                        -
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Empty Filter State -->
+            <div class="hidden py-16 text-center" id="no-results">
+              <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant">
+                <span class="material-symbols-outlined text-[32px]">
+                  manage_search
+                </span>
+              </div>
+              <h4 class="text-lg font-bold text-on-surface">
+                Angkatan Tidak Ditemukan
+              </h4>
+              <p class="text-sm text-on-surface-variant max-w-sm mx-auto mt-1">
+                Coba gunakan kata kunci lain seperti nomor, singkatan nama
+                rimba, atau lokasi pendidikan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 4: FORMULIR PENDATAAN ULANG ALUMNI -->
+      <section class="w-full py-16 px-4 md:px-8 lg:px-12 bg-surface-container-low">
+        <div class="max-w-5xl mx-auto">
+          <div class="bg-surface-container-lowest rounded-3xl p-6 sm:p-10 md:p-12 shadow-md relative overflow-hidden">
+            <!-- Accent Banner Top -->
+            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-primary via-tertiary to-secondary"></div>
+            <div class="flex flex-col md:flex-row gap-8 items-start justify-between mb-8 pb-6 bg-surface-container/30 -mx-6 sm:-mx-10 md:-mx-12 px-6 sm:px-10 md:px-12 pt-4">
+              <div>
+                <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold uppercase tracking-wider mb-2">
+                  <span class="material-symbols-outlined text-[15px]">
+                    badge
+                  </span>
+                  Database Alumni
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-on-surface tracking-tight">
+                  Sensus &amp; Pendataan Ulang Alumni
+                </h2>
+                <p class="text-sm text-on-surface-variant mt-1">
+                  Merajut kembali silaturahmi antar generasi Trinawa Bhuwana
+                  SMAN 39 Jakarta. Mohon lengkapi profil rimba Anda.
+                </p>
+              </div>
+              <div class="shrink-0 flex items-center gap-3 bg-surface-container-high/60 px-4 py-2.5 rounded-xl">
+                <span class="material-symbols-outlined text-primary text-[28px]">
+                  lock
+                </span>
+                <div class="text-[12px] leading-tight text-on-surface-variant">
+                  <strong class="text-on-surface block">
+                    Data Terproteksi
+                  </strong>
+                  Khusus arsip internal KPA
+                </div>
+              </div>
+            </div>
+            <form
+              class="grid grid-cols-1 md:grid-cols-2 gap-6"
+              id="alumni-form"
+            >
+              <!-- Feedback Alert -->
+              <div
+                id="form-alert"
+                class="hidden md:col-span-2 p-4 rounded-xl text-sm font-semibold transition-all"
+              ></div>
+
+              <!-- Nama Lengkap -->
+              <div class="flex flex-col gap-1.5">
+                <label
+                  class="text-xs font-bold uppercase tracking-wider text-on-surface"
+                  for="full-name"
+                >
+                  Nama Lengkap &amp; Gelar <span class="text-error">*</span>
+                </label>
+                <input
+                  class="w-full h-11 px-4 bg-[#FF8000]/10 border border-[#FF8000]/25 text-on-surface text-sm rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF8000] focus:border-[#FF8000] focus:bg-[#FF8000]/15 transition-all placeholder:text-on-surface-variant/50"
+                  id="full-name"
+                  name="fullName"
+                  placeholder="Contoh: Raden Satria Pamungkas, S.T."
+                  required=""
+                  type="text"
+                  pattern="^[a-zA-Z\s.,'-]+$"
+                  title="Nama lengkap hanya boleh berisi huruf dan gelar (tanpa angka)"
+                />
+              </div>
+              <!-- Nama Rimba -->
+              <div class="flex flex-col gap-1.5">
+                <label
+                  class="text-xs font-bold uppercase tracking-wider text-on-surface"
+                  for="rimba-name"
+                >
+                  Nama Rimba / Lapangan
+                </label>
+                <input
+                  class="w-full h-11 px-4 bg-[#FF8000]/10 border border-[#FF8000]/25 text-on-surface text-sm rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF8000] focus:border-[#FF8000] focus:bg-[#FF8000]/15 transition-all placeholder:text-on-surface-variant/50"
+                  id="rimba-name"
+                  name="rimbaName"
+                  placeholder="Contoh: Elang Jawa / Kancil"
+                  type="text"
+                  pattern="^[a-zA-Z\s.,'/-]+$"
+                  title="Nama rimba hanya boleh berisi huruf (tanpa angka)"
+                />
+              </div>
+              <!-- Dropdown Angkatan 1 - 33 -->
+              <div class="flex flex-col gap-1.5">
+                <label
+                  class="text-xs font-bold uppercase tracking-wider text-on-surface"
+                  for="angkatan-select"
+                >
+                  Angkatan Trinawa Bhuwana <span class="text-error">*</span>
+                </label>
+                <div class="relative">
+                  <select
+                    class="w-full h-11 px-4 pr-10 bg-[#FF8000]/10 border border-[#FF8000]/25 text-on-surface text-sm rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF8000] focus:border-[#FF8000] focus:bg-[#FF8000]/15 transition-all appearance-none cursor-pointer"
+                    id="angkatan-select"
+                    name="angkatan"
+                    required=""
+                  >
+                    <option disabled="" selected="" value="">
+                      Pilih Angkatan Anda...
+                    </option>
+                    <option value="Angkatan 1 - Kabut Perintis (1985)">
+                      Angkatan 1 - Kabut Perintis (1985)
+                    </option>
+                    <option value="Angkatan 2 - Slayer Gunung (1985)">
+                      Angkatan 2 - Slayer Gunung (1985)
+                    </option>
+                    <option value="Angkatan 3 - Jejak Pelita (1986)">
+                      Angkatan 3 - Jejak Pelita (1986)
+                    </option>
+                    <option value="Angkatan 4 - Pembaharuan Muda (1987)">
+                      Angkatan 4 - Pembaharuan Muda (1987)
+                    </option>
+                    <option value="Angkatan 5 - Altar Lumpur (1988)">
+                      Angkatan 5 - Altar Lumpur (1988)
+                    </option>
+                    <option value="Angkatan 6 - Arung Badai (1989)">
+                      Angkatan 6 - Arung Badai (1989)
+                    </option>
+                    <option value="Angkatan 7 - Tapak Rimba (1990)">
+                      Angkatan 7 - Tapak Rimba (1990)
+                    </option>
+                    <option value="Angkatan 8 - Kawah Bhavana (1991)">
+                      Angkatan 8 - Kawah Bhavana (1991)
+                    </option>
+                    <option value="Angkatan 9 - Lintas Wana (1992)">
+                      Angkatan 9 - Lintas Wana (1992)
+                    </option>
+                    <option value="Angkatan 10 - Agra Ratu (1993)">
+                      Angkatan 10 - Agra Ratu (1993)
+                    </option>
+                    <option value="Angkatan 11 - Taraksa Janggala (1994)">
+                      Angkatan 11 - Taraksa Janggala (1994)
+                    </option>
+                    <option value="Angkatan 12 - Giri Wisesa (1995)">
+                      Angkatan 12 - Giri Wisesa (1995)
+                    </option>
+                    <option value="Angkatan 13 - Banyu Acala (1996)">
+                      Angkatan 13 - Banyu Acala (1996)
+                    </option>
+                    <option value="Angkatan 14 - Shiriung Sangkala (1997)">
+                      Angkatan 14 - Shiriung Sangkala (1997)
+                    </option>
+                    <option value="Angkatan 15 - Tilas Guar (1998)">
+                      Angkatan 15 - Tilas Guar (1998)
+                    </option>
+                    <option value="Angkatan 16 - Carana Siga (1999)">
+                      Angkatan 16 - Carana Siga (1999)
+                    </option>
+                    <option value="Angkatan 17 - Pandega Gerilya Wana (2000)">
+                      Angkatan 17 - Pandega Gerilya Wana (2000)
+                    </option>
+                    <option value="Angkatan 18 - Agraha Kretarta (2002)">
+                      Angkatan 18 - Agraha Kretarta (2002)
+                    </option>
+                    <option value="Angkatan 19 - Ukkara Manghistha (2002)">
+                      Angkatan 19 - Ukkara Manghistha (2002)
+                    </option>
+                    <option value="Angkatan 20 - Awasana Sukla (2004)">
+                      Angkatan 20 - Awasana Sukla (2004)
+                    </option>
+                    <option value="Angkatan 21 - Shukam Chalam (2004)">
+                      Angkatan 21 - Shukam Chalam (2004)
+                    </option>
+                    <option value="Angkatan 22 - Kara Satrena (2006)">
+                      Angkatan 22 - Kara Satrena (2006)
+                    </option>
+                    <option value="Angkatan 23 - Pusara Drawa (2007)">
+                      Angkatan 23 - Pusara Drawa (2007)
+                    </option>
+                    <option value="Angkatan 24 - Brama Cancala (2007)">
+                      Angkatan 24 - Brama Cancala (2007)
+                    </option>
+                    <option value="Angkatan 25 - Sambandha Rajata (2008)">
+                      Angkatan 25 - Sambandha Rajata (2008)
+                    </option>
+                    <option value="Angkatan 26 - Wrestipata Wijaya (2009)">
+                      Angkatan 26 - Wrestipata Wijaya (2009)
+                    </option>
+                    <option value="Angkatan 27 - Prabhata Hekasa (2010)">
+                      Angkatan 27 - Prabhata Hekasa (2010)
+                    </option>
+                    <option value="Angkatan 28 - Nimnaga Kretayuga (2011)">
+                      Angkatan 28 - Nimnaga Kretayuga (2011)
+                    </option>
+                    <option value="Angkatan 29 - Kirana Arutala (2013)">
+                      Angkatan 29 - Kirana Arutala (2013)
+                    </option>
+                    <option value="Angkatan 30 - Taranggana Prabaswara (2013)">
+                      Angkatan 30 - Taranggana Prabaswara (2013)
+                    </option>
+                    <option value="Angkatan 31 - Adarma Abisatya (2014)">
+                      Angkatan 31 - Adarma Abisatya (2014)
+                    </option>
+                    <option value="Angkatan 32 - Andala Daraka (2015)">
+                      Angkatan 32 - Andala Daraka (2015)
+                    </option>
+                    <option value="Angkatan 33 - Trisha Akshita (2016)">
+                      Angkatan 33 - Trisha Akshita (2016)
+                    </option>
+                  </select>
+                  <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[20px]">
+                    arrow_drop_down
+                  </span>
+                </div>
+              </div>
+              <!-- Tahun Kelulusan SMAN 39 -->
+              <div class="flex flex-col gap-1.5">
+                <label
+                  class="text-xs font-bold uppercase tracking-wider text-on-surface"
+                  for="grad-year"
+                >
+                  Tahun Kelulusan SMAN 39 <span class="text-error">*</span>
+                </label>
+                <input
+                  class="w-full h-11 px-4 bg-[#FF8000]/10 border border-[#FF8000]/25 text-on-surface text-sm rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF8000] focus:border-[#FF8000] focus:bg-[#FF8000]/15 transition-all placeholder:text-on-surface-variant/50"
+                  id="grad-year"
+                  name="gradYear"
+                  max="2026"
+                  min="1985"
+                  placeholder="Contoh: 1998"
+                  required=""
+                  type="number"
+                />
+              </div>
+              <!-- No. WhatsApp / HP -->
+              <div class="flex flex-col gap-1.5">
+                <label
+                  class="text-xs font-bold uppercase tracking-wider text-on-surface"
+                  for="phone-number"
+                >
+                  Nomor WhatsApp Aktif <span class="text-error">*</span>
+                </label>
+                <input
+                  class="w-full h-11 px-4 bg-[#FF8000]/10 border border-[#FF8000]/25 text-on-surface text-sm rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF8000] focus:border-[#FF8000] focus:bg-[#FF8000]/15 transition-all placeholder:text-on-surface-variant/50"
+                  id="phone-number"
+                  name="phone"
+                  placeholder="Contoh: 081288889999"
+                  required=""
+                  type="tel"
+                  inputmode="numeric"
+                  pattern="^(\+62|62|0)[0-9]{8,14}$"
+                  title="Nomor telepon harus berupa angka yang valid (contoh: 081288889999)"
+                />
+              </div>
+              <!-- Email -->
+              <div class="flex flex-col gap-1.5">
+                <label
+                  class="text-xs font-bold uppercase tracking-wider text-on-surface"
+                  for="email"
+                >
+                  Alamat Email <span class="text-error">*</span>
+                </label>
+                <input
+                  class="w-full h-11 px-4 bg-[#FF8000]/10 border border-[#FF8000]/25 text-on-surface text-sm rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF8000] focus:border-[#FF8000] focus:bg-[#FF8000]/15 transition-all placeholder:text-on-surface-variant/50"
+                  id="email"
+                  name="email"
+                  placeholder="Contoh: alumni@trinawabhuwana.org"
+                  required=""
+                  type="email"
+                />
+              </div>
+              <!-- Domisili / Profesi -->
+              <div class="md:col-span-2 flex flex-col gap-1.5">
+                <label
+                  class="text-xs font-bold uppercase tracking-wider text-on-surface"
+                  for="domicile"
+                >
+                  Domisili &amp; Pekerjaan Saat Ini
+                </label>
+                <input
+                  class="w-full h-11 px-4 bg-[#FF8000]/10 border border-[#FF8000]/25 text-on-surface text-sm rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF8000] focus:border-[#FF8000] focus:bg-[#FF8000]/15 transition-all placeholder:text-on-surface-variant/50"
+                  id="domicile"
+                  name="domicile"
+                  placeholder="Contoh: Jakarta Timur / Arsitek Konservasi"
+                  type="text"
+                />
+              </div>
+              <!-- Pesan / Amanat -->
+              <div class="md:col-span-2 flex flex-col gap-1.5">
+                <label
+                  class="text-xs font-bold uppercase tracking-wider text-on-surface"
+                  for="alumni-message"
+                >
+                  Pesan &amp; Masukan untuk Adik-Adik KPA
+                </label>
+                <textarea
+                  class="w-full p-4 bg-[#FF8000]/10 border border-[#FF8000]/25 text-on-surface text-sm rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF8000] focus:border-[#FF8000] focus:bg-[#FF8000]/15 transition-all placeholder:text-on-surface-variant/50"
+                  id="alumni-message"
+                  name="message"
+                  placeholder="Tuliskan wejangan, cerita ekspedisi, atau usulan kegiatan kolaborasi angkatan..."
+                  rows="3"
+                ></textarea>
+              </div>
+
+              <!-- Upload Foto Profil Alumni (Dimensi 1:1, Max 150KB) -->
+              <div class="md:col-span-2 flex flex-col gap-1.5">
+                <label
+                  class="text-xs font-bold uppercase tracking-wider text-on-surface flex items-center justify-between"
+                  for="alumni-photo"
+                >
+                  <span>Upload Foto Profil Alumni (1024 x 1024 / Rasio 1:1)</span>
+                  <span class="text-[11px] font-semibold text-[#FF8000]">Maksimal 150 KB</span>
+                </label>
+
+                <div class="border-2 border-dashed border-[#FF8000]/30 hover:border-[#FF8000] bg-[#FF8000]/5 hover:bg-[#FF8000]/10 rounded-2xl p-5 transition-all flex flex-col sm:flex-row items-center gap-4 relative cursor-pointer group">
+                  <input
+                    type="file"
+                    id="alumni-photo"
+                    name="photo"
+                    accept=".jpg,.jpeg,.png"
+                    class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                  />
+                  <!-- Preview Box -->
+                  <div class="w-16 h-16 rounded-2xl bg-[#FF8000]/15 text-[#FF8000] border border-[#FF8000]/30 flex items-center justify-center shrink-0 overflow-hidden relative shadow-xs">
+                    <img id="photo-preview-img" class="w-full h-full object-cover hidden" alt="Preview Foto" />
+                    <span class="material-symbols-outlined text-[28px]" id="photo-placeholder-icon">add_a_photo</span>
+                  </div>
+
+                  <!-- Text Instruction -->
+                  <div class="flex flex-col text-center sm:text-left gap-0.5">
+                    <span class="text-xs font-extrabold text-on-surface group-hover:text-[#065143] transition-colors" id="photo-name-display">
+                      Pilih atau Seret Foto Profil Anda (JPG / PNG)
+                    </span>
+                    <span class="text-[11px] text-on-surface-variant" id="photo-hint-display">
+                      Dimensi pas 1024x1024 (persegi 1:1) &bull; Ukuran maks 150KB &bull; Tampil di testimoni Beranda setelah diverifikasi.
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- Submit Button -->
+              <div class="md:col-span-2 flex flex-col sm:flex-row items-center justify-between gap-4 pt-4">
+                <div class="flex items-center gap-2 text-xs text-on-surface-variant">
+                  <span class="material-symbols-outlined text-secondary text-[18px]">
+                    verified
+                  </span>
+                  <span>
+                    Data otomatis tersimpan di lembar inventaris alumni SMAN 39
+                  </span>
+                </div>
+                <button
+                  id="submit-btn"
+                  class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-bold text-sm shadow-md hover:shadow-lg transition-all active:scale-[0.98] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                  type="submit"
+                >
+                  <span id="btn-text">Kirim Formulir Pendataan</span>
+                  <span
+                    class="material-symbols-outlined text-[18px]"
+                    id="btn-icon"
+                  >
+                    send
+                  </span>
+                </button>
+              </div>
+            </form>
+
+            <!-- POPUP (DESKTOP) / BOTTOM DRAWER (MOBILE) DUPLICATE MODAL -->
+            <div
+              id="duplicate-modal"
+              class="fixed inset-0 z-50 hidden transition-opacity duration-300"
+            >
+              <!-- Backdrop Overlay -->
+              <div
+                id="modal-backdrop"
+                class="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
+              ></div>
+
+              <!-- Responsive Container: centered popup on md+, bottom-sheet drawer on mobile -->
+              <div class="fixed inset-0 z-10 flex items-end md:items-center justify-center p-0 md:p-6 pointer-events-none">
+                <div
+                  id="modal-content"
+                  class="pointer-events-auto w-full md:max-w-md bg-surface-container-lowest border-t md:border border-red-500/30 rounded-t-3xl md:rounded-2xl p-6 sm:p-7 shadow-2xl flex flex-col gap-4 transform transition-transform duration-300 translate-y-full md:translate-y-0 md:scale-95"
+                >
+                  <!-- Mobile Drawer Drag Handle Indicator -->
+                  <div class="w-12 h-1.5 bg-on-surface-variant/20 rounded-full mx-auto md:hidden -mt-1 mb-1"></div>
+
+                  <!-- Icon & Header -->
+                  <div class="flex items-start gap-3.5">
+                    <div class="w-11 h-11 rounded-2xl bg-red-500/15 text-red-600 flex items-center justify-center shrink-0">
+                      <span class="material-symbols-outlined text-[26px]">
+                        person_cancel
+                      </span>
+                    </div>
+                    <div class="flex flex-col">
+                      <h3 class="text-base sm:text-lg font-extrabold uppercase text-on-surface leading-tight">
+                        Data Sudah Terdaftar!
+                      </h3>
+                      <span
+                        class="text-xs text-red-600 font-semibold mt-0.5"
+                        id="duplicate-type-label"
+                      >
+                        Nomor WhatsApp atau Email Telah Ada
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Detail Info -->
+                  <div class="bg-surface-container-low p-3.5 rounded-xl text-xs text-on-surface-variant leading-relaxed border border-outline-variant/30">
+                    <p id="duplicate-desc">
+                      Alamat Email atau Nomor WhatsApp yang Anda masukkan sudah
+                      pernah melakukan pengisian sensus alumni KPA Trinawa
+                      Bhuwana SMAN 39.
+                    </p>
+                  </div>
+
+                  <p class="text-xs text-on-surface-variant/80">
+                    Jika Anda merasa belum pernah mengisi data atau ingin
+                    memperbarui data yang sudah ada, silakan hubungi pengurus
+                    sekretariat melalui WhatsApp atau email.
+                  </p>
+
+                  <!-- Action Buttons -->
+                  <div class="flex flex-col sm:flex-row gap-2.5 pt-2">
+                    <button
+                      id="close-modal-btn"
+                      type="button"
+                      class="w-full py-2.5 px-4 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider shadow-sm transition-all cursor-pointer"
+                    >
+                      Tutup &amp; Periksa Kembali
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CLIENT-SIDE SCRIPT FOR FILTERING & SEARCH -->
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const eraButtons = document.querySelectorAll(".era-btn");
+          const searchInput = document.getElementById("search-angkatan");
+          const clearBtn = document.getElementById("clear-search");
+          const timelineItems = document.querySelectorAll(".timeline-item");
+          const noResults = document.getElementById("no-results");
+          const counterText = document.getElementById("filtered-count");
+
+          let currentEra = "all";
+          let currentQuery = "";
+
+          function filterTimeline() {
+            let visibleCount = 0;
+
+            timelineItems.forEach((item) => {
+              const itemEra = item.getAttribute("data-era");
+              const name = item.getAttribute("data-name") || "";
+              const code = item.getAttribute("data-code") || "";
+              const year = item.getAttribute("data-year") || "";
+              const loc = item.getAttribute("data-location") || "";
+              const num = item.getAttribute("data-angkatan") || "";
+
+              const eraMatch = currentEra === "all" || currentEra === itemEra;
+              const query = currentQuery.toLowerCase().trim();
+
+              const textMatch =
+                !query ||
+                name.includes(query) ||
+                code.includes(query) ||
+                year.includes(query) ||
+                loc.includes(query) ||
+                num === query;
+
+              if (eraMatch && textMatch) {
+                item.style.display = "flex";
+                visibleCount++;
+              } else {
+                item.style.display = "none";
+              }
+            });
+
+            // Toggle Empty State
+            if (visibleCount === 0) {
+              noResults.classList.remove("hidden");
+            } else {
+              noResults.classList.add("hidden");
+            }
+
+            // Update counter label
+            if (counterText) {
+              counterText.textContent = `Menampilkan ${visibleCount} dari 33 Angkatan`;
+            }
+          }
+
+          // Era Tabs event
+          eraButtons.forEach((btn) => {
+            btn.addEventListener("click", () => {
+              eraButtons.forEach((b) => {
+                b.classList.remove(
+                  "bg-primary",
+                  "text-on-primary",
+                  "shadow-sm",
+                );
+                b.classList.add("text-on-surface-variant");
+              });
+              btn.classList.add("bg-primary", "text-on-primary", "shadow-sm");
+              btn.classList.remove("text-on-surface-variant");
+
+              currentEra = btn.getAttribute("data-era") || "all";
+              filterTimeline();
+            });
+          });
+
+          // Search input event
+          searchInput.addEventListener("input", (e) => {
+            currentQuery = e.target.value;
+            if (currentQuery.length > 0) {
+              clearBtn.classList.remove("hidden");
+            } else {
+              clearBtn.classList.add("hidden");
+            }
+            filterTimeline();
+          });
+
+          // Clear search button
+          clearBtn.addEventListener("click", () => {
+            searchInput.value = "";
+            currentQuery = "";
+            clearBtn.classList.add("hidden");
+            filterTimeline();
+            searchInput.focus();
+          });
+
+          // ALUMNI FORM GOOGLE SHEET INTEGRATION
+          const alumniForm = document.getElementById("alumni-form");
+          const submitBtn = document.getElementById("submit-btn");
+          const btnText = document.getElementById("btn-text");
+          const btnIcon = document.getElementById("btn-icon");
+          const formAlert = document.getElementById("form-alert");
+
+          // Duplicate Modal elements
+          const duplicateModal = document.getElementById("duplicate-modal");
+          const modalBackdrop = document.getElementById("modal-backdrop");
+          const modalContent = document.getElementById("modal-content");
+          const closeModalBtn = document.getElementById("close-modal-btn");
+          const duplicateTypeLabel = document.getElementById(
+            "duplicate-type-label",
+          );
+          const duplicateDesc = document.getElementById("duplicate-desc");
+
+          function showDuplicateModal(type, value) {
+            if (!duplicateModal) return;
+
+            let labelText = "Nomor WhatsApp atau Email Telah Ada";
+            let descText =
+              "Data yang Anda masukkan sudah pernah terdaftar di lembar sensus alumni.";
+
+            if (type === "phone") {
+              labelText = "Nomor WhatsApp Sudah Terdaftar!";
+              descText = `Nomor WhatsApp (${value}) sudah pernah digunakan untuk pengisian sensus alumni KPA Trinawa Bhuwana SMAN 39.`;
+            } else if (type === "email") {
+              labelText = "Alamat Email Sudah Terdaftar!";
+              descText = `Alamat Email (${value}) sudah pernah digunakan untuk pengisian sensus alumni KPA Trinawa Bhuwana SMAN 39.`;
+            } else if (type === "both") {
+              labelText = "WhatsApp & Email Sudah Terdaftar!";
+              descText = `Nomor WhatsApp dan Alamat Email yang Anda masukkan sudah tercatat di basis data alumni KPA Trinawa Bhuwana SMAN 39.`;
+            }
+
+            if (duplicateTypeLabel) duplicateTypeLabel.textContent = labelText;
+            if (duplicateDesc) duplicateDesc.textContent = descText;
+
+            // Show modal with animation
+            duplicateModal.classList.remove("hidden");
+            setTimeout(() => {
+              if (modalContent) {
+                modalContent.classList.remove(
+                  "translate-y-full",
+                  "md:scale-95",
+                );
+                modalContent.classList.add("translate-y-0", "md:scale-100");
+              }
+            }, 10);
+          }
+
+          function hideDuplicateModal() {
+            if (!duplicateModal) return;
+            if (modalContent) {
+              modalContent.classList.remove("translate-y-0", "md:scale-100");
+              modalContent.classList.add("translate-y-full", "md:scale-95");
+            }
+            setTimeout(() => {
+              duplicateModal.classList.add("hidden");
+            }, 250);
+          }
+
+          if (closeModalBtn)
+            closeModalBtn.addEventListener("click", hideDuplicateModal);
+          if (modalBackdrop)
+            modalBackdrop.addEventListener("click", hideDuplicateModal);
+
+          // Handle Photo Input: Preview & Validation (Dimensi 1:1, Max 150KB)
+          const photoInput = document.getElementById("alumni-photo");
+          const photoPreviewImg = document.getElementById("photo-preview-img");
+          const photoPlaceholderIcon = document.getElementById("photo-placeholder-icon");
+          const photoNameDisplay = document.getElementById("photo-name-display");
+          const photoHintDisplay = document.getElementById("photo-hint-display");
+
+          let selectedPhotoFile = null;
+
+          if (photoInput) {
+            photoInput.addEventListener("change", () => {
+              if (photoInput.files && photoInput.files[0]) {
+                const file = photoInput.files[0];
+
+                // 1. Validasi Ukuran (Maks 150KB)
+                if (file.size > 150 * 1024) {
+                  alert(`Ukuran foto (${(file.size / 1024).toFixed(1)} KB) melebihi batas maksimal 150 KB. Silakan kompres atau pilih foto yang lebih kecil.`);
+                  photoInput.value = "";
+                  selectedPhotoFile = null;
+                  if (photoPreviewImg) photoPreviewImg.classList.add("hidden");
+                  if (photoPlaceholderIcon) photoPlaceholderIcon.classList.remove("hidden");
+                  if (photoNameDisplay) photoNameDisplay.textContent = "Pilih atau Seret Foto Profil Anda (JPG / PNG)";
+                  return;
+                }
+
+                // 2. Validasi Dimensi 1:1 (Rasio Persegi)
+                const img = new Image();
+                img.onload = () => {
+                  const width = img.naturalWidth;
+                  const height = img.naturalHeight;
+                  const ratio = width / height;
+
+                  // Toleransi rasio 1:1 sedikit (0.95 - 1.05)
+                  if (ratio < 0.9 || ratio > 1.1) {
+                    alert(`Foto tidak berdimensi persegi / rasio 1:1 (Terdeteksi ${width} x ${height} px). Mohon gunakan foto dengan dimensi 1024 x 1024 atau rasio 1:1.`);
+                    photoInput.value = "";
+                    selectedPhotoFile = null;
+                    if (photoPreviewImg) photoPreviewImg.classList.add("hidden");
+                    if (photoPlaceholderIcon) photoPlaceholderIcon.classList.remove("hidden");
+                    if (photoNameDisplay) photoNameDisplay.textContent = "Pilih atau Seret Foto Profil Anda (JPG / PNG)";
+                    return;
+                  }
+
+                  selectedPhotoFile = file;
+                  if (photoPreviewImg) {
+                    photoPreviewImg.src = img.src;
+                    photoPreviewImg.classList.remove("hidden");
+                  }
+                  if (photoPlaceholderIcon) photoPlaceholderIcon.classList.add("hidden");
+                  if (photoNameDisplay) {
+                    photoNameDisplay.textContent = `${file.name} (${width}x${height}px, ${(file.size / 1024).toFixed(1)} KB)`;
+                    photoNameDisplay.classList.add("text-[#065143]");
+                  }
+                  if (photoHintDisplay) {
+                    photoHintDisplay.textContent = "Foto memenuhi syarat (rasio 1:1, di bawah 150KB) & siap diunggah.";
+                  }
+                };
+
+                img.onerror = () => {
+                  alert("File bukan gambar yang valid.");
+                  photoInput.value = "";
+                };
+
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                  img.src = e.target?.result;
+                };
+                reader.readAsDataURL(file);
+              }
+            });
+          }
+
+          const SCRIPT_URL =
+            "https://script.google.com/macros/s/AKfycbz6STe8qXFifMIflfgxtjGPKU5GZBMAp8PHKqjRtgh5KVNAMhglQSosFkPK_rfIwbwB/exec";
+
+          if (alumniForm) {
+            alumniForm.addEventListener("submit", async (e) => {
+              e.preventDefault();
+
+              // Validation check: Name (string only, no digits)
+              const nameInput = document.getElementById("full-name");
+              const nameVal = nameInput ? nameInput.value.trim() : "";
+              const namePattern = /^[a-zA-Z\s.,'-]+$/;
+              if (!namePattern.test(nameVal)) {
+                formAlert.className =
+                  "md:col-span-2 p-4 rounded-xl text-sm font-semibold bg-red-600 border border-red-700 text-white shadow-md flex items-center gap-2.5";
+                formAlert.innerHTML =
+                  '<span class="material-symbols-outlined text-white text-[22px]">warning</span> <span>Nama Lengkap hanya boleh berisi huruf dan gelar (tidak boleh ada angka).</span>';
+                formAlert.classList.remove("hidden");
+                nameInput.focus();
+                return;
+              }
+
+              // Validation check: Phone (valid phone numbers only)
+              const phoneInput = document.getElementById("phone-number");
+              const phoneVal = phoneInput ? phoneInput.value.trim() : "";
+              const phonePattern = /^(\+62|62|0)[0-9]{8,14}$/;
+              if (!phonePattern.test(phoneVal)) {
+                formAlert.className =
+                  "md:col-span-2 p-4 rounded-xl text-sm font-semibold bg-red-600 border border-red-700 text-white shadow-md flex items-center gap-2.5";
+                formAlert.innerHTML =
+                  '<span class="material-symbols-outlined text-white text-[22px]">warning</span> <span>Nomor WhatsApp hanya boleh berupa angka yang valid (contoh: 081288889999).</span>';
+                formAlert.classList.remove("hidden");
+                phoneInput.focus();
+                return;
+              }
+
+              // Validation check: Email
+              const emailInput = document.getElementById("email");
+              const emailVal = emailInput ? emailInput.value.trim() : "";
+              const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              if (!emailPattern.test(emailVal)) {
+                formAlert.className =
+                  "md:col-span-2 p-4 rounded-xl text-sm font-semibold bg-red-600 border border-red-700 text-white shadow-md flex items-center gap-2.5";
+                formAlert.innerHTML =
+                  '<span class="material-symbols-outlined text-white text-[22px]">warning</span> <span>Mohon masukkan alamat email yang valid.</span>';
+                formAlert.classList.remove("hidden");
+                emailInput.focus();
+                return;
+              }
+
+              // Set loading state
+              submitBtn.disabled = true;
+              btnText.textContent = "Memverifikasi Data...";
+              btnIcon.textContent = "hourglass_top";
+              formAlert.classList.add("hidden");
+
+              const formData = {
+                fullName: nameVal,
+                rimbaName: document.getElementById("rimba-name")?.value || "",
+                angkatan:
+                  document.getElementById("angkatan-select")?.value || "",
+                gradYear: document.getElementById("grad-year")?.value || "",
+                phone: phoneVal,
+                email: emailVal,
+                domicile: document.getElementById("domicile")?.value || "",
+                message: document.getElementById("alumni-message")?.value || "",
+                timestamp: new Date().toISOString(),
+              };
+
+              try {
+                // STEP 1: Check duplicate phone & email via GET to Google Apps Script
+                const checkUrl = `${SCRIPT_URL}?check=duplicate&phone=${encodeURIComponent(phoneVal)}&email=${encodeURIComponent(emailVal)}`;
+                const checkRes = await fetch(checkUrl);
+                const checkData = await checkRes.json();
+
+                if (checkData && checkData.isDuplicate) {
+                  // Show responsive Modal (Popup on desktop, Drawer on mobile)
+                  showDuplicateModal(
+                    checkData.duplicateField,
+                    checkData.duplicateField === "phone" ? phoneVal : emailVal,
+                  );
+                  return;
+                }
+
+                // STEP 2: Proceed to save data if not duplicate
+                // Handle Photo Base64 if selected
+                let photoBase64 = "";
+                let photoOriginalName = "";
+                let photoMimeType = "";
+
+                if (selectedPhotoFile) {
+                  btnText.textContent = "Mengunggah Foto Profil...";
+                  const base64Promise = new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = () => {
+                      const res = reader.result;
+                      if (typeof res === "string") {
+                        resolve(res.split(",")[1]);
+                      } else {
+                        resolve("");
+                      }
+                    };
+                    reader.onerror = reject;
+                    reader.readAsDataURL(selectedPhotoFile);
+                  });
+                  photoBase64 = await base64Promise;
+                  photoOriginalName = selectedPhotoFile.name;
+                  photoMimeType = selectedPhotoFile.type;
+                }
+
+                formData.photoBase64 = photoBase64;
+                formData.photoOriginalName = photoOriginalName;
+                formData.photoMimeType = photoMimeType;
+                formData.status = "Pending";
+
+                btnText.textContent = "Menyimpan ke Sheet...";
+                await fetch(SCRIPT_URL, {
+                  method: "POST",
+                  mode: "no-cors",
+                  headers: {
+                    "Content-Type": "text/plain;charset=utf-8",
+                  },
+                  body: JSON.stringify(formData),
+                });
+
+                // Display success message
+                formAlert.className =
+                  "md:col-span-2 p-4 rounded-xl text-sm font-semibold bg-[#065143] border border-[#065143]/80 text-white shadow-md flex items-center gap-2.5";
+                formAlert.innerHTML =
+                  '<span class="material-symbols-outlined text-[#FF8000] text-[22px]">check_circle</span> <span>Terima kasih! Data sensus alumni dan foto profil berhasil disimpan ke Google Sheet & Drive dengan status Pending.</span>';
+                formAlert.classList.remove("hidden");
+
+                alumniForm.reset();
+                selectedPhotoFile = null;
+                if (photoPreviewImg) photoPreviewImg.classList.add("hidden");
+                if (photoPlaceholderIcon) photoPlaceholderIcon.classList.remove("hidden");
+                if (photoNameDisplay) {
+                  photoNameDisplay.textContent = "Pilih atau Seret Foto Profil Anda (JPG / PNG)";
+                  photoNameDisplay.classList.remove("text-[#065143]");
+                }
+              } catch (error) {
+                console.error("Error submitting form:", error);
+                formAlert.className =
+                  "md:col-span-2 p-4 rounded-xl text-sm font-semibold bg-red-600 border border-red-700 text-white shadow-md flex items-center gap-2.5";
+                formAlert.innerHTML =
+                  '<span class="material-symbols-outlined text-white text-[22px]">error</span> <span>Terjadi kesalahan saat memverifikasi atau mengirim data. Silakan coba lagi.</span>';
+                formAlert.classList.remove("hidden");
+              } finally {
+                // Restore button state
+                submitBtn.disabled = false;
+                btnText.textContent = "Kirim Formulir Pendataan";
+                btnIcon.textContent = "send";
+              }
+            });
+          }
+        });
+      </script>
+    </div>
+  </main>
+</Layout>

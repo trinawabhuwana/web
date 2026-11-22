@@ -1,0 +1,160 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const principles = [
+  {
+    no: "1",
+    title: "Mengabdi kepada Tuhan Yang Maha Esa",
+    desc: "Menjadikan seluruh kegiatan penjelajahan dan kecintaan pada alam sebagai wujud rasa syukur, ketakwaan, serta peribadatan kepada Sang Maha Pencipta semesta alam.",
+  },
+  {
+    no: "2",
+    title: "Memelihara alam beserta isinya, serta menggunakan sumber daya alam sesuai dengan kebutuhan",
+    desc: "Menjunjung prinsip konservasi, tidak merusak vegetasi, tidak memburu satwa, tidak meninggalkan sampah (*Leave No Trace*), serta bijaksana dalam memanfaatkan sumber daya alam.",
+  },
+  {
+    no: "3",
+    title: "Mengabdi kepada Bangsa dan Tanah Air",
+    desc: "Menanamkan rasa cinta tanah air, jiwa nasionalisme, kepeloporan pemuda, serta kesiapan menyumbangkan tenaga dan ilmu bagi keutuhan Negara Kesatuan Republik Indonesia.",
+  },
+  {
+    no: "4",
+    title: "Menghormati tata kehidupan yang berlaku pada masyarakat sekitarnya serta menghargai manusia dengan kerabatnya",
+    desc: "Menghormati kearifan lokal (*local wisdom*), adat istiadat, norma masyarakat setempat di setiap daerah ekspedisi, serta menjunjung tinggi hak asasi sesama manusia.",
+  },
+  {
+    no: "5",
+    title: "Berusaha mempererat tali persaudaraan antar Pecinta Alam sesuai dengan azas dan tujuan Pecinta Alam",
+    desc: "Menjalin silaturahmi tanpa membedakan suku, agama, ras, maupun asal organisasi. Saling tolong-menolong dalam kesulitan dan operasi kemanusiaan.",
+  },
+  {
+    no: "6",
+    title: "Selesai",
+    desc: "Ikrar komitmen penutup yang mengikat secara moral bagi setiap insan yang menyematkan predikat Pecinta Alam Indonesia dalam sanubarinya.",
+  },
+];
+---
+
+<Layout title="Kode Etik Pecinta Alam Indonesia - KPA Trinawa Bhuwana SMAN 39 Jakarta">
+  <main class="w-full pt-20 bg-surface min-h-screen">
+    
+    <!-- HERO HEADER -->
+    <section class="relative w-full py-14 md:py-20 px-4 md:px-8 lg:px-12 bg-gradient-to-b from-[#065143]/15 via-surface to-surface overflow-hidden border-b border-outline-variant/30">
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-[#065143]/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-[#FF8000]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-[1080px] mx-auto relative z-10 text-center flex flex-col items-center">
+        <!-- Breadcrumb -->
+        <div class="flex items-center gap-2 mb-4 text-xs text-on-surface-variant">
+          <a href="/" class="hover:text-primary transition-colors">Beranda</a>
+          <span>/</span>
+          <a href="/dokumen" class="hover:text-primary transition-colors">Dokumen</a>
+          <span>/</span>
+          <span class="text-primary font-bold">Kode Etik Pecinta Alam</span>
+        </div>
+
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold uppercase tracking-wider mb-3">
+          <span class="material-symbols-outlined text-[16px]">nature_people</span>
+          <span>Konsensus Nasional Gladian IV 1974</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-on-surface tracking-tight uppercase leading-tight font-display">
+          Kode Etik Pecinta Alam <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-secondary">
+            Se-Indonesia
+          </span>
+        </h1>
+        <p class="text-sm sm:text-base text-on-surface-variant max-w-2xl mt-3 leading-relaxed">
+          Pedoman moral tertinggi dan sumpah kesadaran bagi setiap pegiat alam bebas dan anggota KPA Trinawa Bhuwana SMAN 39 Jakarta.
+        </p>
+
+        <!-- Sub Nav Pills -->
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-2 bg-surface-container-low p-1.5 rounded-2xl border border-outline-variant/30">
+          <a href="/dokumen/kode-etik" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-primary text-white shadow-xs">
+            Kode Etik
+          </a>
+          <a href="/dokumen/undang-undang" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+            Undang-Undang
+          </a>
+          <a href="/dokumen/anggaran-rumah-tangga" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+            ART &amp; PDF Embed
+          </a>
+          <a href="/dokumen/tujuan-hakekat" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+            Tujuan &amp; Hakekat
+          </a>
+          <a href="/dokumen/tata-tertib" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+            Tata Tertib
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT BODY -->
+    <section class="w-full py-16 md:py-24 px-4 md:px-8 lg:px-12 bg-surface">
+      <div class="max-w-[880px] mx-auto flex flex-col gap-10">
+        
+        <!-- Pembukaan / Mukadimah -->
+        <div class="bg-surface-container-lowest p-8 sm:p-10 rounded-3xl border border-outline-variant/30 shadow-md flex flex-col gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold">
+              <span class="material-symbols-outlined text-[20px]">auto_stories</span>
+            </div>
+            <span class="text-xs font-black uppercase tracking-wider text-primary">Mukadimah &amp; Kesadaran Moral</span>
+          </div>
+
+          <div class="space-y-3.5 text-sm sm:text-base text-on-surface leading-relaxed italic border-l-4 border-primary pl-4 my-2">
+            <p>
+              "Kami Pecinta Alam Indonesia sadar bahwa alam beserta isinya adalah ciptaan Tuhan Yang Maha Esa."
+            </p>
+            <p>
+              "Pecinta Alam Indonesia sebagai bagian dari masyarakat Indonesia sadar akan tanggung jawab terhadap Tuhan, Bangsa, dan Tanah Air."
+            </p>
+            <p>
+              "Pecinta Alam Indonesia sadar bahwa pecinta alam adalah sebagai makhluk yang mencintai alam sebagai anugerah Yang Maha Esa."
+            </p>
+          </div>
+
+          <p class="text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
+            Sesuai dengan hakekat di atas, kami dengan kesadaran menyatakan butir-butir ikrar sebagai berikut:
+          </p>
+        </div>
+
+        <!-- Butir-Butir Kode Etik -->
+        <div class="flex flex-col gap-4">
+          {principles.map((item) => (
+            <div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/25 shadow-xs hover:border-primary/40 hover:shadow-md transition-all flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-container text-white flex items-center justify-center font-black text-sm shrink-0 shadow-xs">
+                {item.no}
+              </div>
+              <div class="flex flex-col">
+                <h3 class="text-sm sm:text-base font-black text-on-surface uppercase tracking-tight">
+                  {item.title}
+                </h3>
+                <p class="text-xs sm:text-sm text-on-surface-variant mt-1 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Catatan Sejarah Pengesahan -->
+        <div class="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[20px]">history_edu</span>
+            <span>Disepakati pada <strong>Gladian Nasional IV</strong> di Ujung Pandang, Januari 1974.</span>
+          </div>
+          <a
+            href="/dokumen/undang-undang"
+            class="text-primary font-bold hover:underline flex items-center gap-1 shrink-0"
+          >
+            <span>Lanjut: Undang-Undang TNB</span>
+            <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</Layout>
