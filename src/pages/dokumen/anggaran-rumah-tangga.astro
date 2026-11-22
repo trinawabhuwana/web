@@ -1,4 +1,5 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 import Layout from "../../layouts/Layout.astro";
 
 // URL Embed Dokumen PDF Asli Google Drive
@@ -18,9 +19,9 @@ const LOCAL_PDF_URL = "/documents/Buku_Panduan_Diklat_TNB.pdf";
       <div class="max-w-[1080px] mx-auto relative z-10 text-center flex flex-col items-center">
         <!-- Breadcrumb -->
         <div class="flex items-center gap-2 mb-4 text-xs text-on-surface-variant">
-          <a href="/" class="hover:text-primary transition-colors">Beranda</a>
+          <a href={`${base}/`} class="hover:text-primary transition-colors">Beranda</a>
           <span>/</span>
-          <a href="/dokumen" class="hover:text-primary transition-colors">Dokumen</a>
+          <a href={`${base}/dokumen`} class="hover:text-primary transition-colors">Dokumen</a>
           <span>/</span>
           <span class="text-primary font-bold">Anggaran Rumah Tangga</span>
         </div>
@@ -42,19 +43,19 @@ const LOCAL_PDF_URL = "/documents/Buku_Panduan_Diklat_TNB.pdf";
 
         <!-- Sub Nav Pills -->
         <div class="mt-8 flex flex-wrap items-center justify-center gap-2 bg-surface-container-low p-1.5 rounded-2xl border border-outline-variant/30">
-          <a href="/dokumen/kode-etik" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+          <a href={`${base}/dokumen/kode-etik`} class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
             Kode Etik
           </a>
-          <a href="/dokumen/undang-undang" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+          <a href={`${base}/dokumen/undang-undang`} class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
             Undang-Undang
           </a>
-          <a href="/dokumen/anggaran-rumah-tangga" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-primary text-white shadow-xs">
+          <a href={`${base}/dokumen/anggaran-rumah-tangga`} class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-primary text-white shadow-xs">
             ART &amp; PDF Embed
           </a>
-          <a href="/dokumen/tujuan-hakekat" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+          <a href={`${base}/dokumen/tujuan-hakekat`} class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
             Tujuan &amp; Hakekat
           </a>
-          <a href="/dokumen/tata-tertib" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+          <a href={`${base}/dokumen/tata-tertib`} class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
             Tata Tertib
           </a>
         </div>

@@ -1,4 +1,5 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 import Layout from "../../layouts/Layout.astro";
 ---
 
@@ -13,7 +14,7 @@ import Layout from "../../layouts/Layout.astro";
       <div class="max-w-[1200px] mx-auto relative z-10 text-center flex flex-col items-center">
         <!-- Breadcrumb -->
         <div class="flex items-center gap-2 mb-4 text-xs text-on-surface-variant">
-          <a href="/" class="hover:text-primary transition-colors">Beranda</a>
+          <a href={`${base}/`} class="hover:text-primary transition-colors">Beranda</a>
           <span>/</span>
           <span class="text-primary font-bold">Dokumen Resmi</span>
         </div>
@@ -35,19 +36,19 @@ import Layout from "../../layouts/Layout.astro";
 
         <!-- Quick Access Navigation Pills -->
         <div class="mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3 bg-surface-container-low p-2 rounded-2xl border border-outline-variant/30">
-          <a href="/dokumen/kode-etik" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+          <a href={`${base}/dokumen/kode-etik`} class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
             1. Kode Etik
           </a>
-          <a href="/dokumen/undang-undang" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+          <a href={`${base}/dokumen/undang-undang`} class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
             2. Undang-Undang
           </a>
-          <a href="/dokumen/anggaran-rumah-tangga" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+          <a href={`${base}/dokumen/anggaran-rumah-tangga`} class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
             3. ART &amp; PDF Asli
           </a>
-          <a href="/dokumen/tujuan-hakekat" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+          <a href={`${base}/dokumen/tujuan-hakekat`} class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
             4. Tujuan &amp; Hakekat
           </a>
-          <a href="/dokumen/tata-tertib" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+          <a href={`${base}/dokumen/tata-tertib`} class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
             5. Tata Tertib
           </a>
         </div>
@@ -75,7 +76,7 @@ import Layout from "../../layouts/Layout.astro";
             </p>
           </div>
           <a
-            href="/dokumen/kode-etik"
+            href={`${base}/dokumen/kode-etik`}
             class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-primary group-hover:text-primary-container transition-colors"
           >
             <span>Buka Kode Etik</span>
@@ -100,7 +101,7 @@ import Layout from "../../layouts/Layout.astro";
             </p>
           </div>
           <a
-            href="/dokumen/undang-undang"
+            href={`${base}/dokumen/undang-undang`}
             class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-primary group-hover:text-primary-container transition-colors"
           >
             <span>Buka Undang-Undang</span>
@@ -130,7 +131,7 @@ import Layout from "../../layouts/Layout.astro";
             </p>
           </div>
           <a
-            href="/dokumen/anggaran-rumah-tangga"
+            href={`${base}/dokumen/anggaran-rumah-tangga`}
             class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-primary group-hover:text-primary-container transition-colors"
           >
             <span>Buka ART &amp; PDF Embed</span>
@@ -155,7 +156,7 @@ import Layout from "../../layouts/Layout.astro";
             </p>
           </div>
           <a
-            href="/dokumen/tujuan-hakekat"
+            href={`${base}/dokumen/tujuan-hakekat`}
             class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-primary group-hover:text-primary-container transition-colors"
           >
             <span>Buka Tujuan &amp; Hakekat</span>
@@ -180,7 +181,7 @@ import Layout from "../../layouts/Layout.astro";
             </p>
           </div>
           <a
-            href="/dokumen/tata-tertib"
+            href={`${base}/dokumen/tata-tertib`}
             class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-primary group-hover:text-primary-container transition-colors"
           >
             <span>Buka Tata Tertib</span>

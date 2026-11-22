@@ -127,7 +127,7 @@ const quickCategories = [
     >
       <!-- 1. Beranda -->
       <a
-        href="/"
+        href={`${base}/`}
         class:list={[
           "px-3.5 py-1.5 rounded-lg text-sm transition-all duration-200",
           isBeranda
@@ -141,7 +141,7 @@ const quickCategories = [
       <!-- 2. Struktur Dropdown Menu -->
       <div class="relative group py-2">
         <a
-          href="/struktur"
+          href={`${base}/struktur`}
           class:list={[
             "inline-flex items-center gap-1 px-3.5 py-1.5 rounded-lg text-sm transition-all duration-200 cursor-pointer",
             isStruktur
@@ -164,7 +164,7 @@ const quickCategories = [
             </div>
             
             <a
-              href="/struktur"
+              href={`${base}/struktur`}
               class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/10 transition-colors group/item"
             >
               <div class="w-8 h-8 rounded-lg bg-[#FF8000]/20 text-[#FF8000] flex items-center justify-center shrink-0 group-hover/item:bg-[#FF8000] group-hover/item:text-white transition-colors">
@@ -181,7 +181,7 @@ const quickCategories = [
             </a>
 
             <a
-              href="/struktur/sejarah"
+              href={`${base}/struktur/sejarah`}
               class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/10 transition-colors group/item"
             >
               <div class="w-8 h-8 rounded-lg bg-[#FF8000]/20 text-[#FF8000] flex items-center justify-center shrink-0 group-hover/item:bg-[#FF8000] group-hover/item:text-white transition-colors">
@@ -198,7 +198,7 @@ const quickCategories = [
             </a>
 
             <a
-              href="/struktur/logo"
+              href={`${base}/struktur/logo`}
               class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/10 transition-colors group/item"
             >
               <div class="w-8 h-8 rounded-lg bg-[#FF8000]/20 text-[#FF8000] flex items-center justify-center shrink-0 group-hover/item:bg-[#FF8000] group-hover/item:text-white transition-colors">
@@ -220,7 +220,7 @@ const quickCategories = [
 
       <!-- 3. Angkatan -->
       <a
-        href="/silsilah"
+        href={`${base}/silsilah`}
         class:list={[
           "px-3.5 py-1.5 rounded-lg text-sm transition-all duration-200",
           isSilsilah
@@ -233,7 +233,7 @@ const quickCategories = [
 
       <!-- 4. Produk (Suburin) -->
       <a
-        href="/suburin"
+        href={`${base}/suburin`}
         class:list={[
           "px-3.5 py-1.5 rounded-lg text-sm transition-all duration-200",
           isSuburin
@@ -275,7 +275,7 @@ const quickCategories = [
                 </span>
               </div>
               <a
-                href="/berita"
+                href={`${base}/berita`}
                 class="inline-flex items-center gap-1 text-xs text-[#065143] hover:text-[#FF8000] font-extrabold tracking-wide uppercase transition-colors group/all"
               >
                 <span>Buka Seluruh Artikel</span>
@@ -400,7 +400,7 @@ const quickCategories = [
 
       <!-- 7. Pendaftaran DIKSAR -->
       <a
-        href="/pendaftaran"
+        href={`${base}/pendaftaran`}
         class:list={[
           "px-3.5 py-1.5 rounded-lg text-sm transition-all duration-200",
           isPendaftaran
@@ -413,7 +413,7 @@ const quickCategories = [
 
       <!-- 8. Testimoni -->
       <a
-        href="/testimoni"
+        href={`${base}/testimoni`}
         class:list={[
           "px-3.5 py-1.5 rounded-lg text-sm transition-all duration-200",
           isTestimoni
@@ -427,7 +427,7 @@ const quickCategories = [
       <!-- 9. Dokumen Dropdown Menu -->
       <div class="relative group py-2">
         <a
-          href="/dokumen"
+          href={`${base}/dokumen`}
           class:list={[
             "inline-flex items-center gap-1 px-3.5 py-1.5 rounded-lg text-sm transition-all duration-200 cursor-pointer",
             isDokumen
@@ -447,11 +447,11 @@ const quickCategories = [
           <div class="bg-[#04342b]/95 backdrop-blur-xl border border-[#065143] rounded-2xl p-2.5 shadow-[0_12px_36px_rgba(0,0,0,0.4)]">
             <div class="px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white/50 border-b border-white/10 mb-1 flex items-center justify-between">
               <span>Arsip Dokumen Resmi</span>
-              <a href="/dokumen" class="text-[#FF8000] hover:underline text-[10px]">Semua →</a>
+              <a href={`${base}/dokumen`} class="text-[#FF8000] hover:underline text-[10px]">Semua →</a>
             </div>
 
             <a
-              href="/dokumen/kode-etik"
+              href={`${base}/dokumen/kode-etik`}
               class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-white/10 transition-colors group/item"
             >
               <div class="w-7 h-7 rounded-lg bg-[#FF8000]/20 text-[#FF8000] flex items-center justify-center shrink-0 group-hover/item:bg-[#FF8000] group-hover/item:text-white transition-colors">
@@ -468,7 +468,7 @@ const quickCategories = [
             </a>
 
             <a
-              href="/dokumen/undang-undang"
+              href={`${base}/dokumen/undang-undang`}
               class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-white/10 transition-colors group/item"
             >
               <div class="w-7 h-7 rounded-lg bg-[#FF8000]/20 text-[#FF8000] flex items-center justify-center shrink-0 group-hover/item:bg-[#FF8000] group-hover/item:text-white transition-colors">
@@ -485,7 +485,7 @@ const quickCategories = [
             </a>
 
             <a
-              href="/dokumen/anggaran-rumah-tangga"
+              href={`${base}/dokumen/anggaran-rumah-tangga`}
               class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-white/10 transition-colors group/item"
             >
               <div class="w-7 h-7 rounded-lg bg-[#FF8000]/20 text-[#FF8000] flex items-center justify-center shrink-0 group-hover/item:bg-[#FF8000] group-hover/item:text-white transition-colors">
@@ -502,7 +502,7 @@ const quickCategories = [
             </a>
 
             <a
-              href="/dokumen/tujuan-hakekat"
+              href={`${base}/dokumen/tujuan-hakekat`}
               class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-white/10 transition-colors group/item"
             >
               <div class="w-7 h-7 rounded-lg bg-[#FF8000]/20 text-[#FF8000] flex items-center justify-center shrink-0 group-hover/item:bg-[#FF8000] group-hover/item:text-white transition-colors">
@@ -519,7 +519,7 @@ const quickCategories = [
             </a>
 
             <a
-              href="/dokumen/tata-tertib"
+              href={`${base}/dokumen/tata-tertib`}
               class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-white/10 transition-colors group/item"
             >
               <div class="w-7 h-7 rounded-lg bg-[#FF8000]/20 text-[#FF8000] flex items-center justify-center shrink-0 group-hover/item:bg-[#FF8000] group-hover/item:text-white transition-colors">
@@ -579,7 +579,7 @@ const quickCategories = [
     <nav class="flex flex-col gap-1 pb-space-sm" aria-label="Mobile Navigation">
       <!-- 1. Beranda -->
       <a
-        href="/"
+        href={`${base}/`}
         class:list={[
           "px-4 py-2.5 rounded-lg text-sm transition-colors",
           isBeranda ? "bg-[#FF8000] text-white font-bold" : "text-white/85 hover:bg-white/10 hover:text-white",
@@ -590,7 +590,7 @@ const quickCategories = [
 
       <!-- 2. Struktur -->
       <a
-        href="/struktur"
+        href={`${base}/struktur`}
         class:list={[
           "px-4 py-2.5 rounded-lg text-sm transition-colors",
           isStruktur ? "bg-[#FF8000] text-white font-bold" : "text-white/85 hover:bg-white/10 hover:text-white",
@@ -601,7 +601,7 @@ const quickCategories = [
 
       <!-- 3. Angkatan -->
       <a
-        href="/silsilah"
+        href={`${base}/silsilah`}
         class:list={[
           "px-4 py-2.5 rounded-lg text-sm transition-colors",
           isSilsilah ? "bg-[#FF8000] text-white font-bold" : "text-white/85 hover:bg-white/10 hover:text-white",
@@ -612,7 +612,7 @@ const quickCategories = [
 
       <!-- 4. Produk (Suburin) -->
       <a
-        href="/suburin"
+        href={`${base}/suburin`}
         class:list={[
           "px-4 py-2.5 rounded-lg text-sm transition-colors",
           isSuburin ? "bg-[#FF8000] text-white font-bold" : "text-white/85 hover:bg-white/10 hover:text-white",
@@ -628,7 +628,7 @@ const quickCategories = [
             <span class="material-symbols-outlined text-[16px]">newspaper</span>
             <span>Berita &amp; Artikel</span>
           </div>
-          <a href="/#berita" class="text-[10px] text-white/60 hover:text-white uppercase font-bold">
+          <a href={`${base}/#berita`} class="text-[10px] text-white/60 hover:text-white uppercase font-bold">
             Lihat Semua →
           </a>
         </div>
@@ -681,7 +681,7 @@ const quickCategories = [
 
       <!-- 7. Pendaftaran DIKSAR -->
       <a
-        href="/pendaftaran"
+        href={`${base}/pendaftaran`}
         class:list={[
           "px-4 py-2.5 rounded-lg text-sm transition-colors",
           isPendaftaran ? "bg-[#FF8000] text-white font-bold" : "text-white/85 hover:bg-white/10 hover:text-white",
@@ -692,7 +692,7 @@ const quickCategories = [
 
       <!-- 8. Testimoni -->
       <a
-        href="/testimoni"
+        href={`${base}/testimoni`}
         class:list={[
           "px-4 py-2.5 rounded-lg text-sm transition-colors",
           isTestimoni ? "bg-[#FF8000] text-white font-bold" : "text-white/85 hover:bg-white/10 hover:text-white",
@@ -708,41 +708,41 @@ const quickCategories = [
             <span class="material-symbols-outlined text-[16px]">folder_open</span>
             <span>Dokumen Organisasi</span>
           </div>
-          <a href="/dokumen" class="text-[10px] text-white/60 hover:text-white uppercase font-bold">
+          <a href={`${base}/dokumen`} class="text-[10px] text-white/60 hover:text-white uppercase font-bold">
             Semua →
           </a>
         </div>
         <div class="flex flex-col gap-1 pt-1.5 border-t border-white/5">
           <a
-            href="/dokumen/kode-etik"
+            href={`${base}/dokumen/kode-etik`}
             class="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs text-white/90 hover:bg-white/10 transition-colors"
           >
             <span class="material-symbols-outlined text-[16px] text-[#FF8000]">verified</span>
             <span>Kode Etik Pecinta Alam</span>
           </a>
           <a
-            href="/dokumen/undang-undang"
+            href={`${base}/dokumen/undang-undang`}
             class="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs text-white/90 hover:bg-white/10 transition-colors"
           >
             <span class="material-symbols-outlined text-[16px] text-[#FF8000]">gavel</span>
             <span>Undang-Undang Trinawa Bhuwana</span>
           </a>
           <a
-            href="/dokumen/anggaran-rumah-tangga"
+            href={`${base}/dokumen/anggaran-rumah-tangga`}
             class="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs text-white/90 hover:bg-white/10 transition-colors"
           >
             <span class="material-symbols-outlined text-[16px] text-[#FF8000]">menu_book</span>
             <span>Anggaran Rumah Tangga &amp; PDF</span>
           </a>
           <a
-            href="/dokumen/tujuan-hakekat"
+            href={`${base}/dokumen/tujuan-hakekat`}
             class="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs text-white/90 hover:bg-white/10 transition-colors"
           >
             <span class="material-symbols-outlined text-[16px] text-[#FF8000]">flag</span>
             <span>Tujuan &amp; Hakekat</span>
           </a>
           <a
-            href="/dokumen/tata-tertib"
+            href={`${base}/dokumen/tata-tertib`}
             class="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs text-white/90 hover:bg-white/10 transition-colors"
           >
             <span class="material-symbols-outlined text-[16px] text-[#FF8000]">policy</span>

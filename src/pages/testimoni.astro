@@ -1,4 +1,5 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 import Layout from "../layouts/Layout.astro";
 import { allTestimonials } from "../data/testimonials";
 
@@ -16,7 +17,7 @@ const testimonials = allTestimonials;
       <div class="max-w-[1200px] mx-auto relative z-10 text-center flex flex-col items-center">
         <!-- Breadcrumb -->
         <div class="flex items-center gap-2 mb-4 text-xs text-on-surface-variant">
-          <a href="/" class="hover:text-primary transition-colors">Beranda</a>
+          <a href={`${base}/`} class="hover:text-primary transition-colors">Beranda</a>
           <span>/</span>
           <span class="text-primary font-bold">Kumpulan Testimoni</span>
         </div>
@@ -39,7 +40,7 @@ const testimonials = allTestimonials;
         <!-- CTA ke Sensus Alumni -->
         <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
           <a
-            href="/silsilah#formulir"
+            href={`${base}/silsilah#formulir`}
             class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-primary hover:bg-primary-container text-on-primary text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95"
           >
             <span class="material-symbols-outlined text-[18px]">edit_note</span>
@@ -103,7 +104,7 @@ const testimonials = allTestimonials;
               Alumni dapat mengisi formulir sensus dan memberikan pesan atau kenangan untuk ditayangkan di halaman ini.
             </p>
             <a
-              href="/silsilah#formulir"
+              href={`${base}/silsilah#formulir`}
               class="mt-4 px-5 py-2.5 rounded-xl bg-primary text-on-primary font-bold text-xs uppercase tracking-wider"
             >
               Isi Sensus Sekarang

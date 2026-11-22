@@ -1,4 +1,5 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 import Layout from "../../layouts/Layout.astro";
 
 // Data 26 Pendiri Angkatan 1 - Kabut Perintis (1985)
@@ -89,9 +90,9 @@ const milestones = [
       <div class="max-w-[1200px] mx-auto relative z-10 text-center flex flex-col items-center">
         <!-- Breadcrumb -->
         <div class="flex items-center gap-2 mb-4 text-xs text-on-surface-variant">
-          <a href="/" class="hover:text-primary transition-colors">Beranda</a>
+          <a href={`${base}/`} class="hover:text-primary transition-colors">Beranda</a>
           <span>/</span>
-          <a href="/struktur" class="hover:text-primary transition-colors">Struktur</a>
+          <a href={`${base}/struktur`} class="hover:text-primary transition-colors">Struktur</a>
           <span>/</span>
           <span class="text-primary font-bold">Sejarah Organisasi</span>
         </div>
@@ -114,19 +115,19 @@ const milestones = [
         <!-- Sub Navigation Pill -->
         <div class="mt-8 flex items-center gap-3 bg-surface-container-low p-1.5 rounded-2xl border border-outline-variant/30">
           <a
-            href="/struktur"
+            href={`${base}/struktur`}
             class="px-4 py-2 rounded-xl text-xs font-bold text-on-surface-variant hover:text-on-surface transition-colors"
           >
             Bagan Struktur
           </a>
           <a
-            href="/struktur/sejarah"
+            href={`${base}/struktur/sejarah`}
             class="px-4 py-2 rounded-xl text-xs font-bold bg-primary text-white shadow-xs"
           >
             Sejarah Organisasi
           </a>
           <a
-            href="/struktur/logo"
+            href={`${base}/struktur/logo`}
             class="px-4 py-2 rounded-xl text-xs font-bold text-on-surface-variant hover:text-on-surface transition-colors"
           >
             Makna Lambang Logo
@@ -154,7 +155,7 @@ const milestones = [
         </div>
 
         <a
-          href="/struktur/logo"
+          href={`${base}/struktur/logo`}
           class="shrink-0 px-5 py-3 rounded-xl bg-[#FF8000] hover:bg-[#e07200] text-white text-xs font-extrabold uppercase tracking-wider transition-all shadow-md flex items-center gap-2"
         >
           <span>Arti Lambang Logo</span>
@@ -223,7 +224,7 @@ const milestones = [
             </p>
           </div>
           <a
-            href="/silsilah"
+            href={`${base}/silsilah`}
             class="text-xs font-bold text-primary hover:underline flex items-center gap-1 shrink-0"
           >
             <span>Lihat Silsilah 33 Generasi</span>
